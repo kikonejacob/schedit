@@ -1,0 +1,88 @@
+
+
+/**
+ * Administrator account
+ */
+Applications
+	-new application
+	-applicants
+Inscriptions
+	-student list
+	-new inscription
+students
+	-scolarships
+	-personal information
+	-attendance
+Enrollments
+	-list of enrolled students
+	-Enroll a student
+Grades
+	-enter grades
+	-students grades
+Finance
+	-unpaid school fees
+	-other students payments
+	-payment plans
+	-fees payments
+	-summary
+Accounting
+	-new operation
+	-operations
+	-assets
+courses
+	-new course
+	-courses
+Teachers
+	-new teacher
+	-teachers list
+	-teacher classes
+Employees
+	-new employee
+	-list of employees
+	-Payroll
+users managements
+	-users 
+	-user groups
+	-roles
+	-my profile
+news
+	-official news
+
+Log
+	-system log
+
+
+Configuaration
+	-School Informations
+	-teached classes
+	-...
+
+/**
+ * teacher account
+ */
+
+news
+
+grades
+
+courses
+
+configuration
+	-my profile
+	-personal informations
+
+/**
+ * student account
+ */
+
+news
+
+My profile
+	-grades
+	-personal informations
+Finances
+	-scholarship
+	-payments
+
+
+

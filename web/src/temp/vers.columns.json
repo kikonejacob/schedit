@@ -1,0 +1,24 @@
+ [{
+  "name": "id", 
+    "label": "ID", 
+    "editable": false, 
+    "cell": "number"
+  }, {
+    "name": "payed",
+    "label": "Payed",
+    "cell": "number" 
+  }, {
+    "name": "balance",
+    "label": "balance",
+    "cell": "number"
+    },
+  {
+    "name": "remitence",
+    "label": "Redeem",
+    "cell": "string" 
+  }, {
+    "name": "date",
+    "label": "Date",
+    "cell": "dateEx",
+    "editable":true
+  }]

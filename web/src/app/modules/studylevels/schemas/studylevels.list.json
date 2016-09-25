@@ -1,0 +1,46 @@
+
+{
+   "source":"/api/levels",
+   "sourceType":"url",
+   "name":"students-levels-grid",
+   "title":"Study level ",
+   "description":"List of study levels.",
+   "columns":["name","description"],
+   "buttons":{
+       "default":[
+           {"caption":"Add","action":"new"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}
+       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+   "target":"#studylevels/",
+   "targetType":"url",
+
+   "columnsMetaData":[
+         {
+             "columnName": "name",
+             "order": 1,
+             "displayName": "Level name",
+             "type":"Text",
+             "partialLink":"{target}",
+             "customComponent": "LinkComponent",
+             "excludeHTMLDisplayNameData":true
+         },
+         {
+             "columnName": "description",
+             "order": 3,
+             "type":"Text",
+             "visible": true,
+             "displayName": "Description"
+         }
+
+    ],
+    "filter":{
+             "filterField":"level_name",
+             "advancedFilterField":["name","level_name"]
+   }
+}

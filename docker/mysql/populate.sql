@@ -1,0 +1,2 @@
+CREATE DATABASE tenantsmgr;
+CREATE DATABASE 2016_sch;

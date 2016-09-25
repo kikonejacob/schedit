@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+DIR="$( dirname "$( dirname "${BASH_SOURCE[0]}" )/docker/bin" && pwd )"
+
+PROJECT_NAME=Schedit
+
+C="$( containers  ps -q db)"
+
+containers exec db  mysql  $@

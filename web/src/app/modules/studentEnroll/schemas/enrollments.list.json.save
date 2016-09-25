@@ -1,0 +1,70 @@
+/**Example with selection list */
+{
+   "source":"api/students/:id/enrollments",
+   "sourceType":"url",
+   "name":"students-enrollment-grid",
+   "title":"Student enrollments",
+   "description":"List of students enrollments.",
+   "columns":["class_name","payment_plan_name","acyear_name"],
+   "buttons":{
+       "default":[
+           {"caption":"New enrollment","action":"create"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+
+   "columnsMetaData":[
+         {
+             "columnName": "class_name",
+             "locked": false,
+             "visible": true,
+             "displayName": "Classe",
+             "type":"Text",
+             "partialLink":"#students/:id/enrollments/",
+             "customComponent": "LinkComponent",
+             "selection":{
+                         "reference":"classId",
+                         "options":"api/classes",
+                         "selectionFields":{"value":"id","caption":"name"},
+                         "optionsType":"url",
+                         "placeholder":"Select a class"
+                     }
+         },
+         {
+             "columnName": "acyear_name",
+             "displayName": "Academic year",
+             "selection":{
+                         "reference":"acyearId",
+                         "options":"api/acyears",
+                         "selectionFields":{"value":"id","caption":"name"},
+                         "optionsType":"url",
+                         "placeholder":"Select an academic year"
+                     }
+         },
+
+
+         {
+             "columnName": "payment_plan_name",
+             "locked": false,
+             "type":"Number",
+             "visible": true,
+             "displayName": "Payment plan",
+             "customComponent":"SelectionComponent",
+             "selection":{
+                         "reference":"payment_plan",
+                         "options":"api/paymentplans",
+                         "selectionFields":{"value":"id","caption":"name"},
+                         "optionsType":"url",
+                         "placeholder":"Select a payment type"
+                     }
+         }
+    ],
+    "filter":{
+             "filterField":"class",
+             "advancedFilterField":["class_name","acyear_name","payment_plan_name"]
+   }
+}

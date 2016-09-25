@@ -1,0 +1,34 @@
+[
+            {
+              "id": 100,
+              "name": "Scolarite",
+              "payed": 1500,
+			  "balance":2000,
+			  "remitence": "0",
+			  "date" :  "2015-05-15"
+            },
+            {
+              "id": 101,
+              "name": "Ra's Al Ghul",
+              "payed": 1540,
+			  "balance": 200,
+			  "remitence" : "0",
+			  "date" :  "2018-05-15"
+            },
+            {
+              "id": 102,
+              "name": "The Joker",
+              "payed": 2800,
+			  "remitence": "0",
+			  "balance": 600,
+			  "date" :  "2017-05-15"
+            },
+            {
+              "id": 103,
+              "name": "The Riddler",
+              "payed": 1470,
+			  "balance": 3000,
+			  "remitence" :"0",
+			  "date" :  "2012-05-15"
+            }
+]

@@ -1,0 +1,88 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+// Database '2016_sch'
+// 2016_sch.educ_levels
+[
+    {
+        "id": "1",
+        "name": "molestiae",
+        "description": "Odit consectetur voluptatem sit atque voluptas recusandae excepturi distinctio.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "2",
+        "name": "rem",
+        "description": "Deserunt maiores quis temporibus quisquam illum et qui adipisci.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "3",
+        "name": "temporibus",
+        "description": "Est sed numquam sit autem laborum laboriosam voluptatem.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "4",
+        "name": "est",
+        "description": "Consequatur placeat aliquam ut tenetur aut maxime.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "5",
+        "name": "dicta",
+        "description": "Voluptatibus adipisci dignissimos consequatur velit.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "6",
+        "name": "excepturi",
+        "description": "Est quis alias excepturi corrupti quod voluptas ad.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "7",
+        "name": "est",
+        "description": "Mollitia eveniet dolorem cum.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "8",
+        "name": "unde",
+        "description": "Voluptates tenetur qui ab nemo velit.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "9",
+        "name": "praesentium",
+        "description": "Omnis molestiae minima sed deleniti et.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    },
+    {
+        "id": "10",
+        "name": "quis",
+        "description": "Totam nihil voluptas velit ut.",
+        "status": "0",
+        "created_at": "2015-09-23 15:36:29",
+        "updated_at": "2015-09-23 15:36:29"
+    }
+]

@@ -1,0 +1,21 @@
+{
+  "schema":{
+        "type":"object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "fieldClass": "row",
+            "disabled": "true"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "fieldClass": "row",
+            "disabled": "true"
+          }
+        }
+    },
+
+  "schemaUi": {}
+}

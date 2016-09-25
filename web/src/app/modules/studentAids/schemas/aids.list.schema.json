@@ -1,0 +1,43 @@
+{
+   "source":"api/financial_aids",
+   "sourceType":"url",
+   "name":"students-financial-aids-grid",
+   "title":"List of available Financial Aids",
+   "description":"List of available Financial Aids.",
+   "columns":["name","type","description","applyTo","type"],
+   "buttons":{
+       "default":[
+           {"caption":"Add a new financial aid","action":"new"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+"columnsMetaData":[{
+	    "columnName": "name",
+	    "order": 1,
+	    "locked": false,
+	    "visible": true,
+      "partialLink":"#students/",
+	    "displayName": "Name",
+      "customComponent": "LinkComponent"
+	},
+	  {
+	    "columnName": "applyTo",
+	    "order": 2,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Apply To"
+	  },
+	  {
+	    "columnName": "birth_date",
+	    "order": 3,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Birth date"
+	  }
+]
+
+}

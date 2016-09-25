@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker create -it --name new-container <image>

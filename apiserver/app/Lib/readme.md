@@ -1,0 +1,1 @@
+## This library contains custom class and helpers for school edit libraries

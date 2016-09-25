@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  workspace:
+    build: ./docker/php-fpm
+    depends_on:
+      - db
+      - memcached
+    volumes:
+      - ..:/sch-web
+  memcached:
+    image: memcached:1.4.25

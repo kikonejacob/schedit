@@ -1,0 +1,44 @@
+{
+   "source":"api/studentgroups",
+   "sourceType":"url",
+   "name":"students-group-list-grid",
+   "title":"Students groups",
+   "description":"List of students groups",
+   "columns":["caption","description","code"],
+   "buttons":{
+       "default":[
+           {"caption":"New group","action":"add"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+"columnsMetaData":[{
+	    "columnName": "caption",
+	    "order": 1,
+	    "locked": false,
+	    "visible": true,
+      "partialLink":"#studentsgroups/",
+	    "displayName": "Name",
+      "customComponent": "LinkComponent",
+			"linkKey":"code"
+	},
+	  {
+	    "columnName": "description",
+	    "order": 2,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Description"
+	  },
+	  {
+	    "columnName": "code",
+	    "order": 3,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Code"
+	  }
+]
+
+}

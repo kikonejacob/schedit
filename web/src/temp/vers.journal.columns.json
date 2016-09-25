@@ -1,0 +1,34 @@
+[
+  {
+    "name": "",
+    "cell": "select-row",
+    "headerCell": "select-all"
+  },
+  {
+    "name": "id",
+    "label": "ID",
+    "editable": false,
+    "cell": "simpleInt"
+  },
+  {
+    "name": "payed",
+    "label": "Payed",
+    "cell": "number"
+  },
+  {
+    "name": "balance",
+    "label": "balance",
+    "cell": "number"
+  },
+  {
+    "name": "cot0",
+    "label": "Tuition",
+    "cell": "number"
+  },
+  {
+    "name": "date",
+    "label": "Date",
+    "cell": "dateEx",
+    "editable": true
+  }
+]

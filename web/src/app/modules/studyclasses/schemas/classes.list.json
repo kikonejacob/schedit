@@ -1,0 +1,66 @@
+
+{
+   "source":"/api/classes",
+   "sourceType":"url",
+   "name":"students-classes-grid",
+   "title":"Study level Classes",
+   "description":"List of classes.",
+   "columns":["name","level_name","description","room","max_size"],
+   "buttons":{
+       "default":[
+           {"caption":"Add","action":"new"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}
+       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+   "target":"#classes/",
+   "targetType":"url",
+
+   "columnsMetaData":[
+         {
+             "columnName": "name",
+             "order": 1,
+             "displayName": "Classe",
+             "type":"Text",
+             "partialLink":"{target}",
+             "customComponent": "LinkComponent",
+             "excludeHTMLDisplayNameData":true
+         },
+         {
+             "columnName": "level_name",
+             "order": 2,
+             "type":"Text",
+             "displayName": "Level"
+         },
+         {
+             "columnName": "description",
+             "order": 3,
+             "type":"Text",
+             "visible": true,
+             "displayName": "Description"
+         },
+         {
+             "columnName": "room",
+             "order": 4,
+             "type":"Text",
+             "visible": true,
+             "displayName": "Room"
+         },
+         {
+             "columnName": "max_size",
+             "order": 5,
+             "type":"Text",
+             "visible": true,
+             "displayName": "Max. places"
+         }
+
+    ],
+    "filter":{
+             "filterField":"class",
+             "advancedFilterField":["name","level_name"]
+   }
+}

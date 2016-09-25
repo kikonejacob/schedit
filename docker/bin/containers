@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+PROJECT_NAME=Schedit
+
+
+docker-compose -p $PROJECT_NAME \
+     -f "$DIR"/docker-compose.web.yml \
+     -f "$DIR"/docker-compose.api.yml \
+    "$@"

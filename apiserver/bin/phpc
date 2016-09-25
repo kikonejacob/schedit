@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+DIR="$( dirname "$( dirname "${BASH_SOURCE[0]}" )/docker/bin" && pwd )"
+
+PROJECT_NAME=Schedit
+
+C="$( containers  ps -q app)"
+
+docker exec -it ${C}  php  $@

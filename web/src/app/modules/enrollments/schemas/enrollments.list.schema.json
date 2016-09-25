@@ -1,0 +1,43 @@
+{
+   "source":"api/enrollments",
+   "sourceType":"url",
+   "name":"enrollments-list-grid",
+   "title":"Students enrollments list",
+   "description":"Students enrollements.",
+   "columns":["lastName","firstName ","class_id"],
+   "buttons":{
+       "default":[
+           {"caption":"Add","action":"New Inscription"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+"columnsMetaData":[{
+	    "columnName": "name",
+	    "order": 1,
+	    "locked": false,
+	    "visible": true,
+      "partialLink":"#students/",
+	    "displayName": "Name",
+      "customComponent": "LinkComponent"
+	},
+	  {
+	    "columnName": "email",
+	    "order": 2,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Email"
+	  },
+	  {
+	    "columnName": "birth_date",
+	    "order": 3,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Birth date"
+	  }
+]
+
+}

@@ -1,0 +1,19 @@
+{
+  "schema":{
+    "type":"object",
+    "properties":{
+        "caption":{
+              "type":"string",
+              "title":"Name"
+        },
+        "description":{
+              "type":"string",
+              "title":"Description"
+        },
+        "code":{
+              "type":"string",
+              "title":"Code"
+        }
+    }
+  }
+}

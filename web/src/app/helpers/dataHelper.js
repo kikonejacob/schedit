@@ -1,0 +1,10 @@
+function sync(){
+	
+
+
+}
+
+function fetch()
+{
+	
+}

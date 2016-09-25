@@ -1,0 +1,63 @@
+{
+  "schema":{
+    "type": "object",
+    "properties": {
+        "data":{
+            "type":"object",
+            "title":"Basics",
+            "properties":{
+                "name": {"type": "string", "title": "Name:"},
+                "first_name": {"type": "string", "title": "First name:"},
+                "last_name": {"type": "string", "title": "Last name:"},
+                "email":{"type":"string","title":"E-mail:"}
+            }
+        },
+        "enrollments":{
+            "type":"array",
+            "title":"Enrollments",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "class_name":{
+                        "type":"string",
+                        "title":"Classe"
+                    }
+                }
+            }
+
+        },
+        "tuition":{
+            "type":"array",
+            "title":"Tuition",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "amount":{
+                        "type":"string",
+                        "title":"Classe"
+                    }
+                }
+            }
+
+        }
+    }
+  },
+  "uiSchema":{
+    "enrollments":{
+         "ui:field":"InlineList",
+         "options":{
+              "urlTemplate":"#/students/:id/enrollments",
+              "ItemUrl":"#/students/:id/enrollments/:key",
+              "captionField":"class_name"
+         }
+
+     },
+     "tuition":{
+         "ui:field":"InlineList",
+         "options":{
+              "urlTemplate":"#/students/:id/enrollments",
+              "captionField":"amount"
+         }
+     }
+  }
+}

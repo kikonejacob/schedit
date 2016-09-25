@@ -1,0 +1,43 @@
+{
+   "source":"api/students",
+   "sourceType":"url",
+   "name":"students-list-grid",
+   "title":"Students list",
+   "description":"List of students.",
+   "columns":["name","email","sex"],
+   "buttons":{
+       "default":[
+           {"caption":"New inscription","action":"New Inscription"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+"columnsMetaData":[{
+	    "columnName": "name",
+	    "order": 1,
+	    "locked": false,
+	    "visible": true,
+      "partialLink":"#students/",
+	    "displayName": "Name",
+      "customComponent": "LinkComponent"
+	},
+	  {
+	    "columnName": "email",
+	    "order": 2,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Email"
+	  },
+	  {
+	    "columnName": "sex",
+	    "order": 3,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "Sex"
+	  }
+]
+
+}

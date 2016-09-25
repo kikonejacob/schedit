@@ -1,0 +1,36 @@
+{
+  "schema": {
+
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "applyTo": {
+        "title": "Apply to",
+        "type": "string",
+        "enum": ["student.reduction","group.reduction"],
+        "enumNames": []
+      },
+      "reference": {
+        "title": "Select",
+        "type": "integer",
+        "enum": [],
+        "enumNames": []
+     },
+     "amount":{
+        "title":"Amount",
+        "type":"number"
+     }
+    }
+  },
+  "uischema": {
+
+  }
+
+}

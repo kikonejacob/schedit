@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  web:
+    build: 
+      context: "../web"
+      dockerfile: Dockerfile
+    volumes:
+      - "../web:/sch-web"
+    ports:
+      - "3030:3000"
+      - "1337:1337"
+    links:
+      - "db:redis"
+
+  db:
+    image: redis

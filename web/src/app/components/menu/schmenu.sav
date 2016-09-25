@@ -1,0 +1,33 @@
+import SideMenu from './sideMenu.js';
+import React from 'react' ;
+
+node=[
+      { title:"Eleves",
+        link:"#",
+        childNodes:[
+            { title:"informations", link:'./#info'},
+            { title: "bilan financier"},
+            { title: "bourses"},
+            { title: "Autres frais"}
+            ]
+      },
+      {  title: "Professeurs",
+         link:"#"
+      },
+      {  title:"Configuration"},
+         link:"#"
+
+      ];
+
+class SchmenuBar extends React.Component {
+  render() {
+    return (<div className="navbar-default sidebar" role="navigation">
+            	 <div className="sidebar-nav navbar-collapse">
+            	 	<SideMenu />
+            	 </div>
+
+			</div>);
+  }
+}
+
+module.exports=SchmenuBar;

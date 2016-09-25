@@ -1,0 +1,55 @@
+version: '2'
+
+services:
+  app:
+    build: ./php-fpm
+    depends_on:
+      - db
+      - memcached
+    links:
+      - db:db
+      - memcached
+    volumes:
+      - ../apiserver:/sch-api
+    ports:
+      - "9000:9000"
+    environment:
+      - SCH_APP_PATH=/sch-api
+      - COMPOSE_HTTP_TIMEOUT = 500
+      # IMPORTANT: Set the Remote Interpreter entry matching name to `laravel`
+      - PHP_IDE_CONFIG="serverName=laravel"
+
+  db:
+    build: ./mysql
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+      
+    environment:
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: homestead
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - "3306:3306"
+  api:
+    build: 
+      context: ./nginx
+      args:
+        - PHP_UPSTREAM=app
+    depends_on:
+      - app
+    links:
+      - app
+    volumes:
+      - ../apiserver:/sch-api
+      - ./logs/nginx/:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      COMPOSE_HTTP_TIMEOUT: 500
+
+  memcached:
+    image: memcached:1.4.25
+    ports:
+      - "11211:11211"
