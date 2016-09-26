@@ -14,7 +14,7 @@ class TuitionPaymentPlanDetail extends Migration
     {
         Schema::create('tuition_payment_plan_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("planId");
+            $table->integer("plan_id");
             $table->date("due_date");
             $table->double("percent");
             $table->timestamps();

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentPlan extends Model
 {
-     /**
+    /**
      * The database table used by the model.
      *
      * @var string
@@ -19,14 +19,14 @@ class PaymentPlan extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','due_date','percent'];
+    protected $fillable = ['name' , 'due_date' , 'group' , 'description'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['created_at','updated_at'];
+    protected $hidden = ['created_at' , 'updated_at'];
     /**
      * The primary key for the model.
      *
@@ -34,7 +34,10 @@ class PaymentPlan extends Model
      */
     protected $primaryKey = 'code';
 
-  
+    public function periods()
+    {
+        return $this->hasMany('PaymentPlanPeriod');
+    }
 
 
 }

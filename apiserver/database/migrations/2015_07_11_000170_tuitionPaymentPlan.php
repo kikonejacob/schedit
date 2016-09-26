@@ -16,7 +16,8 @@ class TuitionPaymentPlan extends Migration
             $table->increments('id');
             $table->string("name");
             $table->date("due_date");
-            $table->double("percent");
+            $table->text('description');
+            $table->string('group');
             $table->timestamps();
         });
     }
