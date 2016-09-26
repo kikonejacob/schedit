@@ -23,8 +23,10 @@ class levelSubjectsController extends Controller
         'name'         => 'required|string',
         'coefficient'  => 'required|double',
         'levelId'      => 'required|integer',
-        'subject_code' => 'required|string'
+        'subject_code' => 'required|string',
+        'max_points'   => 'required|integer',
     ];
+    /** @todo Add option to allow user to select a formula calculation method */
 
     /**
      * Display a listing of the resource.

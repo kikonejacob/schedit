@@ -16,11 +16,12 @@ class CoursesTermGradesController extends Controller
 {
     use FilterTrait;
     /** @var array The validation rules */
-    protected  $rules=[
-        'grade.*.studentId' =>'required|integer',
-        'grade.*.value'     =>'required|double',
-        'termId' =>'required|integer'
-    ];
+    protected $rules
+        = [
+            'grade.*.studentId' => 'required|integer' ,
+            'grade.*.value'     => 'required|double' ,
+            'term_id'            => 'required|integer'
+        ];
     /**
      * Display a listing of the resource.
      *

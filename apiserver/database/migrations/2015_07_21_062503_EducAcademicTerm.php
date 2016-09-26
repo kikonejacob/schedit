@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EducPeriods extends Migration
+class EducAcademicTerm extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class EducPeriods extends Migration
      */
     public function up()
     {
-        Schema::create('educ_periods', function (Blueprint $table) {
+        Schema::create('educ_academic_terms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->date('start_date');
@@ -31,6 +31,6 @@ class EducPeriods extends Migration
      */
     public function down()
     {
-        Schema::drop('educ_periods');
+        Schema::drop('educ_academic_terms');
     }
 }
