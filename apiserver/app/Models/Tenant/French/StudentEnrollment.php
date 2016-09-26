@@ -42,7 +42,9 @@ class StudentEnrollment extends Model
 
         return $this->belongsTo("App/User");
     }
-    public function classe(){
+
+    public function levelClass()
+    {
         return $this->belongsTo("App/Models/Tenant/EducClass");
     }
 }

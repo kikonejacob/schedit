@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class StudentPeriodGrades extends Migration
+class StudentTermGrades extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class StudentPeriodGrades extends Migration
      */
     public function up()
     {
-        Schema::create('student_period_grades', function (Blueprint $table) {
+        Schema::create('student_term_grades', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('studentId');
-            $table->integer('periodId');
-            $table->date('grade_calc_date');
+            $table->integer('term_id');
+            //$table->date('grade_calc_date');
             $table->double('grade');
-            $table->string('grade_calc_method');
+            $table->string('calc_method')->default('personalized');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class StudentPeriodGrades extends Migration
      */
     public function down()
     {
-        Schema::drop('student_period_grades');
+        Schema::drop('student_term_grades');
     }
 }

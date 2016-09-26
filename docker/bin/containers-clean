@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+
+#Clean containers specially for laravel migrations changes
+containers rm db app api;
+
+containers build --no-cache app db api
