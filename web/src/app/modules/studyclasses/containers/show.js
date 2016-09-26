@@ -16,7 +16,7 @@ import {DEFAULT_LEVELFEE_COLL_NAME} from 'modules/levelfees/lib/actions';
 import Button from 'components/LinkComponent/LinkButtonView';
 import {changeTitle} from 'lib/common/UIActions';
 import ButtonGroup from 'components/ButtonsGroup/ButtonsGroup';
-import {PieChart} from 'react-d3';
+import {PieChart} from 'rd3';
 
 const LINK_CLASS_EDIT='#classes/:id/edit';
 const LINK_LIST_LEVEL_FEES='./#studylevels/:id/fees';

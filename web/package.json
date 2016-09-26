@@ -97,6 +97,7 @@
     "morgan": "^1.7.0",
     "path-to-regexp": "^1.5.3",
     "raw-body": "^2.1.7",
+    "rd3": "^0.7.2",
     "react": "~15.0.2",
     "react-addons-css-transition-group": "~15.0.2",
     "react-bootstrap-datetimepicker": "0.0.22",
