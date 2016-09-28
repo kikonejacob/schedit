@@ -14,7 +14,7 @@ class EducLevelSubjects extends Migration
     {
         Schema::create('educ_level_courses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('levelId');
+            $table->integer('levelId')->unsigned();
             $table->integer('acyearId');
             $table->string('subject_code');
             $table->string('coefficient');
@@ -22,6 +22,7 @@ class EducLevelSubjects extends Migration
             $table->string('period_calc_method');
             $table->string('appreciation_method');
             $table->timestamps();
+            $table->foreign('levelId')->references('id')->on('educ_levels')->onDelete('cascade');;
         });
     }
 

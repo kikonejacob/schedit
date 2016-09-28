@@ -5,6 +5,7 @@
  */
 
 use App\Models\Tenant\EducLevelCourse;
+use App\Models\Tenant\SchTenantOptions;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Tenant\EducLevel;
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
         EducSubject::truncate();
         EducFeeHead::truncate();
         EducLevelCourse::truncate();
+        SchTenantOptions::truncate();
 
         DB::table('ui_grids')->truncate();
         DB::table('oauth_clients')->truncate();
@@ -41,6 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FrenchSubjectHeadSeeder::class);
         $this->call(EducLevelFeeSeeder::class);
         $this->call(FrenchLevelCourseSeeder::class);
+        $this->call(FrenchSchoolConfigSeeder::class);
         Model::reguard();
         //DB::statement('SET FOREIGN_KEY_CHECKS=0');
     }

@@ -84,14 +84,21 @@ class createTenant extends Job implements ShouldQueue
 
 
         ));
-         App::isLocal() ? Artisan::call('migrate:refresh' , ['--database' => 'tenant']) : true;
+
+         if (App::isLocal())  //For development only
+         {
+             Artisan::call('migrate:reset' , ['--database' => 'tenant']);
+         }
+
 
          Artisan::call('migrate', ['--database' => 'tenant']);
          Artisan::call('db:seed', ['--database' => 'tenant']);
          //Seed for development environment @todo: make environment checking
-        if (App::isLocal()) {
+        if (App::isLocal())
+        {  // For development only
             Artisan::call('db:seed' , ['--database' => 'tenant' , '--class' => 'DevDatabaseSeeder']);
         }
+
         DB::connection('tenantsmgr')->table('tenants')
             ->insert(array('internal_name' => $internalName,'name' => $this->tenant['name'],));
         //var_dump($internalName);

@@ -31,6 +31,19 @@ return [
         'apc' => [
             'driver' => 'apc',
         ],
+        /** School edit cache store */
+        'tenant-mgr'=>[
+            'driver'  => 'memcached',
+            'servers' => [
+                [
+                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
+                    'port' => env('MEMCACHED_PORT', 11211),
+                    'weight' => 100,
+                ],
+            ],
+
+        ],
+        /** School edit cache store */
 
         'array' => [
             'driver' => 'array',

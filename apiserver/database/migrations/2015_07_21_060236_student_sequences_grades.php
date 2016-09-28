@@ -17,6 +17,7 @@ class StudentSequencesGrades extends Migration
             $table->integer('studentId');
             $table->integer('term_id');
             $table->string('course_code');
+            $table->enum('enum',['published','editing']);
             $table->double('grade');
             $table->timestamps();
         });

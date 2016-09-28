@@ -14,10 +14,11 @@ class TuitionPaymentPlanDetail extends Migration
     {
         Schema::create('tuition_payment_plan_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("plan_id");
+            $table->integer("plan_id")->unsigned();
             $table->date("due_date");
             $table->double("percent");
             $table->timestamps();
+            $table->foreign('plan_id')->references('id')->on('tuition_payment_plan')->onDelete('cascade');;
         });
     }
 

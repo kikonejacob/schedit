@@ -33,7 +33,9 @@ class StudentCourseGrade extends Model
     {
         return $this->hasMany('App\Models\Tenant\French\StudentSequenceGrade','course_code');
     }
-
+    public function course(){
+        return $this->belongsTo('App\Models\Tenant\EducLevelCourse','course_code');
+    }
     public function term()
     {
         return $this->belongsTo('App\Models\Tenant\French\AcademicTerm','term_id');

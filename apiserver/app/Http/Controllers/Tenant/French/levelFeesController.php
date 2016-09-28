@@ -19,7 +19,7 @@ class levelFeesController extends Controller
 
     use FilterTrait;
 
-    private $filterFields=['amount'];
+    protected $filterFields=['amount'];
 
      public function error_levelNotFound()
     {

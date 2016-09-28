@@ -4,9 +4,11 @@ shopt -s nullglob
 
 cd ${SCH_APP_PATH}
 echo ${SCH_APP_PATH}
-echo "migrating tenant manager database"
+echo "Optimizing code"
+php artisan optimize
+echo "Migrating tenant manager database"
 php artisan  migrate --database "tenantsmgr" --path "database/migrations/tenantsMgr/" 
-echo "seeding tenant for example ..."
+echo "Seeding tenant for example ..."
 php artisan db:seed  --database "tenantsmgr" --class "TenantDatabaseSeeder" --verbose
 echo "Seeding is completed."
 

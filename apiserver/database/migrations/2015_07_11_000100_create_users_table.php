@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string("address1");
             $table->string("address2");
             $table->integer("current_acyear");
+            $table->integer("current_term_id");
             $table->string("role");
             $table->softDeletes();
             $table->rememberToken();

@@ -74,7 +74,7 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
         Route::resource('students.courses' , 'StudentCoursesController' , ['only' => ['index' , 'store','show']]);
         Route::resource('students.courses.grades' , 'StudentCoursesGradeController' , ['only' => ['index']]);
         /** 3.5 French-student-grades @todo: Implement it */
-        Route::resource('students.grades' , 'StudentGradeController' , ['only' => ['index']]);
+        Route::resource('students.grades' , 'StudentCoursesGradeController' , ['only' => ['index']]);
 
         /** 3.6 French-Teacher-Courses @todo: Implement it */
         Route::resource('teachers.courses','TeacherController',['only'=>['index','store','update','show']]);
@@ -117,6 +117,12 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
 
         /* 11. Other */
         Route::resource('saveselection' , 'selectionController' , ['only' => ['store']]);
+        /** 12. Storage  */
+        Route::resource('users.storage' , 'StorageController' , ['only' => ['store','index','update']]);
+        Route::resource('students.storage' , 'StorageController' , ['only' => ['store','index','update']]);
+        Route::resource('teachers.storage' , 'StorageController' , ['only' => ['store','index','update']]);
+        Route::resource('admins.storage' , 'StorageController' , ['only' => ['store','index','update']]);
+
     });
 
 });

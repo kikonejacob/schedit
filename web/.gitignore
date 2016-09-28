@@ -28,7 +28,7 @@ node_modules
 bower_components
 webpack-express-boilerplate
 backup
-server/env.config.json
+server/env.dev.config.json
 
 jspm_packages
 

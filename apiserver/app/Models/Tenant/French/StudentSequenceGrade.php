@@ -27,7 +27,7 @@ class StudentSequenceGrade extends Model
      *
      * @var array
      */
-    protected $fillable = ['id' , 'studentId', 'course_code' , 'term_id' , 'grade'];
+    protected $fillable = ['id' , 'studentId', 'course_code' , 'term_id' , 'grade','status'];
 
     public function course(){
         return $this->belongsTo('App\Tenant\French\AcademicTerm','term_id');
