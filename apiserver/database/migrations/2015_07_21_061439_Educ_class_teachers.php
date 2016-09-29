@@ -16,7 +16,7 @@ class EducClassTeachers extends Migration
             $table->increments('id');
             $table->integer('teacherId');
             $table->string('classId');
-            $table->string('subject_code');
+            $table->string('course_code');
             $table->timestamps();
         });
     }

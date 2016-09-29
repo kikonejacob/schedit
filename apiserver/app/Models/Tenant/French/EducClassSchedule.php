@@ -18,7 +18,7 @@ class EducClassSchedule extends Model
      *
      * @var array
      */
-    protected $fillable = ['classId','start_time','end_time','day','subject_code','room_id'];
+    protected $fillable = ['classId','start_time','end_time','day','course_code','room_id'];
 
     /**
      * The attributes excluded from the model's JSON form.

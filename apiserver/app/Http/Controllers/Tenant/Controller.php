@@ -27,6 +27,10 @@ class Controller extends BaseController
         return Response::json(array_merge(['message'=>'error','detail'=>$error->getMessage()],$data),422);
     }
 
+    /**
+     * @param $data
+     * @return \Illuminate\Http\JsonResponse
+     */
     protected  function APINoFoundResponse($data){
         return Response::json(array_merge(['message'=>'resource not found'],$data),401);
     }

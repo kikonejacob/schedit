@@ -1,12 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
+ * School Configuration informations
  * User: khome
  * Date: 9/28/16
  * Time: 7:05 AM
  */
 
 namespace App\Http\Controllers\Tenant;
+
 
 const DEFAULT_SCHOOL_INFO = array(
     'name'  => 'My School' ,
@@ -36,9 +37,11 @@ class SchoolConfigController extends Controller
     public function store(Request $request){
         try{
             $this->validate($request,$this->rules);
-            $allowedFields=array_keys($this->rules);
-            $values=$request->only($allowedFields);
-            SchTenantOptions::insert($values);
+            $allowedValues=$request->only(array_keys($this->rules));
+            foreach($allowedValues as $key=>$value){
+                $data=array('option_name'=>$key,'option_value'=>$value,'group'=>'school.information');
+                SchTenantOptions::insert($data);
+            };
             return $this->APISuccessResponse(['message'=>'sucess']);
 
         }

@@ -15,6 +15,7 @@ class CreateSchOptionsTable extends Migration
         Schema::create('sch_options', function (Blueprint $table) {
             $table->increments('id');
             $table->string('option_name');
+            $table->string('group');
             $table->longText('option_value');
 
         });
@@ -28,6 +29,6 @@ class CreateSchOptionsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('sch_options');
     }
 }

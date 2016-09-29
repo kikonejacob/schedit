@@ -2,23 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: khome
- * Date: 9/27/16
- * Time: 8:21 PM
+ * Date: 9/29/16
+ * Time: 2:12 PM
  */
 
 namespace App\Models\Tenant;
 
 
+use App\schtraits\AcademicYearTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class SchTenantOptions extends Model
+class StudentAbsence extends Model
 {
-
+    use AcademicYearTrait;
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'sch_options';
+    protected $table = 'educ_student_abscences';
+
+
+
 
 }

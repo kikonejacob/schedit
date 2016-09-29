@@ -21,7 +21,7 @@ class SchOptionsController extends Controller
             'option_name'  => 'required|string' ,
             'option_value' => 'required'
     );
-    public function show($optionName){
+    public function index($optionName){
         $result=SchTenantOptions::where('option_name',$optionName);
         return Response::json(['data'=>$result]);
     }

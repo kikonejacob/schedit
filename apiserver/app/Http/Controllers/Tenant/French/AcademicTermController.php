@@ -81,7 +81,7 @@ class AcademicTermController extends Controller
     public function update(Request $request, $id)
     {
         /**Validation or request arguments*/
-        $validator = Validator::make($request->all(),$rules);
+        $validator = Validator::make($request->all(),$this->rules);
         if ($validator->fails()) {
             return response()->json(['error', 'message' => $validator->messages()], 422);
         }
