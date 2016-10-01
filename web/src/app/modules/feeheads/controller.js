@@ -1,7 +1,6 @@
 import debug from 'utils/debug.js';
 import stringRes from 'utils/stringRes';
 import List from './containers/list';
-import DeleteList from './containers/delete';
 import Form from './containers/form';
 import servicesChannels from 'services/servicesChannels';
 import PageableCollection from 'utils/pageableCollection';
@@ -82,17 +81,7 @@ export default  class schoolInfo {
     }
     delete() {
 
-        this.selectedIds = [];
-        let collection = new PageableCollection({ url: API_URL });
-        let header = {
-            description: 'select the levels you want to delete and click on delete',
-            onAction: this.handleActions.bind(this)
-        };
-        this.Rendered = (<DeleteList {...header} collection={collection}
-            multiselect={true} selectedIds={this.selectedIds} />);
-        this.services.trigger('load-content', this.Rendered, 'react');
-
-
+   
 
     }
 

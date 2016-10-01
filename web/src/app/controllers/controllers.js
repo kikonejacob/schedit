@@ -9,20 +9,26 @@ import studentenroll from 'modules/studentEnroll/controller.js';
 import loginController from 'modules/login/controller.js';
 import studentsgroupController from 'modules/studentsGroups/controller';
 import studentMembershipController from 'modules/studentGroupMembership/controller';
+import studentAidsController from 'modules/studentAids/controller';
+import SchoolInformation from 'modules/schoolInfo/controller';
+import Enrollments from 'modules/enrollments/controller';
 
 export default {
 
-    'students':students,
-    'studentenroll':studentenroll,
-    'studylevels':studylevels,
-    'schoolinfo':schoolinfo,
-    'studyclasses':studyclasses,
-    'feeheads':feeheads,
-    'levelfees':levelfees,
-    'subjects':subjects,
-    'loginController':loginController,
-    'studentsgroups':studentsgroupController,
-    'studentmembership':studentMembershipController
+    students:students,
+    studentenroll:studentenroll,
+    studylevels:studylevels,
+    schoolinfo:schoolinfo,
+    studyclasses:studyclasses,
+    feeheads:feeheads,
+    levelfees:levelfees,
+    subjects:subjects,
+    loginController:loginController,
+    studentsgroups:studentsgroupController,
+    studentmembership:studentMembershipController,
+    studentAid:studentAidsController,
+    SchoolInformation:SchoolInformation,
+    enrollments:Enrollments,
 
 
 };

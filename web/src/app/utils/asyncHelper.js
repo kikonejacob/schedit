@@ -74,13 +74,15 @@ function AddSlashToUrl(url){
 
 /**
  * APIgetFetchEx Make an ajax get call from the API using redux.
+ * @export
  * @param {string} url           url of the request
  * @param {string} actionType    The type of redux action
- * @param {object} subdata       [description]
+ * @param {object} subdata       The data
  * @param {function} ActionCreator Represent the callback action creator
  *                   This is useful when the resulting data of the async ajax
  *                   need to be processed.
- * @param {object} ajaxParams={} Specify any additional Ajax to add to the request
+ * @param {object}  [ajaxParams={}]Specify any additional Ajax to add to the request
+ * @param {function}  [ActionCreator=null] action creator
  *
  * In general the server should response with data object ex: {data:{}}
  */
@@ -113,10 +115,30 @@ export  function APIgetFetchEx(url,actionType,subdata,ajaxParams={},ActionCreato
     };
 }
 
+/**
+ * APIgetFetchEx Make an ajax get call from the API using redux.
+ * 
+ * @export
+ * @param {string} url  The api url.
+ * @param {string} actionType the action type.
+ * @param {Object} subdata Data to be sent with this request
+ * @param {Object} [ajaxParams={}]  Ajax params
+ * @returns {function}
+ */
 export function APIgetFetch(url,actionType,subdata,ajaxParams={}){
     return APIgetFetchEx(url,actionType,subdata,ajaxParams,null);
 }
 
+/**
+ * Post data to the Api server.
+ * 
+ * @export
+ * @param {string} url
+ * @param {string} actionType
+ * @param {Object} subdata
+ * @param {function} [ActionCreator=null]
+ * @returns
+ */
 export  function APIpostFetch(url,actionType,subdata,ActionCreator=null) {
     return dispatch => {
         dispatch(AsyncActionCreator(actionType,RESTAPI_REQUEST,subdata));
@@ -140,6 +162,16 @@ export  function APIpostFetch(url,actionType,subdata,ActionCreator=null) {
     };
 }
 
+/**
+ *  Send a PUT request to the API server
+ * 
+ * @export
+ * @param {string} url
+ * @param {string} actionType
+ * @param {Object} subdata
+ * @param {Object} [ActionCreator=null]
+ * @returns {function}
+ */
 export  function APIputFetch(url,actionType,subdata,ActionCreator=null) {
     //console.log(actionType);
     return dispatch => {
@@ -164,6 +196,16 @@ export  function APIputFetch(url,actionType,subdata,ActionCreator=null) {
     };
 }
 
+/**
+ * Send a DELETE request to the server
+ * 
+ * @export
+ * @param {string} url
+ * @param {string} actionType
+ * @param {Object} subdata
+ * @param {function } [ActionCreator=null]
+ * @returns
+ */
 export  function APIdeleteFetch(url,actionType,subdata,ActionCreator=null) {
     return dispatch => {
         dispatch(AsyncActionCreator(actionType,RESTAPI_REQUEST,subdata));

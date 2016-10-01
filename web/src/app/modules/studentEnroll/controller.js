@@ -1,16 +1,10 @@
 import ListContainer from 'lib/common/macros/listContainer';
 //import DeleteList from './containers/delete';
-import Form from './containers/form';
 import ShowForm from './containers/show';
 import React from 'react';
 
-import { Provider } from 'react-redux';
-import {getStudent,enroll,getEnrollmentInfo,CancelEnrollment,initStudentGrid} from './lib/actions.js';
-import {refreshGridOptions,initGridFromSchema} from 'lib/grid/actions.js';
-import {updateActiveContainer,loadContainer,changeTitle} from 'lib/common/actions';
-import {listStudentTuition} from 'modules/studentTuition/lib/actions';
-import {listStudentEnrollments} from 'modules/studentEnroll/lib/actions';
-import {initStudentEnrollmentsGrid}from './lib/actions';
+import {getEnrollmentInfo,CancelEnrollment} from './lib/actions.js';
+import {initGridFromSchema} from 'lib/grid/actions.js';
 
 import {controllerCtl} from 'utils/controllerHelper';
 import * as listSchema from './schemas/enrollments.list.json';
@@ -97,7 +91,7 @@ export default  class  extends Controller {
      * custom loader for Enrollment Informations
      * Load the imported module controller result in the current controller
      * @param {React.Component} Container Component to be loaded
-     * @param {object} params   paramaters
+     * @param {Object} params   paramaters
      */
     UIEnrollInfoLoader(Container,params){
         this.uiCtl.loadContainer((<ShowForm dataId={params.enrollId}>

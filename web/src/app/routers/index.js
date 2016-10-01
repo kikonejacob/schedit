@@ -32,7 +32,7 @@ var AppRouter=Backbone.Router.extend ({
         'students/:id/enrollments/:id':'studentenroll#show',
         'students/:id/enroll-search':'studentenroll#EnrollSearch',
         'students/:id/enroll/:id':'studentenroll#enrollCheck',
-        'enrollements':'enrollments#index',
+        'enrollments':'enrollments#index',
         'schoolinfo':'schoolinfo#show',
         'studylevels':'studylevels#index',
         'studylevels/create':'studylevels#create',
@@ -40,6 +40,7 @@ var AppRouter=Backbone.Router.extend ({
         'studylevels/:id/$edit':'studylevels#edit',
 
         'studylevels/:id/classes':'studyclasses#index',
+        
         'classes':'studyclasses#index',
         'classes/page/:id':'studyclasses#index',
         'classes/create':'studyclasses#create',
@@ -47,11 +48,14 @@ var AppRouter=Backbone.Router.extend ({
         'classes/:id/edit':'studyclasses#edit',
 
         'subjects':'subjects#index',
-        'subjects/:id/':'subjects#show',
         'subjects/create':'subjects#create',
+        'subjects/:id':'subjects#show',
+
         'feeheads':'feeheads#index',
-        'feeheads/:id/':'feeheads#show',
         'feeheads/create':'feeheads#create',
+        'feeheads/:id/':'feeheads#show',
+
+
         'studylevels/:id/fees':'levelfees#index',
         //'levelfees/:id':'levelfees#show',
         'studylevels/:id/fees/:code':'levelfees#edit',
@@ -61,6 +65,15 @@ var AppRouter=Backbone.Router.extend ({
         'studentgroups/:id':'studentgroups#show',
         'studentgroups/:id/edit':'studentgroups#edit',
         'studentgroups/create':'studentgroup#create',
+
+        /* Student Reduction*/
+        'reductions':'studentAid#index',
+        'reductions/id':'studentAid#show',
+        'reductions/add':'studentAid#edit',
+
+        /* School Information */
+        'school-information':'SchoolInformation#index',
+
 
 
     },
@@ -111,6 +124,7 @@ var AppRouter=Backbone.Router.extend ({
         this.currentController= new controller(options);
 
         if (this.currentController.reducers){
+            console.log('YESSSSSSSSS');
             let reducers=this.currentController.reducers;
             injectAsyncReducers(this.store, this.currentController.name, reducers);
         }

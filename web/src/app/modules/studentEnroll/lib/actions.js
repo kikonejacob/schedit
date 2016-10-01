@@ -12,7 +12,8 @@ import {updateActiveContainer} from 'lib/common/actions';
 
 
 
-/* Intialize the grid component  that shows a list of student enrollments
+/**  Intialize the grid component  that shows a list of student enrollments
+ *
 * @param  {string} gridName The name of grid
 * @return {void}
 */
@@ -38,6 +39,15 @@ export function listStudentEnrollments(studentId,collectionName){
     };
 
 }
+/**
+ * Enroll a student to a class
+ *
+ * @export
+ * @param {integer} studentId
+ * @param {integer} classId
+ * @param {Object} options
+ * @return {string}
+ */
 export function Enroll(studentId,classId,options){
     return (dispatch) => {
         let url=String(URL_STUDENT_ENROLL).replace(':id',studentId);
@@ -46,6 +56,14 @@ export function Enroll(studentId,classId,options){
 
 }
 
+/**
+ * Get student enrollment informations.
+ *
+ * @export
+ * @param {integer} studentId
+ * @param {integer} enrollId
+ * @returns
+ */
 export function getEnrollmentInfo(studentId,enrollId){
     return (dispatch, getState) => {
         let state=getState();

@@ -24,6 +24,7 @@ const FORM_DELETE_TITLE='Study Level :: Delete';
 const FORM_LIST_TITLE='Study Level :: list';
 const FORM_CREATE_TITLE='Study Level :: Create';
 const FORM_DELETE_HEADER='Select the levels you want to delete and click on delete';
+const MODULE_ICON='fa-cogs';
 
 
 const GRID_NAME='classes.grid';
@@ -43,7 +44,7 @@ export default  class extends Controller  {
 
         this.dispatch(initGridFromSchema(this.schemas.ListSchema,{id:options[0]}));
         this.uiCtl.loadContainer(<List schema={this.schemas.ListSchema} uiCtl={this.uiCtl} />);
-        this.uiCtl.changeTitle(this.schemas.ListSchema.title);
+        this.uiCtl.changeTitle(this.schemas.ListSchema.title,MODULE_ICON);
 
 
     }
@@ -51,7 +52,7 @@ export default  class extends Controller  {
         const levelId=-1;
         const Container=(<Form rawSchema={this.schemas.FormSchema} data={{levelId:-1}} uiCtl={this.uiCtl} dataId={levelId} />);
         this.uiCtl.loadContainer(Container,{levelId});
-        this.uiCtl.changeTitle(FORM_CREATE_TITLE);
+        this.uiCtl.changeTitle(FORM_CREATE_TITLE,MODULE_ICON);
 
     }
 
@@ -64,7 +65,7 @@ export default  class extends Controller  {
         this.dispatch(feesGet(levelId));
         this.dispatch(classesGet(levelId));
         this.uiCtl.loadContainer(Container,{levelId});
-        this.uiCtl.changeTitle(FORM_SHOW_TITLE);
+        this.uiCtl.changeTitle(FORM_SHOW_TITLE,MODULE_ICON);
     }
     edit(options){
 
@@ -72,7 +73,7 @@ export default  class extends Controller  {
         const Container=(<Form rawSchema={this.schemas.FormSchema}dataId={levelId} uiCtl={this.uiCtl} />);
         this.dispatch(levelGet(levelId));
         this.uiCtl.loadContainer(Container,{levelId});
-        this.uiCtl.changeTitle(FORM_EDIT_TITLE);
+        this.uiCtl.changeTitle(FORM_EDIT_TITLE,MODULE_ICON);
     }
     configure(){
 

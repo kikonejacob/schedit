@@ -1,6 +1,7 @@
 {
   "private": true,
   "devDependencies": {
+    "eslint": "^3.6.1",
     "gulp": "^3.8.8"
   },
   "dependencies": {

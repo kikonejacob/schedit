@@ -12,6 +12,7 @@ export function listStudentFinances(collectionName,studentId){
         url=url.replace(':id',studentId);
         dispatch(initCollection(collectionName,url));
         dispatch(fetchCollection(collectionName,url));
+        LIST_STUDENT_TUITIONS;
 
     };
 

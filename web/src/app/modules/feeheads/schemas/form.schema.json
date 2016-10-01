@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "string"
+        },
+        "code": {
+            "title": "Code",
+            "type": "string"
+        },
+        "type": {
+            "title": "Type",
+            "type": "string",
+            "enum": [
+                "tuition.fee",
+                "other.fee"
+            ],
+            "enumNames": [
+                "Tuition fee",
+                "Other fees"
+            ]
+        }
+    }
+}

@@ -32,3 +32,14 @@ export const URL_STUDENTGROUP_MEMBERSHIP='api/studentgroups/:code/membership';
 /** Branches API*/
 export const URL_BRANCHES='api/branches';
 export const URL_BRANCH='api/branches/:id';
+
+/** School Information */
+export const URL_SCHOOL_INFORMATION='api/school-information';
+
+/** Subject heads */
+export const URL_SUBJECTS='api/subjects';
+export const URL_SUBJECT='api/subjects/:code';
+
+/** Fees heads */
+export const URL_FEE_HEADS='api/fee-heads';
+export const URL_FEE_HEAD='api/fee-heads/:code';

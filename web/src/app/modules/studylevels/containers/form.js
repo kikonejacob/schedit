@@ -7,7 +7,7 @@ import {levelCreate,levelSave} from '../lib/actions.js';
 
 
 
-export default class Form extends Component{
+class Form extends Component{
 
     handleActions(action,data){
         const {dispatch,uiCtl}=this.props;

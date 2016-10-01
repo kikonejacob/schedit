@@ -50,7 +50,6 @@ render(){
              <Header title= {title} description={description}>
                 <Button link='#studylevels/create' action='new'>Add new level</Button>
                 <Button link='#studylevels/delete' action='delete...'>Delete...</Button>
- 
              </Header>
 		     <GridView {...this.props} columns={columns} columnMetadata={columnsMetaData}  />
 			</div>);

@@ -1,21 +1,17 @@
 {
- "schema": {
-   "classid": {
-     "title": "Class",
-     "type": "Number",
-     "fieldClass": "row"
-   },
-   "payment_plan": {
-     "title": "Payment Plan",
-     "type": "Number",
-     "fieldClass": "row"
-
-   }
-
- },
- "fieldsets":[{
-      "fields":["classid","payment_plan"]
-
-
- }]
+  "schema": {
+    "type": "object",
+    "Properties": {
+      "classid": {
+        "title": "Class",
+        "type": "string",
+        "enum":[],
+        "enumNames":[]
+      },
+      "payment_plan": {
+        "title": "Payment Plan",
+        "type": "string"
+      }
+    }
+  }
 }

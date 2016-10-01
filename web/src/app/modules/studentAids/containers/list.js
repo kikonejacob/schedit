@@ -4,7 +4,6 @@
  */
 import React from 'react';
 import List from 'lib/containers/listForm/list';
-import * as ListSchema from '../schemas/student.list.schema.json';
 import {deleteStudent} from '../lib/actions.js';
 import {refreshGridOptions} from 'lib/grid/actions.js';
 
@@ -36,7 +35,7 @@ class ListForm extends React.Component{
 
     }
     render(){
-        const schema=(this.props.schema)? this.props.schema:ListSchema;
+        const schema=this.props.schema;
         return(<List  schema={schema}
                       refreshGridOptions={refreshGridOptions}
                       onAction={this.handleActions.bind(this)}

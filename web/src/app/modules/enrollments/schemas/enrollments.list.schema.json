@@ -4,7 +4,7 @@
    "name":"enrollments-list-grid",
    "title":"Students enrollments list",
    "description":"Students enrollements.",
-   "columns":["lastName","firstName ","class_id"],
+   "columns":["classId","last_ame","first_ame "],
    "buttons":{
        "default":[
            {"caption":"Add","action":"New Inscription"},
@@ -16,27 +16,27 @@
        ]
    },
 "columnsMetaData":[{
-	    "columnName": "name",
+	    "columnName": "classId",
 	    "order": 1,
 	    "locked": false,
 	    "visible": true,
-      "partialLink":"#students/",
-	    "displayName": "Name",
+      "partialLink":"#enrollemns",
+	    "displayName": "Class",
       "customComponent": "LinkComponent"
 	},
 	  {
-	    "columnName": "email",
+	    "columnName": "first_name",
 	    "order": 2,
 	    "locked": false,
 	    "visible": true,
-	    "displayName": "Email"
+	    "displayName": "First name"
 	  },
 	  {
-	    "columnName": "birth_date",
+	    "columnName": "last_name",
 	    "order": 3,
 	    "locked": false,
 	    "visible": true,
-	    "displayName": "Birth date"
+	    "displayName": "Last name"
 	  }
 ]
 

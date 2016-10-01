@@ -1,0 +1,28 @@
+{
+    "schema": {
+        "type": "object",
+        "title":"School Information",
+        "properties": {
+            "caption": {
+                "type": "string",
+                "title": "Name"
+            },
+            "tel": {
+                "type": "string",
+                "title": "tel"
+            },
+            "email": {
+                "type": "string",
+                "title": "email"
+            },
+            "address1": {
+                "type": "string",
+                "title": "address1"
+            },
+            "description": {
+                "type": "string",
+                "title": "description"
+            }
+        }
+    }
+}

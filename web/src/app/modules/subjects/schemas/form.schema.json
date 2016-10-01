@@ -1,0 +1,27 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string"
+            },
+            "code": {
+                "title": "Code",
+                "type": "string"
+            },
+            "type": {
+                "title": "Type",
+                "type": "string",
+                "enum": [
+                    "TECHNIC",
+                    "GENERAL"
+                ],
+                "enumNames": [
+                    "Technical",
+                    "General"
+                ]
+            }
+        }
+    }
+}

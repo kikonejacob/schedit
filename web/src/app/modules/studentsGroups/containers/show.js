@@ -15,17 +15,20 @@ class Form extends Component{
         {
             const {data,group}=this.props;
             return(
-            	<div className="col-lg-12">
-        	    	<Panel title='Group' refLink={String('#/studentgroups/:id/edit').replace(':code',group)}>
-        	    			<div>
-        				    	<p>Name: <span>{data.name}</span></p>
-        				    	<p>description: <span>{data.description}</span></p>
-        				    </div>
-        			</Panel>
-        			<Panel title="Membership" refLink={String('#/groups/:code/enrollments').replace(':code',group)}>
-        	  			<List   schema={this.props.MembershipListSchema} />
-        			</Panel>
-            	  </div>);
+                <div className="row">
+                    <div className="col-lg-12">
+                        <Panel title='Group' refLink={String('#/studentgroups/:id/edit').replace(':code',group)}>
+                                <div>
+                                    <p>Name: <span>{data.name}</span></p>
+                                    <p>description: <span>{data.description}</span></p>
+                                </div>
+                        </Panel>
+                        <Panel title="Membership" refLink={String('#/groups/:code/enrollments').replace(':code',group)}>
+                            <List   schema={this.props.MembershipListSchema} />
+                        </Panel>
+                    </div>
+                </div>
+            );
         }
     }
 }

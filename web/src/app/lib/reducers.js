@@ -14,6 +14,10 @@ import collections from './collections/reducers';
 import students from 'modules/students/lib/reducers';
 import studentTuitions from 'modules/studentTuition/lib/reducers';
 import studentEnrollments from  'modules/studentEnroll/lib/reducers';
+import subjects from  'modules/subjects/lib/reducers';
+import feeHeads from  'modules/feeheads/lib/reducers';
+import reductions from 'modules/studentAids/lib/reducers';
+import schoolInformation from 'modules/schoolInfo/lib/reducers';
 
 export default {
     activeContainer,
@@ -26,5 +30,10 @@ export default {
     students,
     studentTuitions,
     studentEnrollments,
+    subjects,
+    feeHeads,
+    reductions,
+    schoolInformation
+
 
 };

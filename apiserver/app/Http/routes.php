@@ -50,9 +50,9 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
         /** 1. Study Branches  */
         Route::resource('branches' , 'branchController' , ['except' => ['create' , 'edit']]);
 
-        /** 2. F+-ee and subject heads */
+        /** 2. Fee and subject heads */
         Route::resource('subjects' , 'EducSubjectsController' , ['except' => ['create' , 'edit']]);
-        Route::resource('feeheads' , 'EducFeeHeadsController' , ['except' => ['create' , 'edit']]);
+        Route::resource('fee-heads' , 'EducFeeHeadsController' , ['except' => ['create' , 'edit']]);
 
         /** 3. French-system */
 

@@ -1,21 +1,16 @@
 {
- "schema": {
-   "fee_code": {
-     "title": "Code",
-     "type": "Text",
-     "fieldClass": "row"
-   },
-   "amount": {
-     "title": "Amount",
-     "type": "Number",
-     "fieldClass": "row"
-
-   }
-
- },
- "fieldsets":[{
-      "fields":["fee_code","amount"]
-
-
- }]
+  "schema": {
+    "properties": {
+      "fee_code": {
+        "title": "Code",
+        "type": "string",
+        "fieldClass": "row"
+      },
+      "amount": {
+        "title": "Amount",
+        "type": "number",
+        "fieldClass": "row"
+      }
+    }
+  }
 }

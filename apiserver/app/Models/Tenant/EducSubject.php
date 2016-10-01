@@ -34,6 +34,11 @@ class EducSubject extends Model
      */
     protected $primaryKey = 'code';
 
+    /**  Here the primary key is not auto incrementing
+     * @var bool
+     */
+    public $incrementing = false;
+
   
 
 

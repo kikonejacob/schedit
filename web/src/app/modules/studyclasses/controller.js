@@ -28,6 +28,7 @@ const FORM_CREATE_TITLE='Create a new class';
 
 const GRID_NAME='classes.grid';
 const CONTROLLER_NAME='classe.controller';
+const MODULE_ICON='fa-cogs';
 
 
 export default  class extends Controller {
@@ -47,7 +48,7 @@ export default  class extends Controller {
         const page=(typeof Number(options[0])=='number' && options[0]!=='undefined')?Number(options[0]):1;
         this.dispatch(initGridFromSchema(this.schemas.ListSchema,null,{currentPage:page}));
         this.uiCtl.loadContainer(<List schema={this.schemas.ListSchema} uiCtl={this.uiCtl} />);
-        this.uiCtl.changeTitle(this.schemas.ListSchema.title);
+        this.uiCtl.changeTitle(this.schemas.ListSchema.title,MODULE_ICON);
     }
 
     /**
@@ -61,7 +62,7 @@ export default  class extends Controller {
         this.dispatch(listBranches()),
         this.dispatch(listLevels());
         this.uiCtl.loadContainer(Container,{classId});
-        this.uiCtl.changeTitle(FORM_CREATE_TITLE);
+        this.uiCtl.changeTitle(FORM_CREATE_TITLE,MODULE_ICON);
     }
 
     /**
@@ -77,7 +78,7 @@ export default  class extends Controller {
         const Container=(<Form rawSchema={this.schemas.FormSchema} dataId={classId} uiCtl={this.uiCtl} />);
         this.dispatch(getStudyClass(classId));
         this.uiCtl.loadContainer(Container,{classId});
-        this.uiCtl.changeTitle(FORM_TITLE);
+        this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
 
     }
 
@@ -94,7 +95,7 @@ export default  class extends Controller {
             //this.dispatch(levelGet(levelId));
             //this.dispatch(subjectsGet(levelId));
             this.dispatch(listLevelFees(levelId));
-            this.uiCtl.changeTitle(FORM_SHOW_TITLE);
+            this.uiCtl.changeTitle(FORM_SHOW_TITLE,MODULE_ICON);
             this.uiCtl.loadContainer(Container,{classId,levelId});
 
         });

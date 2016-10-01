@@ -1,60 +1,46 @@
-import GridView,{LinkComponent} from 'components/gridFormView/gridFormView';
+/**
+ * React container for displaying a grid list of classes
+ * (c) 2016 kikone kiswendida
+ */
 import React from 'react';
-import Header from 'components/ModuleHeaderView/ModuleHeaderView';
-import Button from 'components/LinkComponent/LinkButtonView'
+import List from 'lib/containers/listForm/list';
+import {deleteClass} from '../lib/actions.js';
+import {refreshGridOptions} from 'lib/grid/actions.js';
 
 
-
-var columns=['code','name','type'];
-
-var columnsMetaData=[{
-	    'columnName': "name",
-	    'order': 2,
-	    'locked': false,
-	    'visible': true,
-	    'displayName': "Name",
-	    'partialLink':'#subjects/',
-	    'linkKey':'code',
-	    'customComponent': LinkComponent
-	  },
-	  {
-	    "columnName": "code",
-	    "order": 1,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "Code "
-	  },
-	  {
-	    "columnName": "created",
-	    "order": 4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "Created"
-	  }
-
-	];
+const DELETE_CONFIRM='Are you sure you want to delete these items ?';
 
 
+class ListForm extends React.Component{
 
-export default class extends React.Component{
+    handleActions(action,selectedRowIds){
+        const {dispatch,uiCtl}=this.props;
+        if (this.props.onAction){
+            return this.props.onActions(action,selectedRowIds,dispatch());
+        }
+        switch (action) {
+        case 'delete':
+            let confirmResult=confirm(DELETE_CONFIRM);
+            if (confirmResult==true)
+            {
+                dispatch(deleteClass(selectedRowIds));
+            }
+            break;
+        case 'create':
+            dispatch(uiCtl.route('inscriptions/new'));
+            break;
+        default:
 
+        }
 
-
-render(){
-
-
-    let {title,description,onAction}=this.props;
-
-    return(<div>
-
-             <Header title= {title} description={description}>
-                <Button link='#studylevels/create' action='new'>Add new level</Button>
-                <Button link='#studylevels/delete' action='delete...'>Delete...</Button>
- 
-             </Header>
-		     <GridView {...this.props} columns={columns} columnMetadata={columnsMetaData}  />
-			</div>);
-
-};
+    }
+    render(){
+        const schema=this.props.schema;
+        return(<List  schema={schema}
+                      refreshGridOptions={refreshGridOptions}
+                      onAction={this.handleActions.bind(this)}
+                /> );
+    }
 
 }
+export default ListForm;

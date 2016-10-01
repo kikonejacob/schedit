@@ -11,7 +11,7 @@ import {fetchCollection} from 'lib/collections/actions';
 
 /**
  * Intialize the grid component  that shows a list of students
- * @param  {[type]} gridName [description]
+ * @param  {string} gridName [description]
  * @return {[type]}          [description]
  */
 export function initStudentGrid(gridName){
@@ -43,6 +43,15 @@ export function updateStudent(studentId,data){
     };
 
 };
+
+/**
+ * Create a new student
+ * 
+ * @export
+ * @param {Number} levelId
+ * @param {{first_name:string,last_name:string,email:string,address1:string}} data
+ * @returns {void}
+ */
 export function createStudent(levelId,data){
     return (dispatch) => {
         let url=URL_STUDENT;

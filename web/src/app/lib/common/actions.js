@@ -30,9 +30,9 @@ export function loadConnectedContainer(Container,store)
     return loadContainer(<Provider store={store}>{Container}</Provider>);
 
 }
-export function changeTitle(newtitle){
+export function changeTitle(newtitle,icon=undefined){
 
-    ReactDOM.render(<ModuleTitleView title={newtitle} />,
+    ReactDOM.render(<ModuleTitleView title={newtitle}  icon={icon}/>,
                           document.getElementById('Module_title'));
 
     return {

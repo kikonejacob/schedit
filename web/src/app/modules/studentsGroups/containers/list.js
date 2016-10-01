@@ -10,9 +10,22 @@ import {refreshGridOptions} from 'lib/grid/actions.js';
 
 const DELETE_CONFIRM='Are you sure you want to delete these items ?';
 
-
+/**
+ * List Form
+ *
+ * @class ListForm
+ * @extends {React.Component}
+ */
 class ListForm extends React.Component{
-
+    /**
+     *  handle form actions
+     *
+     * @param {string} action
+     * @param {Array} selectedRowIds
+     * @return  {void}
+     *
+     * @memberOf ListForm
+     */
     handleActions(action,selectedRowIds){
         const {dispatch,uiCtl}=this.props;
         if (this.props.onAction){

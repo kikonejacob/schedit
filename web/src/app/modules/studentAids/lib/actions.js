@@ -10,7 +10,13 @@ import {fetchCollection} from 'lib/collections/actions';
 
 
 
-
+/**
+ * Get a reduction information
+ *
+ * @export
+ * @param {integer} reductionId
+ * @returns {function} Action creator
+ */
 export function getReductionInfo(reductionId) {
     return (dispatch, getState) => {
         let state=getState();
@@ -22,6 +28,14 @@ export function getReductionInfo(reductionId) {
     };
 }
 
+/**
+ *  Update a reduction information
+ *
+ * @export
+ * @param {integer} reductionId
+ * @param {Object} data
+ * @returns {function}
+ */
 export function updateReductionInfo(reductionId,data){
     return (dispatch) => {
         let url=String(URL_REDUCTION).replace(':id',reductionId);
@@ -29,6 +43,15 @@ export function updateReductionInfo(reductionId,data){
     };
 
 };
+
+/**
+ *  Create student reduction
+ *
+ * @export
+ * @param {integer} reductionId
+ * @param {Object} data
+ * @returns
+ */
 export function createReductionForStudent(reductionId,data){
     return (dispatch) => {
         let url=URL_REDUCTIONS;
@@ -36,6 +59,15 @@ export function createReductionForStudent(reductionId,data){
     };
 
 };
+
+/**
+ *  Create a Reduction
+ *
+ * @export
+ * @param {integer} reductionId
+ * @param {Object} data
+ * @returns
+ */
 export function createReduction(reductionId,data){
     return (dispatch) => {
         let url=URL_REDUCTIONS;

@@ -1,140 +1,95 @@
-import debug from 'utils/debug.js';
-import stringRes from 'utils/stringRes';
-import List from './containers/list';
-import DeleteList from './containers/delete';
-import Form from './containers/form';
-import servicesChannels from 'services/servicesChannels';
-import PageableCollection from 'utils/pageableCollection';
 import React from 'react';
-import RestData from 'utils/restdata';
+import Controller from 'lib/common/controller';
 
-const API_URL='../api/subjects';
-const LIST_TITLE='List of subjects';
+//Containers
+import List from './containers/list';
+import Form from './containers/form';
+
+//module json schemas
+import * as FormSchema from './schemas/form.schema.json';
+import * as ListSchema from './schemas/list.schema.json';
+//external actions
+import {initGridFromSchema} from 'lib/grid/actions.js';
+
+//module actions
+import {getSubject,setSubject} from './lib/actions';
+//module reducers
+import reducers from './lib/reducers';
+
+
+
 const FORM_TITLE='Subject';
+const FORM_SHOW_TITLE='Subject';
+const FORM_CREATE_TITLE='Create a new subject head';
+
+const GRID_NAME='subjects.grid';
+const CONTROLLER_NAME='subjects.controller';
+const MODULE_ICON='fa-cogs';
 
 
-
-export default  class schoolInfo {
-
-handleSubmit(e,data,action){
-
-    let services = servicesChannels('services');
-    console.log(data);
-
-    switch(action)
+export default  class extends Controller {
+    constructor(options){
+        super(options);
+        this.name = options.controllerName||CONTROLLER_NAME;
+        this.gridName=options.gridName||GRID_NAME;
+        this.schemas={ListSchema,FormSchema};
+        this.reducers=reducers;
+    };
+    /**
+     * index display list of level fees
+     * @param  {[object]} options [receive levelId]
+     * @return void
+     */
+    index(options)
     {
-    case 'cancel':
-        services.trigger('routeBack');
-        break;
+        const page=(typeof Number(options[0])=='number' && options[0]!=='undefined')?Number(options[0]):1;
+        this.dispatch(initGridFromSchema(this.schemas.ListSchema,null,{currentPage:page}));
+        this.uiCtl.loadContainer(<List schema={this.schemas.ListSchema} uiCtl={this.uiCtl} />);
+        this.uiCtl.changeTitle(this.schemas.ListSchema.title,MODULE_ICON);
+    }
 
-    case 'submit':
-        services.trigger('routeBack');
+    /**
+     * create  create a new  subject
+     * @return {void}
+     */
+    create(){
+        const classId=-1;
+        const Container=(<Form rawSchema={this.schemas.FormSchema} data={{classId:-1}} uiCtl={this.uiCtl} dataId={classId} />);
+        this.uiCtl.loadContainer(Container,{classId});
+        this.uiCtl.changeTitle(FORM_CREATE_TITLE,MODULE_ICON);
+    }
 
+    /**
+     * Edit edit dialog for level fees
+     * @param  {Object} options Represent Url options
+     * @return {void}         description
+     */
+    edit(options){
+        const subjectCode=options[0];
+        const Container=(<Form schema={this.schemas.FormSchema}
+                                datasource={'subjects'}
+                                dataId={subjectCode} uiCtl={this.uiCtl}
+                                onSubmitForm={setSubject}
+                         />);
+        this.dispatch(getSubject(subjectCode));
+        this.uiCtl.loadContainer(Container,{subjectCode});
+        this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
 
     }
 
-};
-
-handleActions(e,action){
-
-    switch (action){
-    case 'delete':
-
-        this.handleDelete(action) ;
-        break;
+    show(options){
+        const subjectCode=options[0];
+        const Container=(<Form schema={this.schemas.FormSchema}
+                               datasource={'subjects'}
+                               dataId={subjectCode}
+                               onSubmitForm={setSubject}
+                               uiCtl={this.uiCtl}
+                        />);
+        this.dispatch(getSubject(subjectCode));
+        this.uiCtl.changeTitle(FORM_SHOW_TITLE,MODULE_ICON);
+        this.uiCtl.loadContainer(Container,{subjectCode});
 
 
     }
-
-
-}
-
-handleDelete(){//to do: find a way to
-
-
-    let confirmResult=confirm('Are you sure you want to delete these items ?');
-    if (confirmResult==true)
-    {
-
-        console.log(this.selectedIds);
-
-        console.log( this.Rendered.type.getdata());
-    }
-
-
-}
-
-constructor(){
-
-    this.services = servicesChannels('services');
-    debug.log('creating study level controller..');
-
-    this.title = stringRes.studentBasic;
-
-    this.current = null;
-
-};
-
-index()
-{
-
-    var collection=new PageableCollection({url:API_URL});
-    var Rendered=(<List  collection={collection}/>);
-    this.services.trigger('change-title',LIST_TITLE);
-
-    this.services.trigger('load-content',Rendered,'react');
-
-
-}
-delete(){
-
-    this.selectedIds=[];
-    let  collection=new PageableCollection({url:API_URL});
-    let header={ description:'select the levels you want to delete and click on delete',
-                 onAction:this.handleActions.bind(this)};
-    this.Rendered=(<DeleteList {...header} collection={collection}
-                         multiselect={true} selectedIds={this.selectedIds} />);
-    this.services.trigger('load-content',this.Rendered,'react');
-
-
-
-}
-
-create(){
-
-
-    let data={};
-
-    return(<div> <Form data={data} onSubmitForm={this.handleSubmit}  />  </div>);
-
-
-}
-show(options){
-
-    var services=this.services;
-
-    this.current=options[0];
-    this.model=new RestData({
-        channel:'student.info',
-        url:API_URL+'/'+this.current
-
-    });
-
-    this.model.get().done(function(response){
-
-        debug.log(response.data);
-        this.services.trigger('change-title',FORM_TITLE);
-
-
-        let Rendered=(<Form  data={response.data} onSubmitForm={this.handleSubmit} />);
-
-        services.trigger('load-content',Rendered,'react');      
-
-    }.bind(this));
-}
-configure(){
-
-}
-
 
 }

@@ -6,9 +6,26 @@ import {updateActiveContainer,changeTitle,loadConnectedContainer} from 'lib/comm
  * The custom container loader should use  this form:
  * 			function customContainerLoader(container,info,params)
  * 			where params:object represent a custom parameter which is used anytime the function is called
+ *
+ * @export
+ * @class UIController
+ */
+/**
+ *
+ *
+ * @export
+ * @class UIController
  */
 export default class UIController{
 
+
+    /**
+     * Creates an instance of UIController.
+     *
+     * @param {object} store
+     *
+     * @memberOf UIController
+     */
     constructor(store){
         this.store=store;
         this.dispatch=store.dispatch;
@@ -16,15 +33,42 @@ export default class UIController{
         this.customLoaderParam={};
 
     };
+    /**
+     *
+     *
+     * @param {any} loader
+     * @param {any} customLoaderParameter
+     *
+     * @memberOf UIController
+     */
     setCustomContainerLoader(loader,customLoaderParameter){
         this.customContainerLoader=loader;
         this.customLoaderParam=customLoaderParameter;
     }
 
+    /**
+     *
+     *
+     * @param {any} Container
+     * @param {any} Info
+     * @returns
+     *
+     * @memberOf UIController
+     */
     defaultContainerLoader(Container,Info){
         if (Info!='undefined') this.updateActiveContainer(Info);
         return this.dispatch(loadConnectedContainer(Container,this.store,this.customLoaderParam));
     };
+
+    /**
+     * Load container
+     *
+     * @param {Component} Container
+     * @param {Object} containerInfo
+     * @returns
+     *
+     * @memberOf UIController
+     */
     loadContainer(Container,containerInfo){
         if (this.customContainerLoader===undefined){
             return this.defaultContainerLoader(Container,containerInfo);
@@ -34,8 +78,8 @@ export default class UIController{
             return this.customContainerLoader(Container,{containerInfo,...this.customLoaderParam});
         }
     }
-    changeTitle(title){
-        return this.dispatch(changeTitle(title));
+    changeTitle(title,icon=undefined){
+        return this.dispatch(changeTitle(title,icon));
     };
     updateActiveContainer(info){
         return this.dispatch(updateActiveContainer(info));

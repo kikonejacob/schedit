@@ -32,7 +32,7 @@ export default class extends React.Component{
         var nSchema = schema;
         nSchema.fieldsets = [{
             fields: Object.keys(schema.schema),
-            legend: "Advanced search",
+            legend: 'Advanced search',
             buttons: {
                 buttons,
                 buttonsClass: 'btn-toolbar'

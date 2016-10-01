@@ -62,8 +62,8 @@ var node = [
         icon: 'fa  fa-pencil-square ',
         link: '#',
         childNodes: [
-            { title: 'Enter grades', link: './#students' },
-            { title: 'Students grades', link: './#students/add' },
+            { title: 'Enter grades', link: './#grades/enter' },
+            { title: 'Students grades', link: './#grades' },
         ]
     },
     {
@@ -91,7 +91,7 @@ var node = [
         icon: 'fafa-cogs fa-fw ',
         link: '#',
         childNodes: [
-            { title: 'information', link: './#school/info' },
+            { title: 'information', link: './#school-information' },
         ]
     },
     {

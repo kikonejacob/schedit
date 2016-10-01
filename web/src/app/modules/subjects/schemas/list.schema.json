@@ -1,0 +1,49 @@
+{
+    "source": "/api/subjects",
+    "sourceType": "url",
+    "name": "students-levels-grid",
+    "title": "Subjects ",
+    "description": "List of subjects",
+    "columns": ["code", "name","type"],
+    "buttons": {
+        "default": [
+            {
+                "caption": "Add",
+                "action": "new"
+            },
+            {
+                "caption": "Select",
+                "action": "multiselect"
+            },
+            {
+                "caption": "Advanced search ...",
+                "action": "advancedSearch"
+            }
+        ],
+        "multiselect": [
+            {
+                "caption": "Delete Selected",
+                "action": "delete"
+            }
+        ]
+    },
+    "target": "#subjects/",
+    "targetType": "url",
+    "columnsMetaData": [
+        {
+            "columnName": "name",
+            "displayName": "name "
+        },
+        {
+            "columnName": "code",
+            "displayName": "Code",
+            "partialLink": "#subjects/",
+            "linkKey": "code",
+            "customComponent": "LinkComponent"
+        },
+        {
+            "columnName": "type",
+            "displayName": "Type"
+        }
+    ]
+}

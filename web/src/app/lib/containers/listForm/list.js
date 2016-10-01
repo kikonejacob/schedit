@@ -19,8 +19,7 @@ import {urlFormat}  from  'utils/urlHelper';
 import { connect } from 'react-redux';
 import SearchForm from 'components/listForm/SearchForm';
 
-
-const BT_CANCEL='Cancel';
+const BT_CANCEL = 'Cancel';
 
 /**
  * Create an item for search schema form
@@ -28,27 +27,27 @@ const BT_CANCEL='Cancel';
  * @param  {[type]} selections [description]
  * @return {[type]}            [description]
  */
-function createListSearchSchemaItem(meta,selections){
+function createListSearchSchemaItem(meta, selections) {
     let options;
-    let type=meta.type;
-    let placeholder=meta.displayName;
+    let type = meta.type;
+    let placeholder = meta.displayName;
 
-    if (typeof meta.selection=='object'){
-        options=selections[meta.selection.collectionName];
-        if (meta.selection.selectionFields){
-            options=options.map((option)=>{
-                let fields=meta.selection.selectionFields;
+    if (typeof meta.selection == 'object') {
+        options = selections[meta.selection.collectionName];
+        if (meta.selection.selectionFields) {
+            options = options.map((option) => {
+                let fields = meta.selection.selectionFields;
                 return {
-                    val:option[fields.value],
-                    label:option[fields.caption]
+                    val: option[fields.value],
+                    label: option[fields.caption]
                 };
             });
-            placeholder=meta.selection.placeholder;
+            placeholder = meta.selection.placeholder;
         };
-        type='Select';
+        type = 'Select';
     };
-    return{
-        title:meta.displayName,
+    return {
+        title: meta.displayName,
         type,
         placeholder,
         options
