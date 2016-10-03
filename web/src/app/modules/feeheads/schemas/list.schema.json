@@ -1,10 +1,10 @@
 {
-    "source":"/api/feeheads",
+    "source":"/api/fee-heads",
    "sourceType":"url",
    "name":"Fee-Heads-grid",
    "title":"Fees heads ",
-   "description":"List of study levels.",
-   "columns":["name","code","created"],
+   "description":"List of fee heads.",
+   "columns":["code","name","type"],
    "buttons":{
        "default":[
            {"caption":"Add","action":"new"},
@@ -16,33 +16,18 @@
            {"caption":"Delete Selected","action":"delete"}
        ]
    },
-   "target":"#fee-heads/",
+   "target":"#feeheads/",
    "targetType":"url",
 
    "columnsMetaData":[
     {
-	    "columnName": "name",
-	    "order": 2,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "Name",
+	    "columnName": "code",
+	    "displayName": "Code",
 	    "partialLink":"#feeheads/",
 	    "linkKey":"code",
 	    "customComponent": "LinkComponent"
 	  },
-	  {
-	    "columnName": "code",
-	    "order": 1,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "Code "
-	  },
-	  {
-	    "columnName": "created",
-	    "order": 4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "Created"
-	  }
+	  {"columnName": "name","displayName": "Name "},
+	  {"columnName": "created","displayName": "Created"}
    ]
 }

@@ -33,7 +33,6 @@ export default  class extends Controller {
         this.name = options.controllerName||CONTROLLER_NAME;
         this.gridName=options.gridName||GRID_NAME;
         this.schemas={ListSchema,FormSchema};
-        this.reducers=reducers;
     };
     /**
      * index display list of level fees
@@ -90,6 +89,10 @@ export default  class extends Controller {
         this.uiCtl.loadContainer(Container,{subjectCode});
 
 
+    }
+    /** The modules reducers*/
+    static reducers(){
+        return {subjects:reducers};
     }
 
 }

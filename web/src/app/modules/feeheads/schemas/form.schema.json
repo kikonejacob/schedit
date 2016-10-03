@@ -12,14 +12,8 @@
         "type": {
             "title": "Type",
             "type": "string",
-            "enum": [
-                "tuition.fee",
-                "other.fee"
-            ],
-            "enumNames": [
-                "Tuition fee",
-                "Other fees"
-            ]
+            "enum": ["tuition.fee","other.fee"],
+            "enumNames": ["Tuition fee", "Other fees"]
         }
     }
 }

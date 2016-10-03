@@ -6,7 +6,7 @@
  *   		-
  */
 import React,{Component,PropTypes}  from 'react';
-import   FormView,{btYesNoCancel,btSaveCancel} from 'components/FormView/form-view';
+import   FormView,{btYesNoCancel,btSaveCancel} from 'components/FormView/schema-form';
 import * as schema from './form.levelfees.schema.json' ;
 import { connect } from 'react-redux';
 

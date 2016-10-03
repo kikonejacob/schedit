@@ -124,7 +124,6 @@ var AppRouter=Backbone.Router.extend ({
         this.currentController= new controller(options);
 
         if (this.currentController.reducers){
-            console.log('YESSSSSSSSS');
             let reducers=this.currentController.reducers;
             injectAsyncReducers(this.store, this.currentController.name, reducers);
         }

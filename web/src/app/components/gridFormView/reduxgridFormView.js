@@ -1,4 +1,8 @@
-
+/**
+ * Griddle component using Redux
+ *
+ *
+ */
 import React,{PropTypes} from 'react';
 import Griddle from 'griddle-react';
 import _ from 'underscore';

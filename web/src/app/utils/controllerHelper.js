@@ -1,6 +1,6 @@
 import controllers from  '../controllers/controllers.js';
 import {injectAsyncReducers} from 'services/globalstore';
-import * as _ from 'underscore';
+import * as _ from 'lodash';
 
 /**
  * Create a controller instance based on the controller name
@@ -20,4 +20,9 @@ export function controllerCtl(name,options){
     }
 
     return controllerObject;
+}
+
+
+export function mapControllers(func){
+    return _.map(controllers,func);
 }

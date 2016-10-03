@@ -30,7 +30,6 @@ export default {
     students,
     studentTuitions,
     studentEnrollments,
-    subjects,
     feeHeads,
     reductions,
     schoolInformation
