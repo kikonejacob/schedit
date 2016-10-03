@@ -183,8 +183,8 @@ module.exports.development = {
                 services:appPathTo('services'),
                 controllers:appPathTo('controllers'),
                 modules:appPathTo('modules'),
-                'subschema': path.join(__dirname, 'node_modules/subschema/src/index.jsx'),
-                'subschema-styles':path.join(__dirname, 'node_modules/subschema/src/styles')
+                /*'subschema': path.join(__dirname, 'node_modules/subschema/src/index.jsx'),
+                'subschema-styles':path.join(__dirname, 'node_modules/subschema/src/styles')*/
 
             }
         }

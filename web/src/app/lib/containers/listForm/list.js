@@ -17,23 +17,25 @@ import Button from 'components/LinkComponent/LinkButtonView';
 import {refreshCollection} from 'lib/collections/actions';
 import {urlFormat}  from  'utils/urlHelper';
 import { connect } from 'react-redux';
-import SearchForm from 'components/listForm/SearchForm';
+import SearchForm from 'components/listForm/SearchForm2';
 
 const BT_CANCEL = 'Cancel';
 
-/**
- * Create an item for search schema form
+/** @todo Obsolete delete and replace name with createListSearchSchemaItem2
+ * Create an item for search schema form for subschema
  * @param  {[type]} meta       [description]
  * @param  {[type]} selections [description]
  * @return {[type]}            [description]
  */
 function createListSearchSchemaItem(meta, selections) {
     let options;
-    let type = meta.type;
+    let type = (meta.type)?meta.type:'string';
     let placeholder = meta.displayName;
 
     if (typeof meta.selection == 'object') {
         options = selections[meta.selection.collectionName];
+        options.enum=selections.values('value');
+        options.enum=selections.values('value');
         if (meta.selection.selectionFields) {
             options = options.map((option) => {
                 let fields = meta.selection.selectionFields;
@@ -55,9 +57,49 @@ function createListSearchSchemaItem(meta, selections) {
 
 
 };
+/**
+ * Create an item for search schema form for react react-jsonschema-form
+ *
+ * @param {Object} meta
+ * @param {Array} selections
+ * @returns
+ */
+function createListSearchSchemaItem2(meta, selections) {
+    let options={};
+    let type =( meta.type)?meta.type:'string';
+    let placeholder = meta.displayName;
+
+    if (typeof meta.selection == 'object') {
+        if (meta.selection.selectionFields) {
+            let data = selections[meta.selection.collectionName];
+            options.enum = data.map((option) => option.value);
+            options.enumNames = data.map((option) => option.caption);
+            placeholder = meta.selection.placeholder;
+        }
+    }
+    else
+    if (typeof meta.selection == 'array') {
+        options.enum=meta.selection.map((selection)=>selection.value);
+        options.enumName=meta.selection.map((selection)=>selection.value);
+    }
+    return {
+        title: meta.displayName,
+        type,
+        placeholder,
+        ...options
+    };
+
+
+};
 
 
 
+/**
+ *  List view Form Generator based on list schema.
+ *
+ * @class List
+ * @extends {React.Component}
+ */
 class List extends React.Component{
     constructor(props) {
         super(props);
@@ -120,7 +162,15 @@ class List extends React.Component{
         const {selections,schema,urlOptions}=this.props;
         const {filter,target,targetType}=schema;
 
-        let SearchSchema={schema:{}};
+        let SearchSchema = {
+            schema: {
+                type: 'object',
+                properties: []
+            },
+            uiSchema:{
+
+            }
+        };
         this.gridName=schema.name;
         if (selections.length==0) return;
         //Process the columns MetaData
@@ -145,7 +195,7 @@ class List extends React.Component{
                         //console.log(filter);
                         if ((meta.selection)&&(meta.selection.reference))
                             searchItem=meta.selection.reference;
-                        SearchSchema.schema[searchItem]=createListSearchSchemaItem(meta,selections);
+                        SearchSchema.schema.properties[searchItem]=createListSearchSchemaItem2(meta,selections);
                     }
             }
             return meta;

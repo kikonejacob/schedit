@@ -23,7 +23,7 @@
              "locked": false,
              "visible": true,
              "displayName": "Classe",
-             "type":"Text",
+             "type":"string",
              "partialLink":"#students/:id/enrollments/",
              "customComponent": "LinkComponent"
          },
@@ -43,7 +43,7 @@
          {
              "columnName": "payment_plan_name",
              "locked": false,
-             "type":"Number",
+             "type":"number",
              "visible": true,
              "displayName": "Payment plan",
              "customComponent":"SelectionComponent",
