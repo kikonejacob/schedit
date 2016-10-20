@@ -11,7 +11,7 @@ export function RequireAuthentification(){
 
     return(dispatch)=>{
         var Dialog=(<AuthErrorForm />);
-        dispatch(changeTitle('Login is required'));
+        dispatch(changeTitle('Login is required','fa fa-exclamation-triangle'));
         dispatch(loadContainer(Dialog));
         return{
             type:REQUIRE_AUTHENTIFICATION,
@@ -30,13 +30,15 @@ export function AuthentificationFail (){
 function AsyncLoginActionCreator(actionType,status,options){
 
     if (options.response.access_token){
+        //store  keys in cookie
         console.log(options);
         document.cookie=`token=${options.response.access_token};path=/`;
         console.log(cookie.serialize('token', options.response.access_token,{
             httpOnly: true,
             maxAge: 60 * 60 * 24 * 7 // 1 week
         }));
-        location.replace('#'); // Redirecting
+        window.location.replace('#'); // Redirecting
+        window.location.reload(true);
     }
     return {
         type:USER_LOGIN_SUCESS

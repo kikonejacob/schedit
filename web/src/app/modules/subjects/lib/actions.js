@@ -27,9 +27,9 @@ export function getSubject(subjectCode) {
     };
 };
 /**
- * 
+ *
  * Create a subject.
- * 
+ *
  * @export
  * @param {Object} data
  * @returns
@@ -41,13 +41,18 @@ export function createSubject(data){
     };
 
 };
-
+/**
+ * 
+ * 
+ * @export
+ * @param {string} subjectCode
+ */
 export  function checkSubjectCode(subjectCode){
 
 }
 /**
  *  Set Subject information.
- * 
+ *
  * @export
  * @param {string} subjectCode
  * @param {Object} data

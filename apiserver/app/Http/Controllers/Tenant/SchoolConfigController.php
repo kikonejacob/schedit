@@ -30,7 +30,7 @@ class SchoolConfigController extends Controller
         'logo'     => 'optional|string'
     );
     public function index(){
-       $result= SchTenantOptions::where('group','=','sch.school');
+       $result= SchTenantOptions::where('group','=','sch.school')->get();
        return $this->APISuccessResponse($result);
     }
 
@@ -42,7 +42,7 @@ class SchoolConfigController extends Controller
                 $data=array('option_name'=>$key,'option_value'=>$value,'group'=>'school.information');
                 SchTenantOptions::insert($data);
             };
-            return $this->APISuccessResponse(['message'=>'sucess']);
+            return $this->APISuccessResponse();
 
         }
         catch (ValidationException $error){

@@ -22,7 +22,7 @@ class SchOptionsController extends Controller
             'option_value' => 'required'
     );
     public function index($optionName){
-        $result=SchTenantOptions::where('option_name',$optionName);
+        $result=SchTenantOptions::where('option_name',$optionName)->get();
         return Response::json(['data'=>$result]);
     }
     public function store(){
@@ -41,7 +41,7 @@ class SchOptionsController extends Controller
             $this->validate($request , $this->rules);
             $values = $request->only(['option_name' , 'option_value']);
             $result = $this->saveOption($values);
-            return $this->APISuccessResponse(['data' => $result]);
+            return $this->APISuccessResponse($result);
         } catch (ValidationException $error) {
             return $this->APIBadRequestResponse(['message' => $error->getMessage()]);
         }

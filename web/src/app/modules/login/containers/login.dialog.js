@@ -32,7 +32,7 @@ export class LoginDialog extends Component {
                <div className="row">{attemptR}</div>
                 <form  onSubmit={this.handleSubmit.bind(this) }>
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-4  col-lg-4 col-sm-8">
                             <div className="form-group" >
                                 <label htmlFor="username">User name: </label>
                                 <input type="text" ref="username" placeholder="Enter a username" className="form-control"/>
@@ -40,7 +40,7 @@ export class LoginDialog extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className='col-md-6'>
+                        <div className='col-md-4  col-lg-4 col-sm-8'>
                             <div className="form-group">
                                 <label htmlFor="password">Password: </label>
                                 <input type="password" ref="password" placeholder="Enter a password" className="form-control"/>
@@ -48,7 +48,7 @@ export class LoginDialog extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-4 col-lg-4 col-sm-8">
                             <button className="btn btn-success pull-right"><i className="fa fa-sign-in"/>{' '}Log In  </button>
                         </div>
 

@@ -2,6 +2,7 @@ import { get,post,del,put} from 'utils/http';
 import {RESTAPI_RECEIVE,RESTAPI_REQUEST} from 'lib/common/actionTypes';
 import {RequireAuthentification,AuthentificationFail} from 'lib/auth/actions';
 import * as _ from 'lodash';
+import {showAPIerror} from 'lib/containers/APIerror/apierror';
 
 function ApiExceptionMgr(error,dispatch){
     if (error.status==400){
@@ -25,12 +26,14 @@ function ApiExceptionMgr(error,dispatch){
 
     }
     else {
-        console.error(error);
-        alert('error in api communication: \n'+
+        showAPIerror(error.status,error.statusmessage);
+        console.log(error);
+        throw new Error('API comminication fail with code:'+error.code);
+        /*alert('error in api communication: \n'+
               'error: '+error.status +
               'message:' + error.statusmessage
           );
-        //console.log(url);
+        //console.log(url);*/
     }
 
 }
@@ -117,7 +120,7 @@ export  function APIgetFetchEx(url,actionType,subdata,ajaxParams={},ActionCreato
 
 /**
  * APIgetFetchEx Make an ajax get call from the API using redux.
- * 
+ *
  * @export
  * @param {string} url  The api url.
  * @param {string} actionType the action type.
@@ -131,7 +134,7 @@ export function APIgetFetch(url,actionType,subdata,ajaxParams={}){
 
 /**
  * Post data to the Api server.
- * 
+ *
  * @export
  * @param {string} url
  * @param {string} actionType
@@ -164,7 +167,7 @@ export  function APIpostFetch(url,actionType,subdata,ActionCreator=null) {
 
 /**
  *  Send a PUT request to the API server
- * 
+ *
  * @export
  * @param {string} url
  * @param {string} actionType
@@ -198,7 +201,7 @@ export  function APIputFetch(url,actionType,subdata,ActionCreator=null) {
 
 /**
  * Send a DELETE request to the server
- * 
+ *
  * @export
  * @param {string} url
  * @param {string} actionType

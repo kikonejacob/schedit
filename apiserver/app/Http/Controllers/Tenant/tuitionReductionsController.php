@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tenant;
 
+use App\Http\Controllers\FilterTrait;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Tenant\TuitionReduction;
@@ -13,6 +14,8 @@ use Validator;
 class tuitionReductionController extends Controller
 {
     use TuitionAutoFollowUpTrait;
+    use FilterTrait;
+    protected  $filterFields=['name'];
 
     /**
      * Display a listing of the resource.
@@ -21,15 +24,15 @@ class tuitionReductionController extends Controller
      */
     public function index()
     {
-        $applyTo="(CASE type
+        $applyTo = "(CASE type
                                     WHEN 'student.reduction' THEN  (select user.name, from user where (id=refId))
                                     WHEN 'group.reduction'   THEN (select group.name, from user where (code=ref))
                                     ELSE NULL 
-                            END) as appliedTo";
-        $reductions=TuitionReduction::select($applyTo,'amount','ref','ref_if','name','description');
+                     END) as appliedTo";
+        $reductions = TuitionReduction::select($applyTo , 'amount' , 'ref' , 'ref_if' , 'name' , 'description');
 
 
-        return Response::json(["data"=>$reductions],200);
+        return $this->APISuccessResponse($this->ApplyFilters($reductions,true));
     }
 
     /**

@@ -1,11 +1,18 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+import DialogButtonGroup from '../ButtonsGroup/DialogButtonsGroup';
 
+
+const SEARCH_BUTTONS=[
+    {caption:'Search',action:'submit',default:true},
+    {caption:'Cancel',action:'cancel'}
+];
 
 export default class extends React.Component{
 
-    handleSubmit(e,error,data){
-        e.preventDefault() ;
+    handleSubmit(formData){
+        console.log("fdfd");
+        //e.preventDefault() ;
         let action=this.pressed;
         if (action=='cancel') action='CancelAdvancedSearch';
         if (action=='submit') action='runAdvancedSearch';
@@ -40,9 +47,11 @@ export default class extends React.Component{
         }];
 
         return (<Form schema={nSchema}
-            value={{}}
-            onButtonClick={this.handleButtonClick.bind(this) }
-            onSubmit={this.handleSubmit.bind(this) } />);
+                    value={{}}
+                    onButtonClick={this.handleButtonClick.bind(this) }
+                    onSubmit={this.handleSubmit.bind(this) }>
+                    <DialogButtonGroup buttons={SEARCH_BUTTONS} onAction={this.handleButtonClick.bind(this)}  />
+              </Form>);
     }
 
 }

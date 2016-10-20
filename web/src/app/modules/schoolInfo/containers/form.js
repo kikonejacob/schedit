@@ -10,9 +10,13 @@ class Form extends Component{
     }
     render(){
         const {data,schema}=this.props;
-        return(<div>
-                 <FormView formButtons={btSaveCancel} schema={schema.schema}
-                           uiSchema={schema.uiSchema} data={data} />
+        return(<div className="container">
+                 <div className="row">
+                  <div className="col-md-8">
+                     <FormView formButtons={btSaveCancel} schema={schema.schema}
+                             uiSchema={schema.uiSchema} data={data} />
+                 </div>
+                 </div>
                </div>);
     }
 }
@@ -25,10 +29,10 @@ Form.propTypes = {
 };
 
 function mapStateToProps(state,ownProps) {
-    const { dataState} = state[ownProps.datasource];
+    const dataState = state[ownProps.datasource];
     const { data,
             lastUpdated,
-            isFetching } = dataState[ownProps.id]|| {isFetching: false,data:{}};
+            isFetching } = dataState[ownProps.dataId]|| {isFetching: false,data:{}};
     return {
         data:data||{},
         isFetching:isFetching||false,

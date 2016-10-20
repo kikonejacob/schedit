@@ -99,9 +99,9 @@ var node = [
         icon: 'fa fa-cogs fa-fw ',
         link: '#',
         childNodes: [
-            { title: 'change current academic year', link: './#acyears/current' },
-            { title: 'create academic year', link: './#acyears/create' },
-            { title: 'list of acade￼mic years', link: './#acyears/list' },
+            { title: 'change current academic year', link: './#academic-years/current' },
+            { title: 'create academic year', link: './#academic-years/create' },
+            { title: 'list of acade￼mic years', link: './#academic-years' },
         ]
     },
     {

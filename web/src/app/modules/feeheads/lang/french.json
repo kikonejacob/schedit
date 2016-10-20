@@ -1,0 +1,17 @@
+{
+    "form":{
+        "Name":"Nom",
+        "Code": "Code",
+        "Type":{"caption":"Type","values":["Frais de tuition","Autre frais"]}
+    },
+    "list":{
+        "description":"Liste des models de frais",
+        "title":"Modèles de frais",
+        "buttons":["Ajouter","Selectionner","Avancé..."],
+        "columns":["Nom","Code","Type"]
+    },
+    "consts":{
+        "Fee Heads":"Modèles de frais",
+        "Create a new fee head":"Créer un model de frais"
+    }
+}

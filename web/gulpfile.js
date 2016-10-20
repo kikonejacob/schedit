@@ -6,12 +6,11 @@
 
 
 var gulp = require('gulp');
-var shell = require('gulp-shell');
 var merge = require('merge-stream');
 var path = require('path');
 var webpackStream = require('webpack-stream');
-var webpack = require("webpack");
-var gutil = require("gulp-util");
+var webpack = require('webpack');
+var gutil = require('gulp-util');
 
 var less = require('gulp-less');
 var $ = require('gulp-load-plugins')();
@@ -26,7 +25,7 @@ var webpackConfig = require('./webpack.config.js')[environment];
 
 //console.log(webpackConfig.output);
 
-var WebpackDevServer = require("webpack-dev-server");
+var WebpackDevServer = require('webpack-dev-server');
 
 var port = $.util.env.port || 1337;
 var src = 'src/';
@@ -34,19 +33,19 @@ var dist = 'dist/';
 var node_module='node_modules/';
 
 var autoprefixerBrowsers = [
-  'ie >= 9',
-  'ie_mob >= 10',
-  'ff >= 30',
-  'chrome >= 34',
-  'safari >= 6',
-  'opera >= 23',
-  'ios >= 6',
-  'android >= 4.4',
-  'bb >= 10'
+    'ie >= 9',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 6',
+    'opera >= 23',
+    'ios >= 6',
+    'android >= 4.4',
+    'bb >= 10'
 ];
 
 if (isProduction){
-  var uglify = require('gulp-uglify');
+    var uglify = require('gulp-uglify');
 
 }
 
@@ -55,7 +54,7 @@ gutil.log('SCHOOL EDIT 2016');
 gutil.log('Gulp is used to build the project.');
 
 gulp.task('webpack-scripts', function() {
-  return gulp.src(webpackConfig.entry)
+    return gulp.src(webpackConfig.entry)
     .pipe(sourcemaps.init())
     .pipe(webpackStream(webpackConfig))
     .pipe(isProduction ? uglify() : $.util.noop())
@@ -69,15 +68,15 @@ gulp.task('webpack-scripts', function() {
 var exec = require('child_process').exec;
 
 gulp.task('server', function (cb) {
-  exec('npm start', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
-})
+    exec('npm start', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+});
 
 
-gulp.task("webpack-dev-server", function(callback) {
+gulp.task('webpack-dev-server', function(callback) {
 
 
 
@@ -85,10 +84,10 @@ gulp.task("webpack-dev-server", function(callback) {
     // Start a webpack-dev-server
     new WebpackDevServer(webpack(webpackConfig),
                        webpackConfig.devServer)
-        .listen(webpackConfig.devServer.port, "localhost", function(err) {
-        if (err) throw new gutil.PluginError("webpack-dev-server", err);
-        gutil.log("[webpack-dev-server]", "http://"+webpackConfig.devServer.host+":"+webpackConfig.devServer.port);
-    });
+        .listen(webpackConfig.devServer.port, 'localhost', function(err) {
+            if (err) throw new gutil.PluginError('webpack-dev-server', err);
+            gutil.log('[webpack-dev-server]', 'http://'+webpackConfig.devServer.host+':'+webpackConfig.devServer.port);
+        });
 });
 
 
@@ -148,7 +147,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('html', function() {
-  return gulp.src(src + 'index.html')
+    return gulp.src(src + 'index.html')
     .pipe(gulp.dest(dist))
     .pipe($.size({ title : 'html' }))
     .pipe($.connect.reload());
@@ -171,25 +170,25 @@ gulp.task('styles',function(cb) {
 */
 
 gulp.task('less', function () {
-  return gulp.src(src+'/less/**/*.less')
+    return gulp.src(src+'/less/**/*.less')
     .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
+        paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('serve', function() {
-  $.connect.server({
-    root: dist,
-    port: port,
-    livereload: {
-      port: 35728
-    }
-  });
+    $.connect.server({
+        root: dist,
+        port: port,
+        livereload: {
+            port: 35728
+        }
+    });
 });
 
 gulp.task('static', function(cb) {
-  return gulp.src(src + 'static/**/*')
+    return gulp.src(src + 'static/**/*')
     .pipe($.size({ title : 'static' }))
     .pipe(gulp.dest(dist + 'static/'));
 });
@@ -197,13 +196,13 @@ gulp.task('static', function(cb) {
 
 gulp.task('watch', function() {
   //gulp.watch(src + 'stylus/*.styl', ['styles']);
-  gulp.watch(src + 'css/*.css', ['styles']);
-  gulp.watch(src + 'index.html', ['html']);
+    gulp.watch(src + 'css/*.css', ['styles']);
+    gulp.watch(src + 'index.html', ['html']);
   //gulp.watch(src + 'app/**/*.js', ['webpack-scripts']);
 });
 
 gulp.task('clean', function(cb) {
-  return del([dist], cb);
+    return del([dist], cb);
 });
 
 
@@ -213,14 +212,14 @@ gulp.task('default', ['build', 'watch']);
 
 // waits until clean is finished then builds the project
 gulp.task('build-assets', ['clean'], function(){
-  return gulp.start(['static', 'html','styles','less','icons']);
+    return gulp.start(['static', 'html','styles','less','icons']);
 });
 
 gulp.task('build',function(){
 
-  if (isProduction)
-    gulp.start(['build-production']);
-  else
+    if (isProduction)
+        gulp.start(['build-production']);
+    else
      gulp.start(['build-dev']);
 
 });

@@ -24,6 +24,6 @@ export default  class extends Controller  {
     index(){
         this.current=null;
         this.uiCtl.loadContainer(  <LoginForm uiCtrl={this.uiCtl} />);
-        this.uiCtl.changeTitle(FORM_TITLE);
+        this.uiCtl.changeTitle(FORM_TITLE,'fa-sign-in');
     }
 }

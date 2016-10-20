@@ -1,4 +1,3 @@
-import debug from 'utils/debug.js';
 import stringRes from 'utils/stringRes';
 import List from './containers/list';
 import Form from './containers/form';
@@ -7,10 +6,6 @@ import React from 'react';
 import Controller from 'lib/common/controller';
 
 import {levelGet,levelCreate,subjectsGet,feesGet,classesGet,levelSave,levelDelete} from './lib/actions.js';
-import {updateActiveContainer,loadContainer,changeTitle} from 'lib/common/actions';
-import {listLevelClasses} from 'modules/studyclasses/lib/actions';
-import {listLevelFees} from 'modules/levelfees/lib/actions';
-import {listLevelSubjects} from 'modules/levelfees/lib/actions';
 import {initGridFromSchema} from 'lib/grid/actions.js';
 
 import * as ListSchema from './schemas/studylevels.list.json';

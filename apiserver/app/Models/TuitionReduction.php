@@ -11,7 +11,7 @@ class TuitionReduction extends Model
      *
      * @var string
      */
-    protected $table = 'tuition_reduction';
+    protected $table = 'tuition_reductions';
 
     /**
      * The attributes that are mass assignable.

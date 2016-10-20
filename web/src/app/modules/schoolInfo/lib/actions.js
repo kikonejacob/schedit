@@ -1,10 +1,9 @@
-import {ShouldFetch,APIgetFetch,APIpostFetch} from 'utils/asyncHelper';
-import {URL_SCHOOL_INFORMATION} from 'lib/apiUrlconst';
-import {API_GET_SCHOOL_INFORMATION,API_SET_SCHOOLINFORMATION} from './const';
-
-
-
-
+/**
+ *  Fee Heads module
+ *  This code below represent all the actions managed by this modules
+ */
+import { ACTION_TYPES, API_URLS, MODULE_API_REDUCER } from './consts';
+import { ShouldFetch,APIgetFetch,APIputFetch} from 'utils/asyncHelper';
 
 
 /**
@@ -13,31 +12,24 @@ import {API_GET_SCHOOL_INFORMATION,API_SET_SCHOOLINFORMATION} from './const';
  * @export
  * @returns {closure}
  */
-export function GetSchoolInformation() {
+export function getSchoolInformation() {
     return (dispatch, getState) => {
         let state=getState();
         const data = state.schoolInformation?state.schoolInformation:{};
         if (ShouldFetch(data)) {
-            return dispatch(APIgetFetch(URL_SCHOOL_INFORMATION,API_GET_SCHOOL_INFORMATION));
+            return dispatch(APIgetFetch(API_URLS.resource,ACTION_TYPES.APIget));
         }
 
     };
 }
+
 /**
- * Set school information.
- *
  * @export
- * @param {object} data
- * @returns {closure}
+ * @param {Object} data
+ * @returns
  */
-export function SetSchoolInformation(data){
-    return (dispatch) => {
-        return dispatch(APIpostFetch(URL_SCHOOL_INFORMATION,API_SET_SCHOOLINFORMATION,data));
+export function setSchoolInformation(data) {
+    return (dispatch)=>{
+        dispatch(APIputFetch(API_URLS.resource, ACTION_TYPES.APIset, data));
     };
-
-};
-
-
-function dfd(){
-    SetSchoolInformation('dfdfdfddfdfd');
 }

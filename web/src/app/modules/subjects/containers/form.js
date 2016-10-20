@@ -33,7 +33,7 @@ function mapStateToProps(state,ownProps) {
     const dataState = state[ownProps.datasource];
     const { data,
             lastUpdated,
-            isFetching } = dataState[ownProps.id]|| {isFetching: false,data:{}};
+            isFetching } = dataState[ownProps.dataId]|| {isFetching: false,data:{}};
     return {
         data:data||{},
         isFetching:isFetching||false,

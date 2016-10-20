@@ -36,7 +36,7 @@ export default  class extends Controller {
     };
     /**
      * index display list of level fees
-     * @param  {[object]} options [receive levelId]
+     * @param  {object} options [receive levelId]
      * @return void
      */
     index(options)
@@ -48,8 +48,7 @@ export default  class extends Controller {
     }
 
     /**
-     * create  create a new  subject
-     * @return {void}
+     * create  create a new  subject.
      */
     create(){
         const classId=-1;
@@ -59,9 +58,8 @@ export default  class extends Controller {
     }
 
     /**
-     * Edit edit dialog for level fees
+     * Edit edit dialog for level fees.
      * @param  {Object} options Represent Url options
-     * @return {void}         description
      */
     edit(options){
         const subjectCode=options[0];
@@ -75,7 +73,9 @@ export default  class extends Controller {
         this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
 
     }
-
+    /**
+     * @param {Array} options ;
+     * */
     show(options){
         const subjectCode=options[0];
         const Container=(<Form schema={this.schemas.FormSchema}

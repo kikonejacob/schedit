@@ -1,0 +1,34 @@
+{
+   "source":"/api/academic-years",
+   "sourceType":"url",
+   "name":"academic-year-grid",
+   "title":"Academic Years ",
+   "description":"List of fee heads.",
+   "columns":["name","start_time","end_time"],
+   "buttons":{
+       "default":[
+           {"caption":"Add","action":"new"},
+           {"caption":"Select", "action":"multiselect"},
+           {"caption":"Advanced search ...", "action":"advancedSearch"}
+       ],
+
+      "multiselect":[
+           {"caption":"Delete Selected","action":"delete"}
+       ]
+   },
+   "target":"#acadmicyears/",
+   "targetType":"url",
+
+   "columnsMetaData":[
+    {
+	    "columnName": "code",
+	    "displayName": "Code",
+	    "partialLink":"#academic-year/",
+	    "linkKey":"code",
+	    "customComponent": "LinkComponent"
+	  },
+	  {"columnName": "name","displayName": "Name "},
+	  {"columnName": "start_time","displayName": "Start"},
+      {"columnName": "end_time" , "displayName": "End"}
+   ]
+}

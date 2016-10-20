@@ -47,7 +47,7 @@ export function updateGroupInfo(group,data){
  *  Create group
  *
  * @export
- * @param {string code
+ * @param {string} code
  * @param {Object} data
  * @returns
  */
@@ -63,7 +63,7 @@ export function createGroup(code,data){
  *  Set Group membership
  *
  * @export
- * @param {string} studentId The student
+ * @param {Integer} studentId The student
  * @param {Object} group The group to which we want add the student
  * @returns
  */

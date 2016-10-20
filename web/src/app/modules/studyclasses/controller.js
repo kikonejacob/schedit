@@ -8,7 +8,6 @@ import ShowForm from './containers/show';
 
 //external actions
 import {initGridFromSchema} from 'lib/grid/actions.js';
-import {listLevelSubjects} from 'modules/levelsubjects/lib/actions';
 import {listLevelFees} from 'modules/levelfees/lib/actions';
 import {listBranches} from 'modules/studyBranches/lib/actions';
 import {levelGet,listLevels} from 'modules/studylevels/lib/actions';

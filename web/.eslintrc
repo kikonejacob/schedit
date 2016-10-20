@@ -9,7 +9,7 @@
         "es6": true,
         "node": true,
         "jquery": true,
-        "mocha": true,
+        "mocha": true
     },
     "ecmaFeatures": {
         "arrowFunctions": true,
@@ -54,6 +54,6 @@
         "react/wrap-multilines": 1,
         "react/react-in-jsx-scope": 1,
 
-        "mocha/no-exclusive-tests": 2,
+        "mocha/no-exclusive-tests": 2
     }
 }

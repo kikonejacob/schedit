@@ -7,11 +7,6 @@
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators":true
 	},
-	 "paths": {
-      "app/*": ["./src/app/*"],
-	  "lib/*": ["./src/app/lib/*"],
-	  "modules/*": ["./src/app/modules/*"]
-    },
 	"exclude": [
 		"node_modules",
 		"bower_components",

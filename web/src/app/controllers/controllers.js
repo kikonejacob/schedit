@@ -12,6 +12,7 @@ import studentMembershipController from 'modules/studentGroupMembership/controll
 import studentAidsController from 'modules/studentAids/controller';
 import SchoolInformation from 'modules/schoolInfo/controller';
 import Enrollments from 'modules/enrollments/controller';
+import AcademicYear from 'modules/academicYears/controller'
 
 export default {
 
@@ -27,8 +28,9 @@ export default {
     studentsgroups:studentsgroupController,
     studentmembership:studentMembershipController,
     studentAid:studentAidsController,
-    SchoolInformation:SchoolInformation,
+    schoolInformation:SchoolInformation,
     enrollments:Enrollments,
+    academicYears:AcademicYear,
 
 
 };

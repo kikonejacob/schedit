@@ -22,8 +22,8 @@ export const URL_ENROLLMENTS='api/enrollments';
 export const URL_STUDENT_ENROLL='api/students/:id/enrollments';
 export const URL_ENROLLMENT='api/enrollment';
 
-export const URL_REDUCTIONS='api/reductions';
-export const URL_REDUCTION='api/reduction';
+export const URL_REDUCTIONS='api/tuition-reductions';
+export const URL_REDUCTION='api/tuition-reductions';
 export const URL_STUDENT_MEMBERSHIP='api/students/:id/group';
 
 export const URL_STUDENTGROUPS='api/studentgroups';
@@ -43,3 +43,7 @@ export const URL_SUBJECT='api/subjects/:code';
 /** Fees heads */
 export const URL_FEE_HEADS='api/fee-heads';
 export const URL_FEE_HEAD='api/fee-heads/:code';
+
+/** School Information */
+export const URL_ACADEMIC_YEAR='api/academicyears/:id';
+export const URL_ACADEMIC_YEARS='api/academicyears';

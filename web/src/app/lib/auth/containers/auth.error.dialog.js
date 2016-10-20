@@ -10,11 +10,16 @@ export default class AuthErrorDialog  extends Component{
     }
 
     render(){
-        return (<div>
-                    This application is having trouble connecting to the server.
-                    This can occurs when the user session is expired
-                    To solve this problem please login again.
-                    <a className='btn btn-default' href='#login'> Login </a>
+        return (<div className="row">
+                    <div className="col-md-8 col-lg-6 col-sm-12">
+                        <p> This application is having trouble connecting to the server.
+                             This can occurs when the user session is expired.
+                            To solve this problem please login again.
+                        </p>
+                        <a className='btn btn-default' href='#login'> Login </a>
+
+                    </div>
+                    
 
             </div>);
     }

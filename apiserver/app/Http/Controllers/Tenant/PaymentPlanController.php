@@ -15,9 +15,6 @@ use App\Http\Controllers\Tenant\Controller;
 use App\Models\Tenant\PaymentPlan;
 use App\Http\Controllers\tenantMgr\AvoidTenantParameter;
 
-
-
-
 class PaymentPlanController extends Controller
 {
     /**
@@ -42,7 +39,6 @@ class PaymentPlanController extends Controller
     {
         $values=$request->all();
         PaymentPlan::create($values);
-
         return response()->json(['message'=>'ok'],201);
     }
 

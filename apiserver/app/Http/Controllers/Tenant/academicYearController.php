@@ -19,7 +19,7 @@ class AcademicYearController extends Controller
     public function index()
     {
         $acyearList=AcademicYear::all();
-        return response()->json(["data"=>$acyearList],200);
+        return $this->APISuccessResponse($acyearList);
     }
 
     /**

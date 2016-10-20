@@ -1,5 +1,6 @@
 {
   "schema": {
+    "type:": "object",
     "properties": {
       "fee_code": {
         "title": "Code",

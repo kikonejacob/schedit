@@ -1,4 +1,3 @@
-import stringRes from 'utils/stringRes';
 import React from 'react';
 import Controller from 'lib/common/controller';
 
@@ -9,16 +8,11 @@ import Form from './containers/form';
 import * as FormSchema from './schemas/schoolinfo.form.schema.json';
 
 //module actions
-import {GetSchoolInformation,SetSchoolInformation} from './lib/actions';
+import {getSchoolInformation,setSchoolInformation} from './lib/actions';
+import {FORM_TITLE,GRID_NAME, CONTROLLER_NAME,MODULE_ICON,MODULE_REGISTERED_NAME,MODULE_API_REDUCER} from './lib/consts';
+import {reducers} from './lib/reducers';
 
-
-
-const FORM_TITLE='Student';
-const FORM_SHOW_TITLE='Student';
-const FORM_CREATE_TITLE='Register a new student';
-
-const GRID_NAME='studentAids.grid';
-const CONTROLLER_NAME='studentAids';
+const DEFAULT_SCHOOL_INFORMATION_ID='sch';
 
 
 export default  class extends Controller {
@@ -27,13 +21,29 @@ export default  class extends Controller {
         this.name = options.controllerName||CONTROLLER_NAME;
         this.gridName=options.gridName||GRID_NAME;
         this.schemas={FormSchema};
+        this.registeredName=MODULE_REGISTERED_NAME;
     };
 
+    /**
+     * Edit edit dialog for level fees
+     * @param  {Array} options Represent Url options
+     * @return {void}         description
+     */
     index(){
-        this.dispatch(GetSchoolInformation());
-        this.uiCtl.changeTitle(FORM_SHOW_TITLE,'fa-setting');
-        this.uiCtl.loadContainer(<Form schema={this.schemas.FormSchema} onSubmitForm={SetSchoolInformation} />);
+        const Container=(<Form schema={this.schemas.FormSchema}
+                               datasource={MODULE_API_REDUCER}
+                               dataId={DEFAULT_SCHOOL_INFORMATION_ID} uiCtl={this.uiCtl}
+                               onSubmitForm={setSchoolInformation}
+                         />);
+        this.dispatch(getSchoolInformation());
+        this.uiCtl.loadContainer(Container,{DEFAULT_SCHOOL_INFORMATION_ID});
+        this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
+
     }
 
+    /** The modules reducers*/
+    static reducers(){
+        return reducers;
+    }
 
 }

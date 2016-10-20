@@ -1,0 +1,28 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string"
+            },
+            "start_time": {
+                "title": "Start time",
+                "type": "string"
+            },
+            "end_time": {
+                "title": "End time",
+                "type": "string",
+                "enum": ["tuition.fee","other.fee"],
+                "enumNames": ["Tuition fee","Other fees"]
+            },
+            "status": {
+                "title": "Status",
+                "type" : "string",
+                "enum":["active","desactivated"],
+                "enumNames" : ["Active","Desactivated"]
+            }
+        }
+    },
+    "uischema": {}
+}

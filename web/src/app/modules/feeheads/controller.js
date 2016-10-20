@@ -12,19 +12,10 @@ import * as ListSchema from './schemas/list.schema.json';
 import {initGridFromSchema} from 'lib/grid/actions.js';
 
 //module actions
-import {getSubject,setSubject} from './lib/actions';
-//module reducers
-import reducers from './lib/reducers';
-
-
-
-const FORM_TITLE='Fee Heads';
-const FORM_SHOW_TITLE='Fee Heads';
-const FORM_CREATE_TITLE='Create a new subject head';
-
-const GRID_NAME='fee-heads.grid';
-const CONTROLLER_NAME='fee-heads.controller';
-const MODULE_ICON='fa-cogs';
+import {getFeeHead,setFeeHead,createFeeHead} from './lib/actions';
+import {FORM_TITLE,FORM_SHOW_TITLE,FORM_CREATE_TITLE,GRID_NAME,
+        CONTROLLER_NAME,MODULE_ICON,MODULE_REGISTERED_NAME} from './lib/consts';
+import {reducers} from './lib/reducers';
 
 
 export default  class extends Controller {
@@ -33,10 +24,11 @@ export default  class extends Controller {
         this.name = options.controllerName||CONTROLLER_NAME;
         this.gridName=options.gridName||GRID_NAME;
         this.schemas={ListSchema,FormSchema};
+        this.registeredName=MODULE_REGISTERED_NAME;
     };
     /**
      * index display list of level fees
-     * @param  {[object]} options [receive levelId]
+     * @param  {Object} options [receive levelId]
      * @return void
      */
     index(options)
@@ -52,47 +44,63 @@ export default  class extends Controller {
      * @return {void}
      */
     create(){
-        const classId=-1;
-        const Container=(<Form rawSchema={this.schemas.FormSchema} data={{classId:-1}} uiCtl={this.uiCtl} dataId={classId} />);
-        this.uiCtl.loadContainer(Container,{classId});
+        const resourceId='';
+        const Container=(<Form rawSchema={this.schemas.FormSchema}
+                               data={{classId:-1}}
+                               uiCtl={this.uiCtl}
+                               dataId={resourceId}
+                               onSubmitForm={createFeeHead}
+                               />);
+        this.uiCtl.loadContainer(Container,{resourceId});
         this.uiCtl.changeTitle(FORM_CREATE_TITLE,MODULE_ICON);
     }
 
     /**
      * Edit edit dialog for level fees
-     * @param  {Object} options Represent Url options
+     * @param  {Array} options Represent Url options
      * @return {void}         description
      */
     edit(options){
-        const subjectCode=options[0];
+        const feeCode=options[0];
         const Container=(<Form schema={this.schemas.FormSchema}
-                                datasource={'feeeHeads'}
-                                dataId={subjectCode} uiCtl={this.uiCtl}
-                                onSubmitForm={setSubject}
+                               datasource={'feeeHeads'}
+                               dataId={feeCode} uiCtl={this.uiCtl}
+                               onSubmitForm={setFeeHead}
                          />);
-        this.dispatch(getSubject(subjectCode));
-        this.uiCtl.loadContainer(Container,{subjectCode});
+        this.dispatch(getFeeHead(feeCode));
+        this.uiCtl.loadContainer(Container,{feeCode});
         this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
 
     }
 
     show(options){
-        const subjectCode=options[0];
+        const feeCode=options[0];
         const Container=(<Form schema={this.schemas.FormSchema}
                                datasource={'feeHeads'}
-                               dataId={subjectCode}
-                               onSubmitForm={setSubject}
+                               dataId={feeCode}
+                               onSubmitForm={setFeeHead}
                                uiCtl={this.uiCtl}
                         />);
-        this.dispatch(getSubject(subjectCode));
+        this.dispatch(getFeeHead(feeCode));
         this.uiCtl.changeTitle(FORM_SHOW_TITLE,MODULE_ICON);
-        this.uiCtl.loadContainer(Container,{subjectCode});
+        this.uiCtl.loadContainer(Container,{feeCode});
 
 
     }
     /** The modules reducers*/
     static reducers(){
-        return {feeHeads:reducers};
+        return reducers;
+    }
+    getRoute(To){
+        return this.registeredName+'#'+To;
+    }
+    static routes() {
+        return {
+            'fee-heads': this.getRoute('index'),
+            'fee-heads/create': this.getRoute('create'),
+            'fee-heads/:id': this.getRoute('show'),
+            'fee-heads/:id/edit': this.getRoute('edit')
+        };
     }
 
 }

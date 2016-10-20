@@ -36,7 +36,7 @@ export function listLevels(collectionName){
 }
 
 /**
- * TODO: remove classesGet, feesGet,subjectsGet
+ * @todo: remove classesGet, feesGet,subjectsGet
  */
 
 /*

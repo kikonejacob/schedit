@@ -12,6 +12,7 @@ import * as ListSchema from './schemas/aids.list.schema.json';
 
 //module actions
 import {getReduction} from './lib/actions';
+import {initGridFromSchema} from 'lib/grid/actions.js';
 
 
 
@@ -21,6 +22,8 @@ const FORM_CREATE_TITLE='Register a new student';
 
 const GRID_NAME='studentAids.grid';
 const CONTROLLER_NAME='studentAids';
+
+
 
 
 export default  class extends Controller {

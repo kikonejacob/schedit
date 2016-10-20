@@ -1,13 +1,12 @@
-import { createStore,applyMiddleware } from 'redux';
+import { createStore,applyMiddleware,compose } from 'redux';
 import createReducer from 'lib/reducerUtils';
 import thunkMiddleware from 'redux-thunk';
 
 export  function configureStore(initialState) {
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const store = createStore(createReducer(),
                                   initialState,
-                                  applyMiddleware(
-                                thunkMiddleware
-                       ), window.devToolsExtension ? window.devToolsExtension() : f => f
+                                  composeEnhancers(applyMiddleware(thunkMiddleware))
     );
     store.asyncReducers = {};
     return store;

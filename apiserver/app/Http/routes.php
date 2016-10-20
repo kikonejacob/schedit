@@ -45,7 +45,7 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
         //var_dump(Request::path());
 
         /* 0. Academic Year*/
-        Route::resource('acyears' , 'academicYearController' , ['except' => ['create' , 'edit']]);
+        Route::resource('academic-years' , 'academicYearController' , ['except' => ['create' , 'edit']]);
 
         /** 1. Study Branches  */
         Route::resource('branches' , 'branchController' , ['except' => ['create' , 'edit']]);
@@ -110,7 +110,7 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
         Route::resource('paymentplans' , 'PaymentPlanController' , ['only' => ['index']]);
 
         /** 9. Tuition Reduction (Scholarships and aids) */
-        Route::resource('tuitionreductions' , 'tuitionReductionController' , ['only' => ['index']]);
+        Route::resource('tuition-reductions' , 'tuitionReductionController' , ['only' => ['index']]);
 
         /** 10. Teachers @todo Implement  it */
         Route::resource('teachers','TeacherController',['only'=>['index','store','update','show']]);
@@ -122,6 +122,8 @@ Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'
         Route::resource('students.storage' , 'StorageController' , ['only' => ['store','index','update']]);
         Route::resource('teachers.storage' , 'StorageController' , ['only' => ['store','index','update']]);
         Route::resource('admins.storage' , 'StorageController' , ['only' => ['store','index','update']]);
+        /** 13. school information */
+        Route::resource('school-information' , 'SchoolConfigController' , ['only' => ['index','store']]);
 
     });
 

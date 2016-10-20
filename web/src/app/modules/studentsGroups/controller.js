@@ -33,7 +33,7 @@ export default  class extends Controller {
     };
     /**
      * index display list of level fees
-     * @param  {object[]} options  options for list display
+     * @param  {Array[]} options  options for list display
      * @return void
      */
     index(options)
@@ -44,6 +44,10 @@ export default  class extends Controller {
         this.uiCtl.loadContainer(<List schema={this.schemas.ListSchema} uiCtl={this.uiCtl} />);
         this.uiCtl.changeTitle(this.schemas.ListSchema.title,MODULE_ICON);
     }
+    /**
+     * show an Index of all membership of a group.
+     * @param {Array} options
+     * */
     indexMembership(options)
     {
         /** @type {string}  group */

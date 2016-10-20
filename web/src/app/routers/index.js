@@ -33,7 +33,6 @@ var AppRouter=Backbone.Router.extend ({
         'students/:id/enroll-search':'studentenroll#EnrollSearch',
         'students/:id/enroll/:id':'studentenroll#enrollCheck',
         'enrollments':'enrollments#index',
-        'schoolinfo':'schoolinfo#show',
         'studylevels':'studylevels#index',
         'studylevels/create':'studylevels#create',
         'studylevels/:id':'studylevels#show',
@@ -53,7 +52,7 @@ var AppRouter=Backbone.Router.extend ({
 
         'feeheads':'feeheads#index',
         'feeheads/create':'feeheads#create',
-        'feeheads/:id/':'feeheads#show',
+        'feeheads/:id':'feeheads#show',
 
 
         'studylevels/:id/fees':'levelfees#index',
@@ -72,8 +71,13 @@ var AppRouter=Backbone.Router.extend ({
         'reductions/add':'studentAid#edit',
 
         /* School Information */
-        'school-information':'SchoolInformation#index',
+        'school-information':'schoolInformation#index',
 
+        /** Acdemic years */
+        'academic-years':'academicYears#index',
+        'academic-years/create':'academicYears#create',
+        'academic-years/:id':'academicYears#show',
+        'academic-years?:id/edit':'academicYears#edit',
 
 
     },
