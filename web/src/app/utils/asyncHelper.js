@@ -12,13 +12,14 @@ function ApiExceptionMgr(error,dispatch){
         if (error.responseJSON){
             if (error.responseJSON.error)
                 switch (error.responseJSON.error) {
-                case 'invalid_credentials':
+                case 'invalid_client':
                     dispatch(AuthentificationFail());
                     break;
-                case 'access_denied':
+                case 'Unauthenticated':
                     dispatch(RequireAuthentification());
                     break;
                 default:
+                    dispatch(RequireAuthentification());
                 }
         }
         else

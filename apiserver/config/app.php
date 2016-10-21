@@ -159,8 +159,11 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
         /*OAuth2 authentification */
-        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
-        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+
+        Laravel\Passport\PassportServiceProvider::class,
+
+        //LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+        //LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 
         /* Role Management Entrust */
         Zizaco\Entrust\EntrustServiceProvider::class,
@@ -175,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
+        App\Providers\schTenantServiceProvider::class,
 
     ],
 
@@ -227,9 +231,6 @@ return [
 
         /*JWT Authentification*/
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-
-        /*OAuth2 Authentification*/
-        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
 
         /*Entrust role management */
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,

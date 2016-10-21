@@ -33,9 +33,9 @@ Route::group(['prefix' => 'web' , 'middleware=>web'] , function () {
 
 Route::group(['prefix' => 'service/{tenant}' , 'middleware' => 'tenant.database'] , function () {
 
-    Route::post('oauth/access_token' , function () {
+    /*Route::post('oauth/access_token' , function () {
         return Response::json(Authorizer::issueAccessToken());
-    });
+    });*/
 
     // @todo we have to replace auth.basic middle ware by Oauth
     Route::group(['prefix' => 'api' , 'middleware' => ['api' , 'oauth'] , 'namespace' => 'Tenant'] , function ($tenant) {

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
     /**
      * Register any application services.
      *

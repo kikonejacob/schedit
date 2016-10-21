@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'ui-ctrl'] , function () {
+
+    Route::resource('grid' , 'ui\gridController' , ['except' => ['create' , 'edit']]);
+});
+
+
+Route::resource('manage' , 'TenantMgr\tenantsController' , [
+        'namespace' => 'TenantMgr' ,
+        'except'    => ['create' , 'edit']
+]);

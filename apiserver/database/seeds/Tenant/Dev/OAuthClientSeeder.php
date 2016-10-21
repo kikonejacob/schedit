@@ -16,7 +16,8 @@ class OAuthClientSeeder extends Seeder
             DB::table('oauth_clients')->insert([
                 'id'     => "id$i" ,
                 'secret' => "secret$i" ,
-                'name'   => "client$i"
+                'name'   => "client$i",
+                'password_client'=>true, // Using password grand for now for the web application
             ]);
 
         }

@@ -1,0 +1,1070 @@
+ ~/dev/schedit/docker   master ●  docker-machine --help 
+zsh: command not found: docker-machine
+ ✘  ~/dev/schedit/docker   master ●  docker --help        
+Usage: docker [OPTIONS] COMMAND [arg...]
+       docker [ --help | -v | --version ]
+
+A self-sufficient runtime for containers.
+
+Options:
+
+  --config=~/.docker              Location of client config files
+  -D, --debug                     Enable debug mode
+  -H, --host=[]                   Daemon socket(s) to connect to
+  -h, --help                      Print usage
+  -l, --log-level=info            Set the logging level
+  --tls                           Use TLS; implied by --tlsverify
+  --tlscacert=~/.docker/ca.pem    Trust certs signed only by this CA
+  --tlscert=~/.docker/cert.pem    Path to TLS certificate file
+  --tlskey=~/.docker/key.pem      Path to TLS key file
+  --tlsverify                     Use TLS and verify the remote
+  -v, --version                   Print version information and quit
+
+Commands:
+    attach    Attach to a running container
+    build     Build an image from a Dockerfile
+    commit    Create a new image from a container's changes
+    cp        Copy files/folders between a container and the local filesystem
+    create    Create a new container
+    diff      Inspect changes on a container's filesystem
+    events    Get real time events from the server
+    exec      Run a command in a running container
+    export    Export a container's filesystem as a tar archive
+    history   Show the history of an image
+    images    List images
+    import    Import the contents from a tarball to create a filesystem image
+    info      Display system-wide information
+    inspect   Return low-level information on a container, image or task
+    kill      Kill one or more running containers
+    load      Load an image from a tar archive or STDIN
+    login     Log in to a Docker registry.
+    logout    Log out from a Docker registry.
+    logs      Fetch the logs of a container
+    network   Manage Docker networks
+    node      Manage Docker Swarm nodes
+    pause     Pause all processes within one or more containers
+    port      List port mappings or a specific mapping for the container
+    ps        List containers
+    pull      Pull an image or a repository from a registry
+    push      Push an image or a repository to a registry
+    rename    Rename a container
+    restart   Restart a container
+    rm        Remove one or more containers
+    rmi       Remove one or more images
+    run       Run a command in a new container
+    save      Save one or more images to a tar archive (streamed to STDOUT by default)
+    search    Search the Docker Hub for images
+    service   Manage Docker services
+    start     Start one or more stopped containers
+    stats     Display a live stream of container(s) resource usage statistics
+    stop      Stop one or more running containers
+    swarm     Manage Docker Swarm
+    tag       Tag an image into a repository
+    top       Display the running processes of a container
+    unpause   Unpause all processes within one or more containers
+    update    Update configuration of one or more containers
+    version   Show the Docker version information
+    volume    Manage Docker volumes
+    wait      Block until a container stops, then print its exit code
+
+Run 'docker COMMAND --help' for more information on a command.
+ ~/dev/schedit/docker   master ●  docker stats
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.64 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.29%               60.46 MiB / 7.709 GiB   0.77%               528.6 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               76.62 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.65%               176.6 MiB / 7.709 GiB   2.24%               126.7 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        1.55%               227.9 MiB / 7.709 GiB   2.89%               376.2 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.64 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               528.6 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               76.62 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               126.7 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.12%               227.9 MiB / 7.709 GiB   2.89%               376.2 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.64 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               528.6 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               76.62 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               126.7 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.12%               227.9 MiB / 7.709 GiB   2.89%               376.2 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.64 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.00%               60.46 MiB / 7.709 GiB   0.77%               528.6 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.00%               2.715 MiB / 7.709 GiB   0.03%               76.62 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               126.7 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.07%               227.9 MiB / 7.709 GiB   2.89%               376.2 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.64 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.00%               60.46 MiB / 7.709 GiB   0.77%               528.6 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.00%               2.715 MiB / 7.709 GiB   0.03%               76.62 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               126.7 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.07%               227.9 MiB / 7.709 GiB   2.89%               376.2 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.86 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               528.8 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               76.83 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127 kB / 106.9 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.10%               227.9 MiB / 7.709 GiB   2.89%               376.4 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               80.86 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               528.8 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               76.83 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127 kB / 106.9 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.10%               227.9 MiB / 7.709 GiB   2.89%               376.4 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.07 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529 kB / 315.2 kB     83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.04 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127.2 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.13%               227.9 MiB / 7.709 GiB   2.89%               376.6 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.07 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529 kB / 315.2 kB     83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.04 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127.2 kB / 106.9 kB   85.65 MB / 0 B        22
+bd1cdde62afc        0.13%               227.9 MiB / 7.709 GiB   2.89%               376.6 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.28 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529.3 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.25 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.06%               176.6 MiB / 7.709 GiB   2.24%               127.4 kB / 107 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.12%               227.9 MiB / 7.709 GiB   2.89%               376.8 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.28 kB / 19.78 kB   4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529.3 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.25 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.06%               176.6 MiB / 7.709 GiB   2.24%               127.4 kB / 107 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.12%               227.9 MiB / 7.709 GiB   2.89%               376.8 kB / 443.7 kB   46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.5 kB / 19.78 kB    4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529.5 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.47 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127.7 kB / 107 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.13%               227.9 MiB / 7.709 GiB   2.89%               377 kB / 443.7 kB     46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.5 kB / 19.78 kB    4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529.5 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.47 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127.7 kB / 107 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.13%               227.9 MiB / 7.709 GiB   2.89%               377 kB / 443.7 kB     46.95 MB / 73.99 MB   33
+
+
+
+
+CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O               BLOCK I/O             PIDS
+67795f6a3960        0.00%               8.238 MiB / 7.709 GiB   0.10%               81.5 kB / 19.78 kB    4.714 MB / 0 B        5
+11faea6d845d        0.01%               60.46 MiB / 7.709 GiB   0.77%               529.5 kB / 315.2 kB   83.26 MB / 1.188 MB   4
+b84fd9cf74e4        0.01%               2.715 MiB / 7.709 GiB   0.03%               77.47 kB / 648 B      4.653 MB / 0 B        6
+cfe3f06aaea1        0.00%               176.6 MiB / 7.709 GiB   2.24%               127.7 kB / 107 kB     85.65 MB / 0 B        22
+bd1cdde62afc        0.12%               227.9 MiB / 7.709 GiB   2.89%               377 kB / 443.7 kB     46.95 MB / 73.99 MB   33
+^C
+ ✘  ~/dev/schedit/docker   master ●  docker info
+Containers: 10
+ Running: 5
+ Paused: 0
+ Stopped: 5
+Images: 100
+Server Version: 1.12.2
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 117
+ Dirperm1 Supported: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: null overlay bridge host
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Security Options: apparmor seccomp
+Kernel Version: 4.4.0-45-generic
+Operating System: Ubuntu 16.04.1 LTS
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 7.709 GiB
+Name: khome-Satellite-L775
+ID: D67J:VII6:F6GI:M3DI:EX6N:VODI:Z65U:ZG62:OFXA:IVJW:6GQO:575A
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Username: jacobkiswendsida
+Registry: https://index.docker.io/v1/
+WARNING: No swap limit support
+Insecure Registries:
+ 127.0.0.0/8
+ ~/dev/schedit/docker   master ●  sudo status docker
+[sudo] password for khome: 
+status: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ ✘  ~/dev/schedit/docker   master ●  sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: e
+   Active: active (running) since Thu 2016-10-20 09:36:14 CDT; 1h 30min ago
+     Docs: https://docs.docker.com
+ Main PID: 1108 (dockerd)
+    Tasks: 131
+   Memory: 111.5M
+      CPU: 12.347s
+   CGroup: /system.slice/docker.service
+           ├─1108 /usr/bin/dockerd -H fd://
+           ├─1364 docker-containerd -l unix:///var/run/docker/libcontainerd/dock
+           ├─3539 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 1
+           ├─3564 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 3
+           ├─3575 docker-containerd-shim b84fd9cf74e42102af496375c68fc449411d17c
+           ├─3581 docker-containerd-shim bd1cdde62afcf6511f91883c551b5361f5b092a
+lines 1-15
+ ✘  ~/dev/schedit/docker   master ●  sudo systemctl status docker| grep "Active:"
+   Active: active (running) since Thu 2016-10-20 09:36:14 CDT; 1h 30min ago
+ ~/dev/schedit/docker   master ●  perl
+dfd
+^C
+ ✘  ~/dev/schedit/docker   master ●  perl --help
+
+Usage: perl [switches] [--] [programfile] [arguments]
+  -0[octal]         specify record separator (\0, if no argument)
+  -a                autosplit mode with -n or -p (splits $_ into @F)
+  -C[number/list]   enables the listed Unicode features
+  -c                check syntax only (runs BEGIN and CHECK blocks)
+  -d[:debugger]     run program under debugger
+  -D[number/list]   set debugging flags (argument is a bit mask or alphabets)
+  -e program        one line of program (several -e's allowed, omit programfile)
+  -E program        like -e, but enables all optional features
+  -f                don't do $sitelib/sitecustomize.pl at startup
+  -F/pattern/       split() pattern for -a switch (//'s are optional)
+  -i[extension]     edit <> files in place (makes backup if extension supplied)
+  -Idirectory       specify @INC/#include directory (several -I's allowed)
+  -l[octal]         enable line ending processing, specifies line terminator
+  -[mM][-]module    execute "use/no module..." before executing program
+  -n                assume "while (<>) { ... }" loop around program
+  -p                assume loop like -n but print line also, like sed
+  -s                enable rudimentary parsing for switches after programfile
+  -S                look for programfile using PATH environment variable
+  -t                enable tainting warnings
+  -T                enable tainting checks
+  -u                dump core after parsing program
+  -U                allow unsafe operations
+  -v                print version, patchlevel and license
+  -V[:variable]     print configuration summary (or a single Config.pm variable)
+  -w                enable many useful warnings
+  -W                enable all warnings
+  -x[directory]     ignore text before #!perl line (optionally cd to directory)
+  -X                disable all warnings
+  
+Run 'perldoc perl' for more help with Perl.
+
+ ~/dev/schedit/docker   master ●  schapicd 
+ ~/dev/schedit/apiserver   master ●  schwebcd 
+ ~/dev/schedit/web   master ●  ls
+automate.py       karma.conf.js                 schApp.sublime-project
+backup            LICENSE                       schApp.sublime-workspace
+bower_components  node_modules                  server
+bower.json        npm-debug.log.1685531177      server.js
+dist              npm-debug.log.1769273418      src
+doc               npm-debug.log.3474718695      test
+Dockerfile        npm-debug.log.405658510       webpack.config.dev.js
+gulpfile.js       package.json                  webpack.config_JK.js
+index.html        production.webpack.config.js  webpack.config.js
+jsconfig.json     README.md                     webpack.config.js- last
+ ~/dev/schedit/web   master ●  cd ../../dev 
+cd: no such file or directory: ../../dev
+ ✘  ~/dev/schedit/web   master ●  cd ../..
+ ~/dev  ;s
+zsh: command not found: s
+ ✘  ~/dev  la
+total 978M
+drwxrwxr-x  3 khome khome 4.0K Sep 27 13:41 aws
+drwx------ 12 khome khome 4.0K Mar 15  2016 client
+drwxrwxr-x  6 khome khome 4.0K Mar 20  2016 demo-testing-api-requests-with-xhr-and-sinon-js
+drwxrwxr-x  2 khome khome 4.0K Sep 27 15:09 digitalocean
+drwxrwxr-x  4 khome khome 4.0K Sep 29 17:30 dotnet
+drwxrwxr-x  4 khome khome 4.0K Oct  4 17:14 electron-quick-start
+drwxrwxr-x  9 khome khome 4.0K Jun 21 16:15 Griddle
+drwxrwxr-x  5 khome khome 4.0K Sep 30 23:39 hello-world
+drwxrwxr-x 10 khome khome 4.0K Oct  3 21:10 IDE
+-rw-rw-r--  1 khome khome 107M Sep  5 18:58 laravel.05.09.2016.zip
+-rw-rw-r--  1 khome khome  51M Aug  7 01:33 laravel_06_08_2016.zip
+-rw-rw-r--  1 khome khome 7.5M Jun 10 01:53 laravel_10_06_2016.zip
+-rw-rw-r--  1 khome khome  42M Jun 23 08:13 laravel_23_06_2016.zip
+drwxrwxr-x  2 khome khome 4.0K Jun 22 11:42 laravel.tenant.for.sch
+drwxrwxr-x  3 khome khome 4.0K May 27 00:25 myWebsite
+drwxrwxr-x  7 khome khome 4.0K Sep 30 06:53 react-intl
+drwxrwxr-x  9 khome khome 4.0K Jul 23 08:07 react-jsonschema-form
+drwxrwxr-x  9 khome khome 4.0K Mar 19  2016 react-redux
+drwxrwxr-x 10 khome khome 4.0K Mar 19  2016 react-redux-universal-hot-example
+drwxrwxr-x  7 khome khome 4.0K Mar 19  2016 redux-easy-boilerplate
+drwxrwxr-x  4 khome khome 4.0K Jul  2 11:46 reputationloop-kikone
+drwxrwxr-x 11 khome khome 4.0K Aug 17 23:45 samplelaravel
+drwxrwxr-x  9 khome khome 4.0K Oct  3 21:11 schedit
+-rw-rw-r--  1 khome khome 308M Sep 18 17:12 schedit.09.18.2016.com.zip
+-rw-rw-r--  1 khome khome 308M Sep 24 19:48 schedit.com_09.24.2016.zip
+drwxrwxr-x 37 khome khome 4.0K Sep  6 19:17 stdcheck.com
+-rw-rw-r--  1 khome khome 157M Sep 10 22:22 stdcheck.com.zip
+drwxrwxr-x  8 khome khome 4.0K Jul 23 08:16 subschema
+drwxrwxr-x  9 khome khome 4.0K Jul 17 17:56 subschema-project
+drwxrwxr-x 12 khome khome 4.0K Sep  9 07:33 tallemasoft
+drwxrwxr-x  5 khome khome 4.0K Sep 29 22:12 Terminix-Themes
+drwxrwxr-x  3 khome khome 4.0K Aug 17 23:51 valetSamples
+drwxrwxr-x  5 khome khome 4.0K Sep 17 18:40 vccw-2.21.0
+drwxrwxr-x  9 khome khome 4.0K Sep 29 11:45 VVV
+-rw-r--r--  1 khome khome 1.1K Aug 18 02:03 ystemctl list-units
+ ~/dev  la|less
+ ~/dev  cd dotnet 
+ ~/dev/dotnet  ;s
+zsh: command not found: s
+ ✘  ~/dev/dotnet  ls
+aspnetcoreapp  asp-test2
+ ~/dev/dotnet  cd ..
+ ~/dev  ls
+aws
+client
+demo-testing-api-requests-with-xhr-and-sinon-js
+digitalocean
+dotnet
+electron-quick-start
+Griddle
+hello-world
+IDE
+laravel.05.09.2016.zip
+laravel_06_08_2016.zip
+laravel_10_06_2016.zip
+laravel_23_06_2016.zip
+laravel.tenant.for.sch
+myWebsite
+react-intl
+react-jsonschema-form
+react-redux
+react-redux-universal-hot-example
+redux-easy-boilerplate
+reputationloop-kikone
+samplelaravel
+schedit
+schedit.09.18.2016.com.zip
+schedit.com_09.24.2016.zip
+stdcheck.com
+stdcheck.com.zip
+subschema
+subschema-project
+tallemasoft
+Terminix-Themes
+valetSamples
+vccw-2.21.0
+VVV
+ystemctl list-units
+ ~/dev  la|less  
+ ~/dev  ls 
+aws                                              Griddle                 laravel_23_06_2016.zip  react-redux-universal-hot-example  schedit.com_09.24.2016.zip  Terminix-Themes
+client                                           hello-world             laravel.tenant.for.sch  redux-easy-boilerplate             stdcheck.com                valetSamples
+demo-testing-api-requests-with-xhr-and-sinon-js  IDE                     myWebsite               reputationloop-kikone              stdcheck.com.zip            vccw-2.21.0
+digitalocean                                     laravel.05.09.2016.zip  react-intl              samplelaravel                      subschema                   VVV
+dotnet                                           laravel_06_08_2016.zip  react-jsonschema-form   schedit                            subschema-project           ystemctl list-units
+electron-quick-start                             laravel_10_06_2016.zip  react-redux             schedit.09.18.2016.com.zip         tallemasoft
+ ~/dev  schapicd 
+ ~/dev/schedit/apiserver   master ●  composer require laravel/passport
+                                                      
+Using version ^1.0 for laravel/passport
+./composer.json has been updated
+> php artisan clear-compiled
+
+                                                              
+  [Symfony\Component\Debug\Exception\FatalThrowableError]     
+  Class 'Laravel\Passport\PassportServiceProvider' not found  
+                                                              
+
+Script php artisan clear-compiled handling the pre-update-cmd event returned with error code 1
+
+Installation failed, reverting ./composer.json to its original content.
+ ✘  ~/dev/schedit/apiserver   master ●  
+ ✘  ~/dev/schedit/apiserver   master ●  composer require laravel/passport
+Using version ^1.0 for laravel/passport               
+./composer.json has been updated
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+
+                                                                                   
+  [ErrorException]                                                                 
+  file_put_contents(.phpstorm.meta.php): failed to open stream: Permission denied  
+                                                                                   
+
+Script php artisan ide-helper:meta handling the pre-update-cmd event returned with error code 1
+
+Installation failed, reverting ./composer.json to its original content.
+ ✘  ~/dev/schedit/apiserver   master ●  composer require laravel/passport
+Using version ^1.0 for laravel/passport               
+./composer.json has been updated
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Conclusion: remove laravel/framework v5.2.45
+    - Conclusion: don't install laravel/framework v5.2.45
+    - laravel/passport v1.0.0 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.1 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.2 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.3 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.4 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.5 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.6 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.7 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - laravel/passport v1.0.8 requires illuminate/encryption ~5.3 -> satisfiable by illuminate/encryption[v5.3.0, v5.3.16, v5.3.4].
+    - don't install illuminate/encryption v5.3.0|don't install laravel/framework v5.2.45
+    - don't install illuminate/encryption v5.3.16|don't install laravel/framework v5.2.45
+    - don't install illuminate/encryption v5.3.4|don't install laravel/framework v5.2.45
+    - Installation request for laravel/framework (locked at v5.2.45, required as 5.2.*) -> satisfiable by laravel/framework[v5.2.45].
+    - Installation request for laravel/passport ^1.0 -> satisfiable by laravel/passport[v1.0.0, v1.0.1, v1.0.2, v1.0.3, v1.0.4, v1.0.5, v1.0.6, v1.0.7, v1.0.8].
+
+
+Installation failed, reverting ./composer.json to its original content.
+ ✘  ~/dev/schedit/apiserver   master ●  composer install                 
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+Nothing to install or update
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Generating autoload files
+> php artisan clear-compiled
+> php artisan optimize
+Generating optimized class loader
+ ~/dev/schedit/apiserver   master ●  composer install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+Nothing to install or update
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Generating autoload files
+> php artisan clear-compiled
+> php artisan optimize
+Generating optimized class loader
+ ~/dev/schedit/apiserver   master ●  composer update 
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Removing symfony/var-dumper (v3.0.9)
+    Update failed (Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md: )
+    Would you like to try reinstalling the package instead [yes]? yes
+  - Removing symfony/var-dumper (v3.0.9)
+
+                                                                                            
+  [RuntimeException]                                                                        
+  Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md:   
+                                                                                            
+
+update [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--lock] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [--with-dependencies] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--ignore-platform-reqs] [--prefer-stable] [--prefer-lowest] [-i|--interactive] [--root-reqs] [--] [<packages>]...
+
+ ✘  ~/dev/schedit/apiserver   master ●  composer update 
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Removing symfony/var-dumper (v3.0.9)
+    Update failed (Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md: )
+    Would you like to try reinstalling the package instead [yes]? yes
+  - Removing symfony/var-dumper (v3.0.9)
+
+                                                                                            
+  [RuntimeException]                                                                        
+  Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md:   
+                                                                                            
+
+update [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--lock] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [--with-dependencies] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--ignore-platform-reqs] [--prefer-stable] [--prefer-lowest] [-i|--interactive] [--root-reqs] [--] [<packages>]...
+
+ ✘  ~/dev/schedit/apiserver   master ●  composer update
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+
+                                                                                                                                                             
+  [Composer\Downloader\TransportException]                                                                                                                   
+  The "https://api.github.com/repos/Kikonejacob/entrust" file could not be downloaded: php_network_getaddresses: getaddrinfo failed: Temporary failure in n  
+  ame resolution                                                                                                                                             
+  failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution                                                  
+                                                                                                                                                             
+
+update [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--lock] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [--with-dependencies] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--ignore-platform-reqs] [--prefer-stable] [--prefer-lowest] [-i|--interactive] [--root-reqs] [--] [<packages>]...
+
+ ✘  ~/dev/schedit/apiserver   master ●  composer update
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Removing symfony/var-dumper (v3.0.9)
+    Update failed (Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md: )
+    Would you like to try reinstalling the package instead [yes]? yes
+  - Removing symfony/var-dumper (v3.0.9)
+
+                                                                                            
+  [RuntimeException]                                                                        
+  Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md:   
+                                                                                            
+
+update [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--lock] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [--with-dependencies] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--ignore-platform-reqs] [--prefer-stable] [--prefer-lowest] [-i|--interactive] [--root-reqs] [--] [<packages>]...
+
+ ✘  ~/dev/schedit/apiserver   master ●  composer update                  
+> php artisan clear-compiled
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Removing symfony/var-dumper (v3.0.9)
+    Update failed (Could not delete /home/khome/dev/schedit/apiserver/vendor/symfony/var-dumper/README.md: )
+    Would you like to try reinstalling the package instead [yes]? 
+  - Removing symfony/var-dumper (v3.0.9)
+  - Installing symfony/var-dumper (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/translation (v3.0.9)
+  - Installing symfony/translation (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/routing (v3.0.9)
+  - Installing symfony/routing (v3.1.5)
+    Loading from cache
+
+  - Removing symfony/process (v3.0.9)
+  - Installing symfony/process (v3.1.5)
+    Downloading: 100%         
+
+  - Removing psr/log (1.0.0)
+  - Installing psr/log (1.0.2)
+    Downloading: 100%         
+
+  - Removing symfony/debug (v3.0.9)
+  - Installing symfony/debug (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/http-foundation (v3.0.9)
+  - Installing symfony/http-foundation (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/event-dispatcher (v3.1.4)
+  - Installing symfony/event-dispatcher (v3.1.5)
+    Loading from cache
+
+  - Removing symfony/http-kernel (v3.0.9)
+  - Installing symfony/http-kernel (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/finder (v3.0.9)
+  - Installing symfony/finder (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/console (v3.0.9)
+  - Installing symfony/console (v3.1.5)
+    Downloading: 100%         
+
+  - Removing paragonie/random_compat (v1.4.1)
+  - Installing paragonie/random_compat (v2.0.3)
+    Downloading: 100%         
+
+  - Installing ramsey/uuid (3.5.1)
+    Downloading: 100%         
+
+  - Removing nikic/php-parser (v2.1.0)
+  - Installing nikic/php-parser (v2.1.1)
+    Downloading: 100%         
+
+  - Removing league/flysystem (1.0.27)
+  - Installing league/flysystem (1.0.32)
+    Downloading: 100%         
+
+  - Removing laravel/framework (v5.2.45)
+  - Installing laravel/framework (v5.3.19)
+    Downloading: 100%         
+
+  - Removing symfony/yaml (v3.1.4)
+  - Installing symfony/yaml (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/dependency-injection (v3.1.4)
+  - Installing symfony/dependency-injection (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/filesystem (v3.1.4)
+  - Installing symfony/filesystem (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/config (v3.1.4)
+  - Installing symfony/config (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/class-loader (v3.1.4)
+  - Installing symfony/class-loader (v3.1.5)
+    Downloading: 100%         
+
+  - Removing behat/gherkin (v4.4.2)
+  - Installing behat/gherkin (v4.4.4)
+    Downloading: 100%         
+
+  - Removing behat/behat (v3.1.0)
+  - Installing behat/behat (v3.2.1)
+    Downloading: 100%         
+
+  - Removing league/oauth2-server (4.1.5)
+  - Installing league/oauth2-server (4.1.6)
+    Downloading: 100%         
+
+  - Removing phpdocumentor/reflection-docblock (3.1.0)
+  - Installing phpdocumentor/reflection-docblock (3.1.1)
+    Downloading: 100%         
+
+ramsey/uuid suggests installing ircmaxell/random-lib (Provides RandomLib for use with the RandomLibAdapter)
+ramsey/uuid suggests installing ext-libsodium (Provides the PECL libsodium extension for use with the SodiumRandomGenerator)
+ramsey/uuid suggests installing ext-uuid (Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator)
+ramsey/uuid suggests installing moontoast/math (Provides support for converting UUID to 128-bit integer (in string form).)
+ramsey/uuid suggests installing ramsey/uuid-doctrine (Allows the use of Ramsey\Uuid\Uuid as Doctrine field type.)
+ramsey/uuid suggests installing ramsey/uuid-console (A console application for generating UUIDs with ramsey/uuid)
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Writing lock file
+Generating autoload files
+> php artisan optimize
+
+                                                                                                                                                                                                          
+  [ErrorException]                                                                                                                                                                                        
+  Declaration of App\Providers\EventServiceProvider::boot(Illuminate\Contracts\Events\Dispatcher $events) should be compatible with Illuminate\Foundation\Support\Providers\EventServiceProvider::boot()  
+                                                                                                                                                                                                          
+
+Script php artisan optimize handling the post-update-cmd event returned with error code 1
+ ✘  ~/dev/schedit/apiserver   master ●  composer update
+> php artisan clear-compiled
+
+                              
+  [ErrorException]            
+  Undefined variable: events  
+                              
+
+Script php artisan clear-compiled handling the pre-update-cmd event returned with error code 1
+ ✘  ~/dev/schedit/apiserver   master ●  composer update
+> php artisan clear-compiled
+The compiled class file has been removed.
+> php artisan ide-helper:generate
+Exception: Class App\Http\Controllers\Tenant\PasswordGrantVerifier does not exist
+Skipping \LucaDegasperi\OAuth2Server\Facades\Authorizer.
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Removing symfony/css-selector (v3.0.9)
+  - Installing symfony/css-selector (v3.1.5)
+    Downloading: 100%         
+
+  - Removing symfony/dom-crawler (v3.0.9)
+  - Installing symfony/dom-crawler (v3.1.5)
+    Loading from cache
+
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Writing lock file
+Generating autoload files
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+ ~/dev/schedit/apiserver   master ●  composer update
+> php artisan clear-compiled
+The compiled class file has been removed.
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+Nothing to install or update
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Generating autoload files
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+ ~/dev/schedit/apiserver   master ●  pusher/pusher-php-server ~2.0
+zsh: no such user or named directory: 2.0
+ ✘  ~/dev/schedit/apiserver   master ●  composer require pusher/pusher-php-server ~2.0
+zsh: no such user or named directory: 2.0
+ ✘  ~/dev/schedit/apiserver   master ●  composer require pusher/pusher-php-server ~2.0
+zsh: no such user or named directory: 2.0
+ ✘  ~/dev/schedit/apiserver   master ●  composer
+   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+                    /_/
+Composer version 1.2.0 2016-07-19 01:28:52
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help                     Display this help message
+  -q, --quiet                    Do not output any message
+  -V, --version                  Display this application version
+      --ansi                     Force ANSI output
+      --no-ansi                  Disable ANSI output
+  -n, --no-interaction           Do not ask any interactive question
+      --profile                  Display timing and memory usage information
+      --no-plugins               Whether to disable plugins.
+  -d, --working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+  -v|vv|vvv, --verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  about           Short information about Composer
+  archive         Create an archive of this composer package
+  browse          Opens the package's repository URL or homepage in your browser.
+  clear-cache     Clears composer's internal package cache.
+  clearcache      Clears composer's internal package cache.
+  config          Set config options
+  create-project  Create new project from a package into given directory.
+  depends         Shows which packages cause the given package to be installed
+  diagnose        Diagnoses the system to identify common errors.
+  dump-autoload   Dumps the autoloader
+  dumpautoload    Dumps the autoloader
+  exec            Execute a vendored binary/script
+  global          Allows running commands in the global composer dir ($COMPOSER_HOME).
+  help            Displays help for a command
+  home            Opens the package's repository URL or homepage in your browser.
+  info            Show information about packages
+  init            Creates a basic composer.json file in current directory.
+  install         Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+  licenses        Show information about licenses of dependencies
+  list            Lists commands
+  outdated        Shows a list of installed packages that have updates available, including their latest version.
+  prohibits       Shows which packages prevent the given package from being installed
+  remove          Removes a package from the require or require-dev
+  require         Adds required packages to your composer.json and installs them
+  run-script      Run the scripts defined in composer.json.
+  search          Search for packages
+  self-update     Updates composer.phar to the latest version.
+  selfupdate      Updates composer.phar to the latest version.
+  show            Show information about packages
+  status          Show a list of locally modified packages
+  suggests        Show package suggestions
+  update          Updates your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+  validate        Validates a composer.json and composer.lock
+  why             Shows which packages cause the given package to be installed
+  why-not         Shows which packages prevent the given package from being installed
+ ~/dev/schedit/apiserver   master ●  composer require "pusher/pusher-php-server ~2.0"
+./composer.json has been updated
+> php artisan clear-compiled
+
+                                                           
+  [Symfony\Component\Debug\Exception\FatalThrowableError]  
+  Class 'Pusher' not found                                 
+                                                           
+
+Script php artisan clear-compiled handling the pre-update-cmd event returned with error code 1
+
+Installation failed, reverting ./composer.json to its original content.
+ ✘  ~/dev/schedit/apiserver   master ●  composer require "pusher/pusher-php-server ~2.0"
+./composer.json has been updated
+> php artisan clear-compiled
+The compiled class file has been removed.
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)         
+  - Installing pusher/pusher-php-server (v2.6.0)
+    Downloading: 100%         
+
+Package lucadegasperi/oauth2-server-laravel is abandoned, you should avoid using it. Use laravel/passport instead.
+Writing lock file
+Generating autoload files
+> php artisan optimize
+Generating optimized class loader
+The compiled class file has been removed.
+ ~/dev/schedit/apiserver   master ●  schdockercd 
+ ~/dev/schedit/docker   master ●  git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../apiserver/.phpstorm.meta.php
+        modified:   ../apiserver/_ide_helper.php
+        modified:   ../apiserver/app/Exceptions/Handler.php
+        deleted:    ../apiserver/app/Http/Controllers/Auth/AuthController.php
+        deleted:    ../apiserver/app/Http/Controllers/Auth/PasswordController.php
+        modified:   ../apiserver/app/Http/Controllers/FilterTrait.php
+        modified:   ../apiserver/app/Http/Kernel.php
+        modified:   ../apiserver/app/Jobs/TenantMgr/createTenant.php
+        modified:   ../apiserver/app/Providers/AuthServiceProvider.php
+        modified:   ../apiserver/app/Providers/EventServiceProvider.php
+        modified:   ../apiserver/app/Providers/RouteServiceProvider.php
+        modified:   ../apiserver/app/User.php
+        modified:   ../apiserver/composer.json
+        modified:   ../apiserver/composer.lock
+        modified:   ../apiserver/config/app.php
+        modified:   ../apiserver/config/queue.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../apiserver/app/Http/Controllers/Auth/ForgotPasswordController.php
+        ../apiserver/app/Http/Controllers/Auth/LoginController.php
+        ../apiserver/app/Http/Controllers/Auth/RegisterController.php
+        ../apiserver/app/Http/Controllers/Auth/ResetPasswordController.php
+        ../apiserver/app/Providers/BroadcastServiceProvider.php
+        ../apiserver/routes/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ ~/dev/schedit/docker   master ●  git add .
+ ~/dev/schedit/docker   master ●  git add *
+The following paths are ignored by one of your .gitignore files:
+docker/data
+docker/logs
+Use -f if you really want to add them.
+ ✘  ~/dev/schedit/docker   master ●  git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../apiserver/.phpstorm.meta.php
+        modified:   ../apiserver/_ide_helper.php
+        modified:   ../apiserver/app/Exceptions/Handler.php
+        deleted:    ../apiserver/app/Http/Controllers/Auth/AuthController.php
+        deleted:    ../apiserver/app/Http/Controllers/Auth/PasswordController.php
+        modified:   ../apiserver/app/Http/Controllers/FilterTrait.php
+        modified:   ../apiserver/app/Http/Kernel.php
+        modified:   ../apiserver/app/Jobs/TenantMgr/createTenant.php
+        modified:   ../apiserver/app/Providers/AuthServiceProvider.php
+        modified:   ../apiserver/app/Providers/EventServiceProvider.php
+        modified:   ../apiserver/app/Providers/RouteServiceProvider.php
+        modified:   ../apiserver/app/User.php
+        modified:   ../apiserver/composer.json
+        modified:   ../apiserver/composer.lock
+        modified:   ../apiserver/config/app.php
+        modified:   ../apiserver/config/queue.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../apiserver/app/Http/Controllers/Auth/ForgotPasswordController.php
+        ../apiserver/app/Http/Controllers/Auth/LoginController.php
+        ../apiserver/app/Http/Controllers/Auth/RegisterController.php
+        ../apiserver/app/Http/Controllers/Auth/ResetPasswordController.php
+        ../apiserver/app/Providers/BroadcastServiceProvider.php
+        ../apiserver/routes/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ ~/dev/schedit/docker   master ●  composer require laravel/passport
+Using version ^1.0 for laravel/passport
+./composer.json has been created
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Installing phpseclib/phpseclib (2.0.4)
+    Downloading: 100%         
+
+  - Installing psr/http-message (1.0.1)
+    Loading from cache
+
+  - Installing zendframework/zend-diactoros (1.3.7)
+    Downloading: 100%         
+
+  - Installing symfony/polyfill-mbstring (v1.2.0)
+    Loading from cache
+
+  - Installing symfony/http-foundation (v3.1.5)
+    Loading from cache
+
+  - Installing symfony/psr-http-message-bridge (v0.3)
+    Downloading: 100%         
+
+  - Installing paragonie/random_compat (v2.0.3)
+    Loading from cache
+
+  - Installing lcobucci/jwt (3.2.0)
+    Loading from cache
+
+  - Installing league/event (2.1.2)
+    Loading from cache
+
+  - Installing league/oauth2-server (5.1.3)
+    Downloading: 100%         
+
+  - Installing illuminate/contracts (v5.3.16)
+    Downloading: 100%         
+
+  - Installing doctrine/inflector (v1.1.0)
+    Loading from cache
+
+  - Installing illuminate/support (v5.3.16)
+    Downloading: 100%         
+
+  - Installing psr/log (1.0.2)
+    Loading from cache
+
+  - Installing symfony/debug (v3.1.5)
+    Loading from cache
+
+  - Installing symfony/event-dispatcher (v3.1.5)
+    Loading from cache
+
+  - Installing symfony/http-kernel (v3.1.5)
+    Loading from cache
+
+  - Installing symfony/finder (v3.1.5)
+    Loading from cache
+
+  - Installing symfony/translation (v3.1.5)
+    Loading from cache
+
+  - Installing nesbot/carbon (1.21.0)
+    Loading from cache
+
+  - Installing illuminate/session (v5.3.16)
+    Downloading: 100%         
+
+  - Installing illuminate/http (v5.3.16)
+    Downloading: 100%         
+
+  - Installing illuminate/encryption (v5.3.16)
+    Loading from cache
+
+  - Installing illuminate/container (v5.3.16)
+    Downloading: 100%         
+
+  - Installing illuminate/database (v5.3.16)
+    Downloading: 100%         
+
+  - Installing symfony/console (v3.1.5)
+    Loading from cache
+
+  - Installing illuminate/console (v5.3.16)
+    Downloading: 100%         
+
+  - Installing illuminate/auth (v5.3.16)
+    Downloading: 100%         
+
+  - Installing guzzlehttp/promises (1.2.0)
+    Loading from cache
+
+  - Installing guzzlehttp/psr7 (1.3.1)
+    Loading from cache
+
+  - Installing guzzlehttp/guzzle (6.2.2)
+    Downloading: 100%         
+
+  - Installing firebase/php-jwt (v4.0.0)
+    Loading from cache
+
+  - Installing laravel/passport (v1.0.8)
+    Downloading: 100%         
+
+phpseclib/phpseclib suggests installing ext-libsodium (SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.)
+phpseclib/phpseclib suggests installing ext-gmp (Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.)
+paragonie/random_compat suggests installing ext-libsodium (Provides a modern crypto API that can be used to generate random bytes.)
+lcobucci/jwt suggests installing mdanter/ecc (Required to use Elliptic Curves based algorithms.)
+league/oauth2-server suggests installing indigophp/hash-compat (Polyfill for hash_equals function for PHP 5.5)
+illuminate/support suggests installing illuminate/filesystem (Required to use the composer class (5.2.*).)
+illuminate/support suggests installing symfony/process (Required to use the composer class (3.1.*).)
+illuminate/support suggests installing symfony/var-dumper (Required to use the dd function (3.1.*).)
+symfony/event-dispatcher suggests installing symfony/dependency-injection ()
+symfony/http-kernel suggests installing symfony/browser-kit ()
+symfony/http-kernel suggests installing symfony/class-loader ()
+symfony/http-kernel suggests installing symfony/config ()
+symfony/http-kernel suggests installing symfony/dependency-injection ()
+symfony/http-kernel suggests installing symfony/var-dumper ()
+symfony/translation suggests installing symfony/config ()
+symfony/translation suggests installing symfony/yaml ()
+illuminate/database suggests installing doctrine/dbal (Required to rename columns and drop SQLite columns (~2.4).)
+illuminate/database suggests installing fzaninotto/faker (Required to use the eloquent factory builder (~1.4).)
+illuminate/database suggests installing illuminate/events (Required to use the observers with Eloquent (5.3.*).)
+illuminate/database suggests installing illuminate/filesystem (Required to use the migrations (5.3.*).)
+illuminate/database suggests installing illuminate/pagination (Required to paginate the result set (5.3.*).)
+symfony/console suggests installing symfony/process ()
+illuminate/console suggests installing mtdowling/cron-expression (Required to use scheduling component (~1.0).)
+illuminate/console suggests installing symfony/process (Required to use scheduling component (3.1.*).)
+illuminate/auth suggests installing illuminate/queue (Required to fire login / logout events (5.3.*).)
+Writing lock file
+Generating autoload files
+ ~/dev/schedit/docker   master  
+

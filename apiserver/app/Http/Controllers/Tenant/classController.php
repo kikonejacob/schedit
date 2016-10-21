@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tenant;
 use App\Models\Tenant\EducClass;
 use App\Http\Controllers\FilterTrait;
 use  App\Lib\Tenant\DButils\consts as C;
+use App\schtraits\AcademicYearTrait;
 use DB;
 use Response;
 
@@ -12,6 +13,7 @@ use Response;
 class classController extends Controller
 {
     use FilterTrait;
+    use AcademicYearTrait;
     private $filterFields=['name','description'];
 
 

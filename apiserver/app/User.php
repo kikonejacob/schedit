@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Zizaco\Entrust\Traits\EntrustUserTrait; //For Roles and permission with Entrust
 
 
@@ -21,6 +22,7 @@ class User extends Model implements AuthenticatableContract , CanResetPasswordCo
     use studentTrait;
     use EntrustUserTrait; //For Roles and permission with Entrush
     use Notifiable;
+    use HasApiTokens;
 
 
     /**

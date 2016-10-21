@@ -1,4 +1,4 @@
-const CONFIG=require( './env.config.json');
+const CONFIG=require( './env.config');
 const http = require('http');
 const express = require('express');
 const proxy = require('http-proxy-middleware');
@@ -49,7 +49,8 @@ var ProxyOptions = {
     target: API_SERVER, // target host
     changeOrigin: true,               // needed for virtual hosted sites
     pathRewrite: {
-        'api/auth' : 'oauth/access_token'       // remove path
+        'api/auth' : 'oauth/token',       // remove path
+        'api/':''
     },
     onProxyReq:function onProxyReq(proxyReq, req, res) {
         // add custom header to request
@@ -57,8 +58,8 @@ var ProxyOptions = {
         if (req.method.toLowerCase()=='post'){
             if (req.params['0']=='auth'){
                 req.body.grant_type='password';
-                req.body.client_id='id1';
-                req.body.client_secret='secret1';
+                req.body.client_id='1';
+                req.body.client_secret='secret0';
             }
             //console.log(req.params);
         }
@@ -67,7 +68,7 @@ var ProxyOptions = {
             // incase if content-type is application/x-www-form-urlencoded -> we need to change to application/json
             //proxyReq.setHeader('Content-Type','application/json');
             proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-            console.log(req.cookies.token);
+            //console.log(req.cookies.token);
             proxyReq.setHeader('Authorization', 'Bearer '+req.cookies.token);
             // stream the content
             proxyReq.write(bodyData);
