@@ -52,7 +52,7 @@ use DB;
         		default:
         			//TODO: change to walk filterFieldAlias(array)
         			$seach=array_where($this->_filterFields,function($key,$value) use($arg){
-        				return is_array($key)?($key[0]==arg):($key==$arg);
+        				return is_array($key)?($key[0]==$arg):($key==$arg);
         
         			});
         		

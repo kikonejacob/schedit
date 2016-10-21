@@ -8,6 +8,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Illuminate\Notifications\Notifiable;
 use Zizaco\Entrust\Traits\EntrustUserTrait; //For Roles and permission with Entrust
 
 
@@ -19,6 +20,7 @@ class User extends Model implements AuthenticatableContract , CanResetPasswordCo
     use Authenticatable , CanResetPassword;
     use studentTrait;
     use EntrustUserTrait; //For Roles and permission with Entrush
+    use Notifiable;
 
 
     /**

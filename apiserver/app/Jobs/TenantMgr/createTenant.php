@@ -92,6 +92,7 @@ class createTenant extends Job implements ShouldQueue
 
 
          Artisan::call('migrate', ['--database' => 'tenant']);
+         Artisan::call('php artisan passport:install');
          Artisan::call('db:seed', ['--database' => 'tenant']);
          //Seed for development environment @todo: make environment checking
         if (App::isLocal())
