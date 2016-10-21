@@ -29,8 +29,8 @@ export default class FormView extends Component {
         switch(this.props.buttons){
         case btSaveCancel:
             return (<div className='btn-toolbar  pull-right'>
-                        <button type="submit" className="btn btn-primaryt">Save</button>
                         <button type="cancel" className="btn" onClick={this.handleCancel.bind(this)}>Cancel</button>
+                        <button type="submit" className="btn btn-primaryt">Save</button>
                     </div>);
         case btYesCancel:
             return (<div className='btn-toolbar  pull-right'>
@@ -45,10 +45,9 @@ export default class FormView extends Component {
                     </div>);
         default:
             return (<div className='btn-toolbar  pull-right'>
-                        <button type="submit" className="btn btn-primary" >Save</button>
-
                         <button className="btn" onClick={this.handleCancel.bind(this)}>Cancel</button>
-                    </div>);
+                         <button type="submit" className="btn btn-primary" >Save</button>
+                   </div>);
         }
     }
     render(){
