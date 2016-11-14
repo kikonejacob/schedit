@@ -58,10 +58,10 @@ export default  class  extends Controller {
         const studentId=options[0];
         var classController=controllerCtl(STUDY_CLASS_CONTROLLER,{store:this.registry});
         const classListschema={...classController.schemas.ListSchema,
-                                buttons:[],
-                                target:'#students/:id/enroll/',
-                                title:'Enroll to a class',
-                                mode:'advancedSearch'
+            buttons:[],
+            target:'#students/:id/enroll/',
+            title:'Enroll to a class',
+            mode:'advancedSearch'
         };
         this.dispatch(initGridFromSchema(classListschema,{id:studentId}));
         let Container=<EnrollClassSearch schema={classListschema} uiCtl={this.uiCtl} dataId={studentId} />;
@@ -84,7 +84,7 @@ export default  class  extends Controller {
         var classController=controllerCtl(STUDY_CLASS_CONTROLLER,{store:this.registry});
         classController.uiCtl.setCustomContainerLoader(this.UIenrollCheckLoader.bind(this),{studentId,classId});
         classController.show([classId],{buttons:[],
-                                    onAction:this.handleEnrollCheckActions});
+            onAction:this.handleEnrollCheckActions});
 
     }
     /**

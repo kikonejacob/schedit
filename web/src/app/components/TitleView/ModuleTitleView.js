@@ -19,7 +19,7 @@ export default class TitleView extends React.Component  {
             <div className="col-lg-12">
                 <h1 className="page-header">{icon}<span>{this.props.title}</span></h1>
             </div>
-         );
+        );
 
     }
 

@@ -4,6 +4,11 @@ var path = require('path');
 module.exports.production = {
     debug: false,
     devtool: 'source-map',
+    stats: {
+        colors: true,
+        reasons: true
+    },
+    noInfo: true,
     plugins:[
         new CleanPlugin([ path.join(__dirname,'../src/dist'),], { root:  path.join(__dirname,'../src/app/'), }),
        // optimizations
@@ -14,6 +19,7 @@ module.exports.production = {
                 warnings: false
             }
         }),
+        new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'

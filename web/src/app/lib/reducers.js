@@ -18,6 +18,7 @@ import subjects from  'modules/subjects/lib/reducers';
 import feeHeads from  'modules/feeheads/lib/reducers';
 import reductions from 'modules/studentAids/lib/reducers';
 import schoolInformation from 'modules/schoolInfo/lib/reducers';
+import {currentuser} from './users/reducers';
 
 export default {
     activeContainer,
@@ -32,7 +33,8 @@ export default {
     studentEnrollments,
     feeHeads,
     reductions,
-    schoolInformation
+    schoolInformation,
+    currentuser
 
 
 };

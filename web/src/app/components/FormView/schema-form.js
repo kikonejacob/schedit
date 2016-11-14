@@ -61,7 +61,7 @@ export default class FormView extends Component {
                 {this.getButtons()}
               </Form>
           </div>
-      );
+        );
     }
 }
 

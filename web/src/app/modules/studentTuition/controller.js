@@ -42,7 +42,7 @@ export default  class extends Controller {
         this.dispatch(initGridFromSchema(this.schemas.ListSchema,{id:options[0]}));
         this.uiCtl.loadContainer(<List schema={this.schemas.ListSchema} uiCtl={this.uiCtl} />);
         this.uiCtl.changeTitle(this.schemas.ListSchema.title);
-        this.uiCtl.changeTitle('delph')
+        this.uiCtl.changeTitle('delph');
     }
 
 

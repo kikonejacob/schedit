@@ -19,7 +19,7 @@ export default class AuthErrorDialog  extends Component{
                         <a className='btn btn-default' href='#login'> Login </a>
 
                     </div>
-                    
+
 
             </div>);
     }

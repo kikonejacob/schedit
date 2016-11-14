@@ -32,7 +32,7 @@
              "displayName": "Academic year",
              "selection":{
                          "reference":"acyearId",
-                         "options":"api/acyears",
+                         "options":"api/academic-years",
                          "selectionFields":{"value":"id","caption":"name"},
                          "optionsType":"url",
                          "placeholder":"Select an academic year"

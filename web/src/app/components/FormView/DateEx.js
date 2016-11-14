@@ -2,7 +2,7 @@ var subschema = require('subschema');
 var loader = subschema.loader;
 var React = require('react');
 var FieldValueMixin = subschema.FieldValueMixin;
-var moment = require("moment");
+var moment = require('moment');
 var JK = require('react-bootstrap-datetimepicker');
 
 
@@ -20,7 +20,7 @@ var DateExInput = React.createClass({
 
     render: function () {
 
-        var {onChange, onValueChange, onBlur, className, field, value, dataType, value, fieldAttrs, type} = this.props
+        var {onChange, onValueChange, onBlur, className, field, value, dataType, value, fieldAttrs, type} = this.props;
 
         console.log(this.state);
         console.log(value);
@@ -44,6 +44,6 @@ var DateExInput = React.createClass({
         );
 
     }
-})
+});
 
 module.exports = DateExInput;

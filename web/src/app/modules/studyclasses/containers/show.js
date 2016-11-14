@@ -127,12 +127,12 @@ function mapStateToProps(state,ownProps) {
     const {classId}=activeContainer;
 
     const { isFetching,data,aggregate} = classes[classId] || { isFetching: false,
-                                                     data:{},
-                                                    };
+        data:{},
+    };
     const genreStatistic = aggregate.genre_statistic.map((val) => {
         return { label: (val.sex=='f') ? 'Feminine':'Masculine',
-                 value: (val.count/aggregate.enrollments).toFixed(2)*100
-                };
+            value: (val.count/aggregate.enrollments).toFixed(2)*100
+        };
 
     });
     console.log(aggregate);
@@ -143,10 +143,10 @@ function mapStateToProps(state,ownProps) {
 
     if (fees==undefined) fees={items:[]} ;
     return {data,
-            fees,
-            aggregate,
-            genreStatistic,
-            isFetching,
-        /*level*/};
+        fees,
+        aggregate,
+        genreStatistic,
+        isFetching,
+        /    };
 }
 export default connect(mapStateToProps)(Form);

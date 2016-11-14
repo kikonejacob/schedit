@@ -3,7 +3,7 @@
  *  (C) 2016 Kiswendsida  Kikone
  */
 
-import {LIST_STUDENT_TUITIONS,API_GET_ENROLL,API_SET_ENROLL,API_DEL_ENROLL
+import {API_GET_ENROLL,API_SET_ENROLL,API_DEL_ENROLL
       ,API_ENROLL} from './actionTypes.js';
 import {RESTAPI_REQUEST} from 'lib/common/actionTypes';
 import {merge} from 'utils/stateHelper';

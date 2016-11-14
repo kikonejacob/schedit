@@ -5,7 +5,7 @@ export function getIndexOfOption(arr, value){
     for(let i=0; i<arr.length; i++){
         if (arr[i].value==value){
             return i;
-       
+
         }
     }
 };
@@ -14,9 +14,9 @@ export function getLabelOfOption(arr, value){
     for(let i=0; i<arr.length; i++){
         if (arr[i].value==value){
             return arr[i].label;
-       
+
         }
- 
+
     }
 };
 

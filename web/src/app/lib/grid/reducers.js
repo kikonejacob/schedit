@@ -41,10 +41,10 @@ function schGrids(state={},action){
         console.log('GRID INIT init');
         //return {...state,[action.gridName]:{.Name);
         return merge(state)(action.gridName,{...initialPagingState,
-                                             url:action.url,
-                                             collectionName:action.gridName,
-                                             ...action.options
-                                         } );
+            url:action.url,
+            collectionName:action.gridName,
+            ...action.options
+        } );
         break;
     case GRID_UPDATE_CONFIG:
         //console.log(action);

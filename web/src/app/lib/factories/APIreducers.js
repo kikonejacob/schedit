@@ -31,7 +31,7 @@ export function generateApiReducer(types)
         let data,extra={};
         switch(action.type){
         case actionTypes.APIget:
-            console.log("OOOOOOOOOOOOOOOOOOO");
+            console.log('OOOOOOOOOOOOOOOOOOO');
             isFetching=(action.status==RESTAPI_REQUEST);
             data=action.data;
             if (isFetching){

@@ -15,7 +15,7 @@ function studentTuitions(state={},action)
         data=(isFetching)? {}: action.data;
         extra=(isFetching)?{} : {lastUpdated:action.receivedAt};
         let arr = Object.keys(data).map(function(k) { return data[k] ;}); //convert json to arrays
-        return merge(state,{...arr,isFetching})
+        return merge(state,{...arr,isFetching});
         break;
     default:
         return state;

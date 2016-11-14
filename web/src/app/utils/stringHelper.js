@@ -10,7 +10,7 @@ export function replaceStrFromJson(source,replaceOptions){
     for (let prop in replaceOptions) {
         regex.push(prop);
     }
-    regex = new RegExp( regex.join('|'), "g" );
+    regex = new RegExp( regex.join('|'), 'g' );
     return source.replace(regex, function(match) {
         return replaceOptions[match];
     });

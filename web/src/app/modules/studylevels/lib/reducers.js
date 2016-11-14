@@ -17,11 +17,11 @@ function levelRequests(state={levels:{} },action)
         return Object.assign({}, state, {  [action.levelId]:{
             ...state[action.levelId],
             classes:{   isFetching: isFetching,
-                        items:data,
-                        didInvalidate: false,
-                        ...extra
+                items:data,
+                didInvalidate: false,
+                ...extra
 
-              }
+            }
         }
         });
         break;

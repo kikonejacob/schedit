@@ -22,21 +22,21 @@ import { connect } from 'react-redux';
 const columns=['fee_code','amount'];
 
 const columnsMetaData=[
-    {   'columnName': 'fee_code',
-        'order': 1,
-        'locked': false,
-        'visible': true,
-        'displayName': 'Code',
-        'partialLink':'#studylevels/:id/fees/',
-        'linkKey':'fee_code',
-        'customComponent': LinkComponent,
+    {   columnName: 'fee_code',
+        order: 1,
+        locked: false,
+        visible: true,
+        displayName: 'Code',
+        partialLink:'#studylevels/:id/fees/',
+        linkKey:'fee_code',
+        customComponent: LinkComponent,
     },
     {
-        'columnName': 'amount',
-        'order': 2,
-        'locked': false,
-        'visible': true,
-        'displayName': 'Amount'
+        columnName: 'amount',
+        order: 2,
+        locked: false,
+        visible: true,
+        displayName: 'Amount'
     }
 ];
 

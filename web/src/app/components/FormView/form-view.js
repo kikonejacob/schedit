@@ -14,26 +14,26 @@ export const btYesNo='bt_yes_no';
 
 //default form  schema buttons constants
 const SCbuttons={buttonsClass:'btn-toolbar',
-                            buttons:[{ label:'Save', action:'submit',className:'btn btn-primary pull-right'},
+    buttons:[{ label:'Save', action:'submit',className:'btn btn-primary pull-right'},
                                      { label:'Cancel',action:'cancel', className:'btn  pull-right'}
-                          ]
-             } ;
+    ]
+} ;
 const YNCbuttons={buttonsClass:'btn-toolbar',
-                       buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
+    buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
                                  { label:'No',action:'cancel', className:'btn  pull-right'},
                                  { label:'Cancel',action:'cancel', className:'btn  pull-right'}
-                      ]
-              } ;
+    ]
+} ;
 const YCbuttons={buttonsClass:'btn-toolbar',
-                       buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
+    buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
                                 { label:'Cancel',action:'cancel', className:'btn  pull-right'}
-                      ]
-              } ;
+    ]
+} ;
 const YNbuttons={buttonsClass:'btn-toolbar',
-                       buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
+    buttons:[{ label:'Yes', action:'submit',className:'btn btn-primary pull-right'},
                                 { label:'no',action:'cancel', className:'btn  pull-right'}
-                      ]
-              } ;
+    ]
+} ;
 
 
 
@@ -61,7 +61,7 @@ export default class FormView extends Component {
     /**very helpful for redux update*/
     componentWillReceiveProps( nextprops){
 
-        this.valueManager.setValue(nextprops.data)
+        this.valueManager.setValue(nextprops.data);
     }
 
     componentWillUnmount() {
@@ -126,6 +126,6 @@ export default class FormView extends Component {
                     <Form  {...this.props} onButtonClick={this.handleButtonClick}
                        onSubmit={this.handleSubmit} valueManager={this.valueManager}/>
                 </div>);
-        }
+    }
 
 };

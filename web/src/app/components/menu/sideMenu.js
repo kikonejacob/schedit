@@ -1,5 +1,5 @@
 import React from 'react';
-import "metisMenu";
+import 'metisMenu';
 
 
 class SideMenu extends React.Component {

@@ -13,7 +13,7 @@ class MenuSvc {
     constructor(){
         this.channel=ChannelConnection('services');
         ReactDOM.render(React.createElement(SchmenuBar, {node}),
-	               document.getElementById("menu-container"));
+	               document.getElementById('menu-container'));
         console.log('Rolling the  menu service');
     }
 

@@ -51,7 +51,7 @@
         "react/no-did-mount-set-state": 1,
         "react/no-did-update-set-state": 1,
         "react/no-unknown-property": 2,
-        "react/wrap-multilines": 1,
+        "react/jsx-wrap-multilines": 1,
         "react/react-in-jsx-scope": 1,
 
         "mocha/no-exclusive-tests": 2

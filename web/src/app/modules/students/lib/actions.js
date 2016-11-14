@@ -46,7 +46,7 @@ export function updateStudent(studentId,data){
 
 /**
  * Create a new student
- * 
+ *
  * @export
  * @param {Number} levelId
  * @param {{first_name:string,last_name:string,email:string,address1:string}} data

@@ -42,8 +42,8 @@ export function createSubject(data){
 
 };
 /**
- * 
- * 
+ *
+ *
  * @export
  * @param {string} subjectCode
  */

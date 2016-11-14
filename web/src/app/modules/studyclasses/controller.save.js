@@ -125,7 +125,7 @@ export default  class  {
         this.selectedIds=[];
         let  collection=new PageableCollection({url:'../api/levels'});
         let header={ description:'select the levels you want to delete and click on delete',
-                     onAction:this.handleActions.bind(this)};
+            onAction:this.handleActions.bind(this)};
         this.Rendered=(<List {...header} collection={collection}
                              multiselect={true} selectedIds={this.selectedIds} />);
         this.services.trigger('load-content',this.Rendered,'react');

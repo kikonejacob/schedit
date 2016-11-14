@@ -5,8 +5,8 @@ import InlineList from 'components/InlineList/InlineList';
 import { connect } from 'react-redux';
 import ProgressDialog from 'components/ProgressDialog/progressDialog';
 import {URL_STUDENT,URL_STUDENTS} from 'lib/apiUrlconst';
-import Form from "react-jsonschema-form";
-import SchemaField from "react-jsonschema-form/lib/components/fields/SchemaField";
+import Form from 'react-jsonschema-form';
+import SchemaField from 'react-jsonschema-form/lib/components/fields/SchemaField';
 import * as _ from 'lodash';
 
 
@@ -54,14 +54,14 @@ class Caption extends React.Component {
 }
 
 const DefaultUiSchema={
-    "ui:readonly": true
+    'ui:readonly': true
 
 };
 
 // Define the custom field components to register; here our "geo"
 // custom field component
-const fields = {"InlineList": InlineListWrapper,
-               };
+const fields = {InlineList: InlineListWrapper,
+};
 
 class ShowForm extends Component{
 

@@ -7,7 +7,7 @@ export const QUERY_PARAMS_TO_SERVER= {
     order: 'order',
     directions: {
         '-1': 'asc',
-        '1': 'desc'
+        1: 'desc'
     }
 };
 
@@ -20,7 +20,7 @@ export const QUERY_PARAMS_FROM_SERVER= {
     order: 'order',
     directions: {
         '-1': 'asc',
-        '1': 'desc'
+        1: 'desc'
     }
 };
 

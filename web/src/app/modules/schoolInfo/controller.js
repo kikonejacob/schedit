@@ -3,6 +3,7 @@ import Controller from 'lib/common/controller';
 
 //Containers
 import Form from './containers/form';
+import SchoolPictureForm from './containers/uploadIcon';
 
 //module json schemas
 import * as FormSchema from './schemas/schoolinfo.form.schema.json';
@@ -39,6 +40,17 @@ export default  class extends Controller {
         this.uiCtl.loadContainer(Container,{DEFAULT_SCHOOL_INFORMATION_ID});
         this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
 
+    }
+
+    changePicture(){
+        const Container=(<SchoolPictureForm schema={this.schemas.FormSchema}
+                               datasource={MODULE_API_REDUCER}
+                               dataId={DEFAULT_SCHOOL_INFORMATION_ID} uiCtl={this.uiCtl}
+                               onSubmitForm={setSchoolInformation}
+                         />);
+        this.dispatch(getSchoolInformation());
+        this.uiCtl.loadContainer(Container,{DEFAULT_SCHOOL_INFORMATION_ID});
+        this.uiCtl.changeTitle(FORM_TITLE,MODULE_ICON);
     }
 
     /** The modules reducers*/

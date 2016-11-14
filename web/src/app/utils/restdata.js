@@ -2,76 +2,76 @@
 import when from 'when';
 import { get,post } from '../utils/http';
 import Radio from 'backbone.radio';
-import _ from "underscore";
+import _ from 'underscore';
 import debug from './debug';
 
 export default class RestData {
 
-	constructor(options){
-		this.data=options.data||{};
-		this.url=options.url;
-		debug.log( 'ddOOOOOOO__'+options.url);
+    constructor(options){
+        this.data=options.data||{};
+        this.url=options.url;
+        debug.log( 'ddOOOOOOO__'+options.url);
 
-		Object.assign(this,options);
-		this.services=Radio.channel('services');
+        Object.assign(this,options);
+        this.services=Radio.channel('services');
 
-	}
+    }
 
-	handleError(e){
+    handleError(e){
 
-		alert("error in api communication")
-	}
+        alert('error in api communication');
+    }
 
-	get(){
+    get(){
 
-		var url=this.url;
-		var data=this.data;
+        var url=this.url;
+        var data=this.data;
 
 
-		data=get(url);
+        data=get(url);
 		/*data.done(function(e){
 
 			data=e;
 
 		});*/
 
-		data.catch(this.handleError);
-	
-		return data;
-	}
+        data.catch(this.handleError);
 
-	save(){
+        return data;
+    }
 
-
-
-		var url=this.url;
-		var data=this.data;
-		console.log(data);
-
-		
-		let options={
-
-			params:data
-		};
+    save(){
 
 
 
-		let response=post(url,options);
-		response.done(function(e){
-
-			console.log('successfuly stored');
-
-		});
-		response.catch(function(e){
-			alert("error in api communication")
+        var url=this.url;
+        var data=this.data;
+        console.log(data);
 
 
-		})
+        let options={
+
+            params:data
+        };
 
 
 
-	}
+        let response=post(url,options);
+        response.done(function(e){
 
-	
+            console.log('successfuly stored');
+
+        });
+        response.catch(function(e){
+            alert('error in api communication');
+
+
+        });
+
+
+
+    }
+
+
 
 }

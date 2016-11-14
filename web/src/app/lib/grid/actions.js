@@ -66,8 +66,8 @@ export function initGridFromSchema(schema,urlOptions,collectionOption){
         //console.log(selectionCollectionNames);
         dispatch(initGrid(url,name,{selectionCollectionNames
                                     ,schema,
-                                    urlOptions,
-                                    collectionOption}));
+            urlOptions,
+            collectionOption}));
         return dispatch(fetchCollection(name,url));
     };
 }

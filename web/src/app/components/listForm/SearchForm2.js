@@ -11,12 +11,12 @@ const SEARCH_BUTTONS=[
 export default class extends React.Component{
 
     handleSubmit(formData){
-        console.log("fdfd");
+        console.log('fdfd');
         //e.preventDefault() ;
         let action=this.pressed;
         if (action=='cancel') action='CancelAdvancedSearch';
         if (action=='submit') action='runAdvancedSearch';
-        this.props.onAction(action,data);
+        this.props.onAction(action,formData);
     };
     handleButtonClick(event, action){
         this.pressed=action;
@@ -36,7 +36,7 @@ export default class extends React.Component{
 
         const {schema, onAction} = this.props;
         console.log(schema);
-        var nSchema = schema.schema;
+        let nSchema = schema.schema;
         nSchema.fieldsets = [{
             fields: Object.keys(schema.schema),
             legend: 'Advanced search',

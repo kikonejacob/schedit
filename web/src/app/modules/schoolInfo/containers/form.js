@@ -11,6 +11,17 @@ class Form extends Component{
     render(){
         const {data,schema}=this.props;
         return(<div className="container">
+                <div>
+                    <div className="col-md-4 col-sm-3">
+                       <div className="thumbnail">
+                            <img alt="School Icon" src={data.icon} width="171px" height="180px"/>
+                            <div className="caption">
+                              <a href='#school-information/picture' className="button">Modify/Add picture</a>
+                            </div>
+                       </div>
+
+                    </div>
+                </div>
                  <div className="row">
                   <div className="col-md-8">
                      <FormView formButtons={btSaveCancel} schema={schema.schema}

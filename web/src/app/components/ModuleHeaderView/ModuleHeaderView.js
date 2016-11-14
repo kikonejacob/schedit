@@ -17,7 +17,7 @@ export default  class ModuleHeaderView extends Component{
               </div>
             </nav>
 
-          );
+        );
     }
 
 

@@ -46,9 +46,9 @@ function ApiExceptionMgr(error,dispatch){
 function AsyncActionCreator(actionType,status,options){
 
     return {type:actionType,
-            status:status,
-            ...options
-   };
+        status:status,
+        ...options
+    };
 
 
 
@@ -101,10 +101,10 @@ export  function APIgetFetchEx(url,actionType,subdata,ajaxParams={},ActionCreato
               //console.log(url);
 
               let params={...subdata,
-                          pagination:_.omit(response,'data'), //it supose that the rest is pagination informations
-                          data:response.data,//we are sending the raw response to be processed by the action creator
-                          receivedAt:Date.now()
-                         };
+                  pagination:_.omit(response,'data'), //it supose that the rest is pagination informations
+                  data:response.data,//we are sending the raw response to be processed by the action creator
+                  receivedAt:Date.now()
+              };
               //console.log(params);
               if (ActionCreator!=null)
                   return dispatch(ActionCreator(actionType,RESTAPI_RECEIVE,params));
@@ -151,9 +151,9 @@ export  function APIpostFetch(url,actionType,subdata,ActionCreator=null) {
           //.then(req => req.json())
           .then(json => {
               let params={...subdata,
-                              response:json,//(url=='api/auth')?json:json.data,
-                              savedAt:Date.now()
-                            };
+                  response:json,//(url=='api/auth')?json:json.data,
+                  savedAt:Date.now()
+              };
               if (ActionCreator!=null)
                   return dispatch(ActionCreator(actionType,RESTAPI_RECEIVE,params));
               else
@@ -187,9 +187,9 @@ export  function APIputFetch(url,actionType,subdata,ActionCreator=null) {
           //.then(req => req.json())
           .then(json => {
               let params={...subdata,
-                              response:json,
-                              savedAt:Date.now()
-                            };
+                  response:json,
+                  savedAt:Date.now()
+              };
               //console.log(params);
               if (ActionCreator!=null)
                   return dispatch(ActionCreator(actionType,RESTAPI_RECEIVE,params));

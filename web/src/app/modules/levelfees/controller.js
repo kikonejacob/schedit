@@ -62,7 +62,7 @@ export default  class  {
         let levelId=options[0];
         this.current=levelId;
         let header={ description:'index',
-                     onAction:this.handleIndexActions.bind(this)};
+            onAction:this.handleIndexActions.bind(this)};
         this.registry.dispatch(initLevelfeeGrid(levelId,this.gridName));
 
 

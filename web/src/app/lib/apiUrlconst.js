@@ -45,5 +45,11 @@ export const URL_FEE_HEADS='api/fee-heads';
 export const URL_FEE_HEAD='api/fee-heads/:code';
 
 /** School Information */
-export const URL_ACADEMIC_YEAR='api/academicyears/:id';
-export const URL_ACADEMIC_YEARS='api/academicyears';
+export const URL_ACADEMIC_YEAR='api/academic-years/:id';
+export const URL_ACADEMIC_YEARS='api/academic-years';
+
+/** User Information */
+export const URL_CURRENT_USER='api/user';
+/** Users  */
+export const URL_USERS='api/users';
+export const URL_USER='api/users/:id';

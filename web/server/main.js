@@ -18,7 +18,7 @@ const PATHS = {
     build: path.join(__dirname, '../dist'),
 };
 
-const isDeveloping = process.env.NODE_ENV !== 'production';
+var isDeveloping = process.env.NODE_ENV !== 'production';
 
 
 // proxy middleware options
@@ -30,7 +30,7 @@ var ProxyOptions = {
         'api/':''
     },
     onProxyReq:function onProxyReq(proxyReq, req, res) {
-        var bodyData = JSON.stringify(req.body);
+
         // add custom header to request
         //console.log(req.method.toLowerCase());
         if (req.method.toLowerCase()=='post'){
@@ -42,7 +42,7 @@ var ProxyOptions = {
             //console.log(req.params);
         }
         if(req.body) {
-
+            let  bodyData = JSON.stringify(req.body);
             // incase if content-type is application/x-www-form-urlencoded -> we need to change to application/json
             //proxyReq.setHeader('Content-Type','application/json');
             proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
@@ -104,7 +104,7 @@ var ProxyOptions = {
 const app = express();
 
 // use gzip Compression
-app.use(compress);
+app.use('/:tenant/app/*',compress());
 // support json encoded bodies
 app.use(bodyParser.json());
 // support encoded bodies
@@ -120,11 +120,12 @@ app.use('/:tenant/api/*', proxy(ProxyOptions));
 // Apply Webpack HMR Middleware for development only
 // ------------------------------------
 if (isDeveloping) {
+    console.log('is developing ..........');
     const webpackConfig = require('../webpack.config.js');
     const compiler = webpack(webpackConfig);
 
     debug('Enable webpack dev and HMR middleware');
-    app.use('/:tenant/app',require('webpack-dev-middleware')(compiler, webpackConfig.devServer));
+    app.use('/:tenant/app/js',require('webpack-dev-middleware')(compiler, webpackConfig.devServer));
     app.use(require('webpack-hot-middleware')(compiler));
 
   // Serve static assets from ~/src/static since Webpack is unaware of
@@ -133,7 +134,7 @@ if (isDeveloping) {
   // when the application is compiled.
     app.use(express.static(PATHS.build));
 } else {
-    debug(
+    console.log(
     'Server is being run outside of live development mode, meaning it will ' +
     'only serve the compiled application bundle in ~/dist. Generally you ' +
     'do not need an application server for this and can instead use a web ' +

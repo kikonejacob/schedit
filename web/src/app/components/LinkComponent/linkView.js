@@ -3,11 +3,11 @@ import React,{Component} from 'react';
 
 export default  class Link  extends Component{
 
-render(){
+    render(){
 
-    let {link,OnClick,children}=this.props;
-    return( <a href={link} OnClick={OnClick}>{children}</a>)
+        let {link,OnClick,children}=this.props;
+        return( <a href={link} OnClick={OnClick}>{children}</a>);
 
 
-	}
+    }
 }

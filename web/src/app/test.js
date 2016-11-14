@@ -4,7 +4,7 @@
 
 import 'jquery';
 import bootstrap from 'bootstrap';
-import "metisMenu";
+import 'metisMenu';
 
 import bela from './studentsView/studentsView.js' ;
 
@@ -20,9 +20,9 @@ import React from 'react';
 ////React.render(<Example  />, document.body);
 
 class HelloMessage extends React.Component {
-  render() {
-    return <div>Hello {this.props.name}</div>;
-  }
+    render() {
+        return <div>Hello {this.props.name}</div>;
+    }
 }
 
 

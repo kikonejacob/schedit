@@ -17,7 +17,7 @@ var entry = [
 var output = {
     path: path.join(__dirname, '../dist/js/'),
     filename: 'main.js',
-    chunkFilename: '[id].chunk.js'
+    chunkFilename: '[id].chunk.js',
 };
 
 var appPathTo = _.partial( pathTo, 'app' );
@@ -30,16 +30,15 @@ function pathTo() {
 module.exports={
     entry:entry,
     output:output,
-    target:'node',
     module : {
         loaders : [
             { test: /\.js(x)?$/,
-             exclude: /node_modules/,
-             include:['./src'],
-             loaders: [ 'babel-loader']
+                exclude: /node_modules/,
+                include:['./src'],
+                loaders: [ 'babel-loader']
             },
             { test: /\.json?$/,
-              loader: 'json-loader',
+                loader: 'json-loader',
             },
             , {
                 test: /\.js(x)?$/,
@@ -90,10 +89,14 @@ module.exports={
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+      
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
         }),
+        new webpack.IgnorePlugin(/vertx/),
         new ExtractTextPlugin('[name]-[chunkhash].css', {allChunks: true}),
     ],
     resolve: {

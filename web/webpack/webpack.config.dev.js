@@ -12,6 +12,7 @@ module.exports = {
     debug : true,
     devtool : 'eval',
     entry: ['webpack-hot-middleware/client'],
+    noInfo:true,
     cache:true,
     stats: {
         colors: true,
@@ -21,7 +22,7 @@ module.exports = {
         fs: 'empty'
     },
     devServer: {
-        contentBase: 'dist',
+        contentBase: 'dist/js',
         hot: true,
         progress:true,
         inline: true,

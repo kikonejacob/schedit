@@ -11,9 +11,9 @@ const ENROLLL_BUTTONS=[
 ];
 
 const ENROLL_SUCESS_MESSAGE=['#### Enrollment Sucessfully completed. \n ',
-                             'Your enrollment for ``class.name`` was sucessful.',
-                             'You are require to pay the fees for the enrollment. \n',
-                             '#### Thank you !'].join(' ');
+    'Your enrollment for ``class.name`` was sucessful.',
+    'You are require to pay the fees for the enrollment. \n',
+    '#### Thank you !'].join(' ');
 
 
 

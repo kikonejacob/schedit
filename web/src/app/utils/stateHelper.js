@@ -15,6 +15,6 @@ export function merge(state,objectToMerge=null){
             ...state[element],
             ...value
         }
-    });
+        });
     };
 }
