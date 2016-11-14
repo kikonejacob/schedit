@@ -3,46 +3,23 @@ const http = require('http');
 const express = require('express');
 const proxy = require('http-proxy-middleware');
 const url = require('url');
-const app = express();
 const API_SERVER=CONFIG.APIServer;//'http://192.168.10.10/service';
 const CookieParser = require('cookie-parser');
-const  bodyParser = require('body-parser');
-const  getRawBody = require('raw-body');
+const bodyParser = require('body-parser');
+const getRawBody = require('raw-body');
+const path = require('path');
+const webpack = require('webpack');
+const compress = require('compression');
+const debug = require('debug')('http');
 
-const cookie = require('cookie');
-var path = require('path');
 
 const PATHS = {
     app: path.join(__dirname, '../src'),
     build: path.join(__dirname, '../dist'),
 };
 
-/*//restreame
-var restreamer = function (){
-    return function (req, res, next) { //restreame
-        req.removeAllListeners('data');
-        req.removeAllListeners('end');
-        next();
-        process.nextTick(function () {
-            if(req.body) {
-                req.emit('data', JSON.stringify(req.body));
+const isDeveloping = process.env.NODE_ENV !== 'production';
 
-            }
-            req.emit('end');
-        });
-    };
-};*/
-
-app.use(bodyParser.json()); // support json encoded bodies
-
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-//app.use(restreamer());//restreame
-
-
-app.use(require('morgan')('short'));
-
-
-app.use(CookieParser()); // for parsing application/json
 
 // proxy middleware options
 var ProxyOptions = {
@@ -53,6 +30,7 @@ var ProxyOptions = {
         'api/':''
     },
     onProxyReq:function onProxyReq(proxyReq, req, res) {
+        var bodyData = JSON.stringify(req.body);
         // add custom header to request
         //console.log(req.method.toLowerCase());
         if (req.method.toLowerCase()=='post'){
@@ -64,7 +42,7 @@ var ProxyOptions = {
             //console.log(req.params);
         }
         if(req.body) {
-            var bodyData = JSON.stringify(req.body);
+
             // incase if content-type is application/x-www-form-urlencoded -> we need to change to application/json
             //proxyReq.setHeader('Content-Type','application/json');
             proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
@@ -122,56 +100,59 @@ var ProxyOptions = {
 };
 
 
+
+const app = express();
+
+// use gzip Compression
+app.use(compress);
+// support json encoded bodies
+app.use(bodyParser.json());
+// support encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+// log system
+app.use(require('morgan')('short'));
+// Cookie parser for parsing application/json
+app.use(CookieParser());
+// Proxie for school edit API
 app.use('/:tenant/api/*', proxy(ProxyOptions));
 
-
-
-
-/*app.use('/:tenant/auth/
-
-
-
-        // or log the req
-*', proxy(API_SERVER,{
-        decorateRequest: function(reqOpt, req) {
-            if (req.cookie.bData){
-                reqOpt.headers['Authorization'] = 'Bearer '+ req.cookie.bData;
-            }
-            return reqOpt;
-        },
-        forwardPath: function(req, res) {
-            console.log('fddf');
-            return url.parse(req.url).path+'dfdf';
-        },
-        changeOrigin: true}));
-*/
-
-(function initWebpack() {
-    const webpack = require('webpack');
-    const webpackConfig = require('../webpack.config.js')['development'];
+// ------------------------------------
+// Apply Webpack HMR Middleware for development only
+// ------------------------------------
+if (isDeveloping) {
+    const webpackConfig = require('../webpack.config.js');
     const compiler = webpack(webpackConfig);
 
+    debug('Enable webpack dev and HMR middleware');
     app.use('/:tenant/app',require('webpack-dev-middleware')(compiler, webpackConfig.devServer));
+    app.use(require('webpack-hot-middleware')(compiler));
 
-    app.use(require('webpack-hot-middleware')(compiler, {
-        log: console.log,
-        path: '/__webpack_hmr', heartbeat: 10 * 1000,
-        stats:{
-            progress:true,
-            colors: true}
-    }));
-
+  // Serve static assets from ~/src/static since Webpack is unaware of
+  // these files. This middleware doesn't need to be enabled outside
+  // of development since this directory will be copied into ~/dist
+  // when the application is compiled.
     app.use(express.static(PATHS.build));
-})();
+} else {
+    debug(
+    'Server is being run outside of live development mode, meaning it will ' +
+    'only serve the compiled application bundle in ~/dist. Generally you ' +
+    'do not need an application server for this and can instead use a web ' +
+    'server such as nginx to serve your static files. See the "deployment" ' +
+    'section in the README for more information on deployment strategies.'
+  );
 
+  // Serving ~/dist by default. Ideally these files should be served by
+  // the web server and not the app server, but this helps to demo the
+  // server in production.
+    app.use(express.static(PATHS.build));
+}
+// Serve Index file
 app.get('/:tenant/app/', function root(req, res) {
-    console.log('OOOOOOOO');
     res.sendFile(PATHS.app+'/index.html');
 });
+// Server any file under :tenant/app
 app.get('/:tenant/app/*', function root(req, res) {
-    //console.log(req);
     res.sendFile(PATHS.build+'/'+req.params[0]);
-    //console.log(req.path);
 });
 
 const server = http.createServer(app);
