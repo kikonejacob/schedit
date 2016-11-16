@@ -1,4 +1,5 @@
 import 'backbone.paginator';
+import Backbone from 'backbone';
 
 var bela=Backbone.Model.extend({});
 

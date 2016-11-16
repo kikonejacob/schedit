@@ -119,8 +119,8 @@ var AppRouter=Backbone.Router.extend ({
         this.responsiveRender();
         $('div.sidebar-nav').removeClass('in');
 
-        var controllerInfo=name.split('#');
-        var controller=_.propertyOf(controllers)(controllerInfo[0]);
+        let controllerInfo=name.split('#');
+        let controller=_.propertyOf(controllers)(controllerInfo[0]);
         //debug.log(name+'_router name');
 
         // if (this.currentController!=undefined)  this.currentController.destroy;

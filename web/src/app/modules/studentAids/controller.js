@@ -11,7 +11,7 @@ import * as FormSchema from './schemas/aid.schema.json';
 import * as ListSchema from './schemas/aids.list.schema.json';
 
 //module actions
-import {getReduction} from './lib/actions';
+import {getReductionInfo} from './lib/actions';
 import {initGridFromSchema} from 'lib/grid/actions.js';
 
 
@@ -65,14 +65,14 @@ export default  class extends Controller {
     edit(options){
         const studentId=options[0];
         const Container=(<Form dataId={studentId} uiCtl={this.uiCtl} />);
-        this.dispatch(getStudent(studentId));
+        this.dispatch(getReductionInfo(studentId));
         this.uiCtl.loadContainer(Container,{studentId});
         this.uiCtl.changeTitle(FORM_CREATE_TITLE);
     }
 
     show(options,props){
         const studentId=options[0];
-        this.dispatch(getStudent(studentId));
+        this.dispatch(getReductionInfo(studentId));
         this.dispatch(listStudentTuition(studentId,'student.tuition'));
         this.dispatch(listStudentEnrollments(studentId,'student.enrollments'));
         //this.dispatch(subjectsGet(levelId));

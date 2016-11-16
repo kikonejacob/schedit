@@ -19,6 +19,6 @@ class MenuSvc {
 
  }
 
-var MenuSerivce= new MenuSvc();
+let MenuSerivce= new MenuSvc();
 
 export default MenuSerivce;

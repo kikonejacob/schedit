@@ -5,7 +5,10 @@
 		"target": "es2015",
 		"module": "commonjs",
 		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators":true
+		"experimentalDecorators":true,
+		"paths":{
+			"lib/*":"./src/app/lib"
+		}
 	},
 	"exclude": [
 		"node_modules",

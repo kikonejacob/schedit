@@ -87,11 +87,8 @@ module.exports={
         return [precss, autoprefixer];
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-    plugins: [
         new webpack.HotModuleReplacementPlugin(),
-      
+        new webpack.ProvidePlugin({
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.$': 'jquery',

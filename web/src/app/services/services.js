@@ -15,7 +15,7 @@ export const registry=configureStore({});
 
 
 export default function services() {
-    this.channel = new Channels( 'services' );
+    this.channel = new ChannelConnection( 'services' );
     services.defaultChannel=ChannelConnection('services');
 };
 services.responsiveRender=function(){

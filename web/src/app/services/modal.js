@@ -20,7 +20,7 @@ class DialogPortal {
 
     configureChannel(){
 
-        this.channel.on('showModal',showModalEx);
+        this.channel.on('showModal',this.showModalEx);
     }
 
     addDialog(form,title){
@@ -28,7 +28,7 @@ class DialogPortal {
         var dialogElement=document.createElement('div');
         dialogElement.id=this.containerId+'_dialog_container_'+this.count;
 
-        var node=this.container.appendChild(dialogElement);
+        let node=this.container.appendChild(dialogElement);
 
         this.nodes.push(node);
 
@@ -57,7 +57,7 @@ class DialogPortal {
     }
     showModalEx(form,title){
         var refId=this.addDialog(form,title);
-        showModal(refId);
+        this.showModal(refId);
 
     }
     deleteDialog(refId){

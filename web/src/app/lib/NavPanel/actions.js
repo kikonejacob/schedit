@@ -18,7 +18,7 @@ export function CreateNavPanel(title,icon,Content=undefined){
 
     /** Render the dropdown panel content */
     if  (Content){
-        ReactDOM.render(<Content ondelete={deleteNavPanel} panelId={NewPanelId} />,NewPanel);
+        ReactDOM.render(<Content ondelete={deleteNavPanel} panelId={newPanelId} />,NewPanel);
     }
     return newPanelId;
 

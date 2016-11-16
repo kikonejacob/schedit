@@ -147,6 +147,6 @@ function mapStateToProps(state,ownProps) {
         aggregate,
         genreStatistic,
         isFetching,
-        /    };
+    };
 }
 export default connect(mapStateToProps)(Form);

@@ -9,12 +9,16 @@ export class CollectionView extends Component{
         this.props.collectionMgr();
     };
 
+    getMeta(){
+
+    };
+
 
     getRenderedItem(item){
         const {columns,multiselect}=this.props;
         let extra,output;
         output=columns.map((column)=>{
-            const meta=getMeta(column);
+            const meta=this.getMeta(column);
             let columnOutput=item.text;
             if (meta){
                 if (meta.customComponent>'')
