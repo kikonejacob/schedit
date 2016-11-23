@@ -1,3 +1,9 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+     // Mappings for paths
+    "path-intellisense.mappings": {
+        "lib": " ${workspaceRoot}/src/app/lib",
+        "utils":"${workspaceRoot}/src/app/utils",
+        "component":"${workspaceRoot}/src/app/components"
+    }
 }
