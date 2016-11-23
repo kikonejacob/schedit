@@ -92,6 +92,7 @@ module.exports={
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
+            $: 'jquery',
         }),
         new webpack.IgnorePlugin(/vertx/),
         new ExtractTextPlugin('[name]-[chunkhash].css', {allChunks: true}),
