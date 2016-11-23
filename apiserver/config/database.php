@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'tenantsmgr'),
+    'default' => env('DB_CONNECTION', 'tenants-manager'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,10 +64,10 @@ return [
             'strict'    => false,
             'engine'    => null,
         ],
-        'tenantsmgr' => [
+        'tenants-manager'=> [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('TENANTS_DB', 'tenantmgr'),
+            'database'  => env('TENANTS_DB', 'tenants_manager'),
             'username'  => env('TENANTS_USER', 'tenant'),
             'password'  => env('TENANTS_PASSWORD', ''),
             'charset'   => 'utf8',

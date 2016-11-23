@@ -66,6 +66,13 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        'tenant'=>[
+            'driver'=>'local'
+        ],
+        'tenants'=>[
+            'driver'=>'local',
+            'root' => storage_path('app/tenants'),
+        ]
 
     ],
 

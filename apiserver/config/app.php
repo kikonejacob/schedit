@@ -168,6 +168,9 @@ return [
         /* Role Management Entrust */
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+        /** Image */
+        Intervention\Image\ImageServiceProvider::class,
+
 
 
         /*
@@ -235,6 +238,9 @@ return [
         /*Entrust role management */
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
+        /** Alias for Image processing library */
+        'Image' => Intervention\Image\Facades\Image::class,
+
 
       
 
@@ -242,7 +248,7 @@ return [
          * Aliases for pdf and excel
          */
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
-        'Image' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        //'Image' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],

@@ -8,14 +8,13 @@
 
 namespace App\Http\Controllers\Tenant;
 
-use App\Helpers;
-
-
-
-
-use function App\Helpers\generateTicketCode;
+use App\Lib\Tenant\TenantAuth;
 use App\Models\Tenant\TenantStorage;
-use App\TenantMgr\Tenant;use Illuminate\Http\Request;use Storage;
+use App\Sch\Helpers\FileHelper;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
+use League\Flysystem\File;
+use Storage;
 
 /**
  * Class StorageController
@@ -30,7 +29,7 @@ use App\TenantMgr\Tenant;use Illuminate\Http\Request;use Storage;
  *           We want to store user profile:
  *
  *          First we have an ajax request with the file: POST[file]->api/storage
- *          We receive back the ticker numbe  RESTAPI RESPONSEr;
+ *          We receive back the ticker number  RESTAPI RESPONSEr;
  *          send an ajax request to Api/student/{student}
  *                  the controller will create an image preview using http://image.intervention.io/
  *
@@ -40,46 +39,52 @@ use App\TenantMgr\Tenant;use Illuminate\Http\Request;use Storage;
  */
 
 
-// File context controll where to store the file  and who can access to it
-$context = array(
-    'user.student.profile.picture'      => ['path'=>'$user/profile/pictures' , 'access' => array('admin' , 'student:$user')] ,
-    'user.student.profile.docs'         => ['$user/profile/docs' , 'access' => array('admin' , 'student:$user')] ,
-    'user.student.profile.term-reports' => ['$user/profile/term-reports' , 'access' => array('admin' , 'student:$user')] ,
-    'user.profile'                      => ['$user/profile/docs' , 'access' => array('admin' , 'student:$user')] ,
-    'user.teacher.public'               => ['$user/profile/public' , 'access' => array('any')] ,
-    'user.teach.courses.public'         => ['$user/profile/courses' , 'access' => array('any')] ,
-    'school.profile.picture'            => ['$user/profile/pictures' , 'access' => 'any'] ,
-    'file.temporary'                    => ['/temp' , 'access' => 'none']
-);
 
-class StorageController extends  Controller
+class StorageController extends Controller
 {
 
-
-    public function index($userId){
-
+    /**
+     * Return the file represented by the ticket
+     * @param  string $ticket
+     * @return  File
+     */
+    public function getFile($ticket)
+    {
+        $id=decrypt($ticket);
+        /** @var TenantStorage $fileInformation */
+        $fileInformation=TenantStorage::find($id);
+        return $fileInformation->getFile();
     }
-    public function store(Request $request,$userId){
 
-        $rule=array(
-            'file'=>'required|file',
+    public function store(Request $request)
+    {
+        $rules = array(
+            'file' => 'required|file' ,
         );
-        $values=$request->only(['file']);
-        $uniqueId=generateTicketCode();
-        $path="/temp".$uniqueId;
-        Storage::disk('tenant')->put($path,$values['file']);
-        $fileInfo=array(
-            'location'=>$path,
-            'owner'=>Tenant::currentUser(),
-            'context'=>'file.temporary',
-            'type'=>'@todo file type'
-    );
+        try {
+            $this->validate($request , $rules);
 
-        //@todo store time in user model so we can limit the upload frequences of a user
-        return TenantStorage::create($fileInfo); //Should return a uniq ticket
+            $values = $request->only(['file']);
+            $uniqueId = FileHelper::generateTicketCode();
+            $fileInfo = array(
+                'internal_name' => $uniqueId ,
+                'owner'    => TenantAuth::user() ,
+                'context'  => TenantStorage::FILE_TEMPORARY,
+                'type'     => '@todo file type',
+                'file'     =>$values['file']
+            );
+
+            //@todo store time in user model so we can limit the upload frequences of a user
+            return encrypt(TenantStorage::create($fileInfo)->id); //Should return a unique ticket
+        }
+        catch(ValidationException $error)  {
+                return $this->APIValidationError($error);
+        }
+
     }
 
-    public function show($studentId,$ticket){
+    public function index($ticket)
+    {
 
     }
 

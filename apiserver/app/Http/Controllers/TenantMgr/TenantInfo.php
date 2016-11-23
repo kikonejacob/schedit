@@ -5,7 +5,7 @@
  * Copyright (c) 2016, Kikone Jacob
  */
 
-namespace App\tenantMgr;
+namespace App\TenantManager;
 
 $tenant="";
 

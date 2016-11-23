@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\TenantMgr\Tenant;
+use App\TenantManager\Tenant;
 use Faker\Factory as Faker;
 
 class TenantSeeder extends Seeder

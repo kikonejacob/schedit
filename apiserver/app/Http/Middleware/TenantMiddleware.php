@@ -19,14 +19,11 @@ class TenantMiddleware
      */
     public function handle($request, Closure $next)
     {
-     
 
         $tenantName=$request->route()->parameters()['tenant'];
-        $tenant=DB::connection('tenantsmgr')->table('tenants')
+        $tenant=DB::connection('tenants-manager')->table('tenants')
                     ->where('name','=',$tenantName)
                     ->first();
-
-
         /*Configuration for the tenant*/
 
         Config::set('database.connections.tenant', array(
@@ -45,6 +42,9 @@ class TenantMiddleware
         ));
 
         Config::set('database.default', 'tenant');
+        Config::set('sch.tenant.internal_name',$tenant->internal_name);
+        Config::set('sch.tenant.storage_type',$tenant->storage_type);
+        Config::set('sch.tenant.storage_credentials',$tenant->storage_credentials);
 
         return $next($request);
     }

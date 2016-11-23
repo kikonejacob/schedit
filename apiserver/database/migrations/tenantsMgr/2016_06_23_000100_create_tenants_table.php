@@ -12,11 +12,19 @@ class CreateTenantsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('tenantsmgr')->create('tenants', function (Blueprint $table) {
+
+        Schema::connection('tenants-manager')->create('tenants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userId');
+            $table->integer('owner_id');
             $table->string('name');
+            $table->enum('type',['french-system','english-system']);
+            $table->boolean('is_original_file')->default(false);
             $table->string('internal_name');
+            $table->enum('storage_type',['local','amazon-s3','dropbox','one-drive','google-drive','rackspace']);
+            $table->longText('storage_credentials');
+            $table->string('storage_service_client_id');
+            $table->string('storage_service_client_token');
+            $table->enum('status',['active','creationFailed','suspended','deleted','expired']);
             $table->timestamps();
         });
     }

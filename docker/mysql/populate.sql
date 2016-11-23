@@ -1,2 +1,2 @@
-CREATE DATABASE tenantsmgr;
+CREATE DATABASE tenants_manager;
 CREATE DATABASE 2016_sch;

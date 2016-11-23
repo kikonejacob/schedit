@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TenantMgr;
+namespace App\TenantManager;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

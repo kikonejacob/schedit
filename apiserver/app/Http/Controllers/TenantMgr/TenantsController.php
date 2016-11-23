@@ -7,15 +7,16 @@
 
 namespace App\Http\Controllers\tenantMgr;
 
+use App\TenantManager\Tenant;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Jobs\TenantMgr\createTenant;
+use App\Jobs\TenantMgr\CreateTenant;
+use Illuminate\Validation\ValidationException;
 
 
-
-class tenantsController extends Controller
+class TenantsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,8 @@ class tenantsController extends Controller
      */
     public function index()
     {
-        
+        $result=Tenant::all();
+        return response($result,201);
 
     }
 
@@ -32,13 +34,27 @@ class tenantsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param Request $request
      * @return Response
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        $values=$request->all();
 
-        $this->dispatch(new createTenant($values));
+        $rules=array(
+            'owner_id'=>'required',
+            'name'=>'required',
+            'type'=>'required',
+            'storage_type'=>'required|'
+        );
+        try {
+            $this->validate($request , $rules);
+            $values = $request->all();
+            $this->dispatch(new CreateTenant($values));
+        }
+        catch(ValidationException $error)  {
+            return response($error->getMessage(),404);/** @todo change error code */
+        }
     }
 
     /**

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use App\Jobs\TenantMgr\createTenant;
+use App\Jobs\TenantMgr\CreateTenant;
 
 
 
@@ -23,7 +23,11 @@ class TenantDatabaseSeeder extends Seeder
         Model::unguard();
 
 
-        $this->dispatch(new createTenant(['userId'=>'0','name'=>'gssb']));
+        $this->dispatch(new CreateTenant([
+            'owner_id'=>'0',
+            'name'=>'gssb',
+            'storage_type'=>'local'
+        ]));
     
 
 

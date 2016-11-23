@@ -18,6 +18,7 @@ services:
       - COMPOSE_HTTP_TIMEOUT = 500
       # IMPORTANT: Set the Remote Interpreter entry matching name to `laravel`
       - PHP_IDE_CONFIG="serverName=laravel"
+      - INSTALL_XDEBUG=true
 
   db:
     build: ./mysql
