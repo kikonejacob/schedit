@@ -6,7 +6,7 @@ namespace App\Providers;
 
 use Config;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
+use \Illuminate\Http\Request;
 
 class schTenantServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class schTenantServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       $request = app(\Illuminate\Http\Request::class);
+       $request = app(Request::class);
         if (strpos($request->url(),'/api/v1')>0)
         {
             Config::set('database.default', 'tenant');

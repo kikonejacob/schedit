@@ -12,7 +12,7 @@ class CreateTenantMgrUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('tenantsmgr')->create('users', function (Blueprint $table) {
+        Schema::connection('tenants-manager')->create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('firstName');
@@ -23,7 +23,6 @@ class CreateTenantMgrUsersTable extends Migration
             $table->string("phone");
             $table->string("address1");
             $table->string("address2");
-            $table->integer("current_acyear");
             $table->string("role");
             $table->softDeletes();
             $table->rememberToken();

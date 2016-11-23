@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        Passport::routes(null,['middleware'=>['api','tenant.database'],'prefix'=>'api/v1/{tenant}']);
+        Passport::routes(null,['middleware'=>['tenant.database'],'prefix'=>'api/v1/{tenant}']);
         Passport::tokensExpireIn(Carbon::now()->addDays(15));
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
         Passport::pruneRevokedTokens(); // Remove revoked tokens

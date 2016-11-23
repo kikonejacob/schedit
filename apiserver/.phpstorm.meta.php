@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-10-21.
+    * Generated on 2016-11-04.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -15,6 +15,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -57,6 +59,8 @@ namespace PHPSTORM_META {
             'tymon.jwt.validators.payload' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
             'tymon.jwt.payload.factory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'tymon.jwt.generate' instanceof \Tymon\JWTAuth\Commands\JWTGenerateCommand,
+            'League\OAuth2\Server\AuthorizationServer' instanceof \League\OAuth2\Server\AuthorizationServer,
+            'League\OAuth2\Server\ResourceServer' instanceof \League\OAuth2\Server\ResourceServer,
             'entrust' instanceof \Zizaco\Entrust\Entrust,
             'command.entrust.migration' instanceof \Zizaco\Entrust\MigrationCommand,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -165,6 +169,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -207,6 +213,8 @@ namespace PHPSTORM_META {
             'tymon.jwt.validators.payload' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
             'tymon.jwt.payload.factory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'tymon.jwt.generate' instanceof \Tymon\JWTAuth\Commands\JWTGenerateCommand,
+            'League\OAuth2\Server\AuthorizationServer' instanceof \League\OAuth2\Server\AuthorizationServer,
+            'League\OAuth2\Server\ResourceServer' instanceof \League\OAuth2\Server\ResourceServer,
             'entrust' instanceof \Zizaco\Entrust\Entrust,
             'command.entrust.migration' instanceof \Zizaco\Entrust\MigrationCommand,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -315,6 +323,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -357,6 +367,8 @@ namespace PHPSTORM_META {
             'tymon.jwt.validators.payload' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
             'tymon.jwt.payload.factory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'tymon.jwt.generate' instanceof \Tymon\JWTAuth\Commands\JWTGenerateCommand,
+            'League\OAuth2\Server\AuthorizationServer' instanceof \League\OAuth2\Server\AuthorizationServer,
+            'League\OAuth2\Server\ResourceServer' instanceof \League\OAuth2\Server\ResourceServer,
             'entrust' instanceof \Zizaco\Entrust\Entrust,
             'command.entrust.migration' instanceof \Zizaco\Entrust\MigrationCommand,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -465,6 +477,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -507,6 +521,8 @@ namespace PHPSTORM_META {
             'tymon.jwt.validators.payload' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
             'tymon.jwt.payload.factory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'tymon.jwt.generate' instanceof \Tymon\JWTAuth\Commands\JWTGenerateCommand,
+            'League\OAuth2\Server\AuthorizationServer' instanceof \League\OAuth2\Server\AuthorizationServer,
+            'League\OAuth2\Server\ResourceServer' instanceof \League\OAuth2\Server\ResourceServer,
             'entrust' instanceof \Zizaco\Entrust\Entrust,
             'command.entrust.migration' instanceof \Zizaco\Entrust\MigrationCommand,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,

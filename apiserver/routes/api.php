@@ -13,26 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+
 
 Route::get('/',function(Request $request){
     return "Welcome to school edit API";
 });
 
-Route::group(['prefix' => 'v1/{tenant}' , 'middleware' => ['auth:api','tenant.database']] , function () {
+Route::group(['prefix' => 'v1/{tenant}' , 'middleware' => ['tenant.database']] , function () {
 
-    /*Route::post('oauth/access_token' , function () {
-        return Response::json(Authorizer::issueAccessToken());
-    });*/
+    Route::get('/' ,  ['uses' => 'Tenant\SchoolConfigController@index'])->middleware([]);
 
     // @todo we have to replace auth.basic middle ware by Oauth
-    Route::group(['namespace' => 'Tenant'] , function ($tenant) {
-        Route::get('/' , function () {
-            return view('welcome');
-        });
+    Route::group(['namespace' => 'Tenant','middleware'=>['auth:api']] , function ($tenant) {
+
         //var_dump(Request::path());
+
 
         /* 0. Academic Year*/
         Route::resource('academic-years' , 'academicYearController' , ['except' => ['create' , 'edit']]);
@@ -114,7 +109,11 @@ Route::group(['prefix' => 'v1/{tenant}' , 'middleware' => ['auth:api','tenant.da
         Route::resource('admins.storage' , 'StorageController' , ['only' => ['store','index','update']]);
         /** 13. school information */
         Route::resource('school-information' , 'SchoolConfigController' , ['only' => ['index','store']]);
-
+        /** 14. current user from request */
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+        Route::post('/user/storage','StorageController@store');
     });
 
 });

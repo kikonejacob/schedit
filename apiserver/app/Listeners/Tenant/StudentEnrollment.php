@@ -28,8 +28,8 @@ class StudentEnrollment
      */
     public function handle(StudentEnrolled $event)
     {
-        $enrollement=$event->enrollment;
-        //var_dump($enrollement);
-        $this->ApplyStudentClassTuition($enrollement->studentId,$enrollement->classId);
+        $enrollment=$event->enrollment;
+        //var_dump($enrollment);
+        $this->ApplyStudentClassTuition($enrollment->studentId,$enrollment->classId);
     }
 }

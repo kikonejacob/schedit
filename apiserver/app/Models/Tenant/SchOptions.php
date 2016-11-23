@@ -21,4 +21,10 @@ class SchTenantOptions extends Model
      */
     protected $table = 'sch_options';
 
+
+    /**  Put the information of the tenant the database */
+    public function initializeTenantConfig($config){
+
+    }
+
 }

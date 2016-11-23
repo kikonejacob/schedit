@@ -22,7 +22,7 @@ Route::group(['prefix' => 'ui-ctrl'] , function () {
 });
 
 
-Route::resource('manage' , 'TenantMgr\tenantsController' , [
+Route::resource('manage' , 'TenantMgr\TenantsController' , [
         'namespace' => 'TenantMgr' ,
         'except'    => ['create' , 'edit']
 ]);

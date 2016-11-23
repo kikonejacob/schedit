@@ -1,3 +1,3 @@
  //migrate tenant 
 
- php artisan migrate --database tenantsmgr --path database/migrations/tenantsMgr/ 
+ php artisan migrate --database tenants-manager --path database/migrations/tenantsMgr/

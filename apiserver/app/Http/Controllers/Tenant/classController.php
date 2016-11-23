@@ -94,8 +94,7 @@ class classController extends Controller
     
          $EducClass=EducClass::
                             join(C::EDUC_LEVEL,'levelId','=',C::EDUC_LEVEL.'.id')
-                            ->select(C::EDUC_CLASS.'.*',
-                                     C::ALIAS_PARSE(C::ALIAS_LEVEL_NAME));
+                            ->select(C::EDUC_CLASS.'.*',C::ALIAS_PARSE(C::ALIAS_LEVEL_NAME));
         $EducClass=$this->ApplyFilters($EducClass,true);
 
         return $EducClass;
